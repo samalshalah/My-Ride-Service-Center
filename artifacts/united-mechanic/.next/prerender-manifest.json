@@ -433,7 +433,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/contact": {
+    "/body-shop": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -446,32 +446,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/contact",
-      "dataRoute": "/contact.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/dealership-service-program": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/dealership-service-program",
-      "dataRoute": "/dealership-service-program.rsc",
+      "srcRoute": "/body-shop",
+      "dataRoute": "/body-shop.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -505,6 +481,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/dealership-service-program": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/dealership-service-program",
+      "dataRoute": "/dealership-service-program.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/": {
       "experimentalBypassFor": [
         {
@@ -529,7 +529,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/body-shop": {
+    "/contact": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -542,37 +542,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/body-shop",
-      "dataRoute": "/body-shop.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/robots.txt": {
-      "initialHeaders": {
-        "cache-control": "public, max-age=0, must-revalidate",
-        "content-type": "text/plain",
-        "x-next-cache-tags": "_N_T_/layout,_N_T_/robots.txt/layout,_N_T_/robots.txt/route,_N_T_/robots.txt/"
-      },
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/robots.txt",
-      "dataRoute": null,
+      "srcRoute": "/contact",
+      "dataRoute": "/contact.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -601,6 +572,35 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/sitemap.xml",
+      "dataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/robots.txt": {
+      "initialHeaders": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "x-next-cache-tags": "_N_T_/layout,_N_T_/robots.txt/layout,_N_T_/robots.txt/route,_N_T_/robots.txt/"
+      },
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/robots.txt",
       "dataRoute": null,
       "allowHeader": [
         "host",
@@ -691,8 +691,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "b6421a6d37878f6dc1572124d1ae2b92",
-    "previewModeSigningKey": "1ca614f9b92c017809ec9ee25af47c84b3d37a4cc8c61250279b1ba242a0fa9b",
-    "previewModeEncryptionKey": "4d89d197084b7cae4c82dd2d619f9ae1a73e7e69d6aac80ab67b5e2611bfcd8d"
+    "previewModeId": "e2c211c7564d525f4a4236c8cbca9cff",
+    "previewModeSigningKey": "8ad9d80688309a506025a7cfc12f96e38f6eb182b881e22f326f44afa0afc78b",
+    "previewModeEncryptionKey": "12c39995412c6649fe3cb4bf9b22fd6b9b502cf4846bf713a57e8b0ab17c2690"
   }
 }

@@ -61,7 +61,7 @@ export default function BodyShopContent() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">
             <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2">What We Do</p>
-            <h2 id="bodyshop-services-heading" className="text-2xl md:text-3xl font-extrabold text-foreground">Body Shop & Collision Repair Services in Fredericksburg, VA</h2>
+            <h2 id="bodyshop-services-heading" className="text-2xl md:text-3xl font-extrabold text-foreground">Body Shop Services in Fredericksburg, VA</h2>
             <p className="text-muted-foreground mt-3 max-w-2xl mx-auto text-sm md:text-base">From minor cosmetic damage to major structural collision repair — our body shop team restores every vehicle to the highest standard.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -29,7 +29,7 @@ export default function HomeContent() {
 
             {/* Headline */}
             <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight max-w-4xl leading-[1.1] mb-4">
-              Fredericksburg's Trusted Collision &amp; Auto Repair Experts
+              Fredericksburg's Trusted Body Shop &amp; Auto Repair Experts
             </h1>
 
             {/* Accent Bar */}
@@ -123,7 +123,7 @@ export default function HomeContent() {
             <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground rounded-full px-4 py-1.5 text-sm font-medium mb-4">
               <PaintBucket className="h-4 w-4" /> Body Shop
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">Collision Repair &amp; Body Shop Services in Fredericksburg, VA</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">Body Shop Services in Fredericksburg, VA</h2>
             <p className="text-muted-foreground max-w-xl mx-auto">Professional collision repair, dent removal, auto painting, and frame straightening — backed by direct insurance billing at My Ride Service Center.</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
@@ -315,7 +315,7 @@ export default function HomeContent() {
       <section className="py-20 bg-zinc-950">
         <div className="container mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Schedule Auto Repair or Collision Service in Fredericksburg, VA</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Schedule Auto Repair or Body Shop Service in Fredericksburg, VA</h2>
             <p className="text-zinc-400 max-w-xl mx-auto mb-10 text-lg">Call My Ride Service Center or book online — same-day appointments often available at 540-418-6626.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/appointment">

@@ -95,7 +95,7 @@ export default function ContactContent() {
               </div>
               <div className="bg-zinc-50 rounded-3xl border border-border p-8">
                 <h3 className="font-bold text-foreground mb-4">Body Shop Services</h3>
-                <p className="text-sm text-muted-foreground mb-4">Collision repair, dent removal, painting, and glass replacement with insurance support.</p>
+                <p className="text-sm text-muted-foreground mb-4">Body shop, dent removal, painting, and glass replacement with insurance support.</p>
                 <Link href="/body-shop">
                   <Button variant="outline" className="font-semibold border-primary text-primary hover:bg-primary hover:text-white">View Body Shop →</Button>
                 </Link>

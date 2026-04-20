@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     template: "%s | My Ride Service Center",
-    default: "My Ride Service Center | Auto Repair & Collision Body Shop in Fredericksburg, VA",
+    default: "My Ride Service Center | Body Shop & Auto Repair in Fredericksburg, VA",
   },
   description:
-    "My Ride Service Center is Fredericksburg, VA's trusted auto repair and collision body shop — 25+ years serving Stafford, Spotsylvania & surrounding areas. All makes and models, insurance accepted. Call 540-418-6626.",
+    "My Ride Service Center is Fredericksburg, VA's trusted body shop and auto repair center — 25+ years serving Stafford, Spotsylvania & surrounding areas. All makes and models, insurance accepted. Call 540-418-6626.",
   keywords: [
     "auto repair Fredericksburg VA",
     "collision repair Fredericksburg VA",

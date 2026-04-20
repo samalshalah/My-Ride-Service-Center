@@ -15,15 +15,15 @@ const FAQ_SCHEMA = {
 };
 
 export const metadata: Metadata = {
-  title: "Collision & Body Shop in Fredericksburg, VA | My Ride Service Center",
+  title: "Body Shop in Fredericksburg, VA | My Ride Service Center",
   description:
-    "Professional collision repair and body shop in Fredericksburg, VA. My Ride Service Center offers dent repair, auto painting, frame straightening, glass replacement & more. Insurance accepted. Call 540-418-6626.",
+    "Professional body shop in Fredericksburg, VA. My Ride Service Center offers dent repair, auto painting, frame straightening, glass replacement & more. Insurance accepted. Call 540-418-6626.",
   alternates: {
     canonical: "https://www.myrideserivcecenter.com/body-shop",
   },
   openGraph: {
-    title: "Collision & Body Shop in Fredericksburg, VA | My Ride Service Center",
-    description: "Professional collision repair, dent removal, auto painting & insurance support. Call 540-418-6626.",
+    title: "Body Shop in Fredericksburg, VA | My Ride Service Center",
+    description: "Professional body shop, dent removal, auto painting & insurance support in Fredericksburg, VA. Call 540-418-6626.",
     images: [{ url: "/myride-body-shop-hero.jpg" }],
   },
 };

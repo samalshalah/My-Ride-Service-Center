@@ -70,7 +70,7 @@ export default function AboutContent() {
               },
               {
                 icon: <PaintBucket className="h-7 w-7" />,
-                title: "Collision Body Shop",
+                title: "Body Shop",
                 desc: "Complete collision repair, dent removal, frame straightening, auto painting, scratch repair, glass replacement, and rust repair — with direct insurance billing support.",
                 link: "/body-shop",
                 label: "View Body Shop Services",
