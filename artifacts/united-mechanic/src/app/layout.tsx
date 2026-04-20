@@ -37,13 +37,13 @@ export const metadata: Metadata = {
     title: "My Ride Service Center | Auto Repair & Body Shop in Fredericksburg, VA",
     description:
       "Fredericksburg's trusted auto repair and collision body shop — 25+ years serving VA. All makes and models, insurance accepted. Call 540-418-6626.",
-    images: [{ url: "/myride-hero.jpg", width: 1200, height: 630, alt: "My Ride Service Center — Auto Repair & Body Shop Fredericksburg VA" }],
+    images: [{ url: "/myride-social-banner.jpg", width: 1200, height: 630, alt: "My Ride Service Center — Auto Repair & Body Shop Fredericksburg VA" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "My Ride Service Center | Auto Repair & Body Shop in Fredericksburg, VA",
     description: "25+ years serving Fredericksburg, VA. Auto repair, collision body shop & dealership services. Call 540-418-6626.",
-    images: ["/myride-hero.jpg"],
+    images: ["/myride-social-banner.jpg"],
   },
   robots: {
     index: true,
