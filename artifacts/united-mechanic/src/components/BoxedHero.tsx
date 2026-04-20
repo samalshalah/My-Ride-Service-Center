@@ -104,23 +104,6 @@ export default function BoxedHero({
                   </div>
                 ))}
               </div>
-
-              {/* Feature list */}
-              {features.length > 0 && (
-                <div className="space-y-1.5 mb-6">
-                  {features.map((f) => (
-                    <div key={f} className="flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
-                      <span className="text-zinc-400 text-xs">{f}</span>
-                    </div>
-                  ))}
-                  {extraFeaturesCount > 0 && (
-                    <span className="text-xs text-primary font-semibold">
-                      + {extraFeaturesCount} more ↓
-                    </span>
-                  )}
-                </div>
-              )}
             </div>
 
             {/* CTA buttons */}
@@ -140,12 +123,6 @@ export default function BoxedHero({
         </motion.div>
       </div>
 
-      {/* Tagline — shown below the hero box */}
-      {tagline && (
-        <div className="max-w-4xl mx-auto px-4 py-8 text-center">
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{tagline}</p>
-        </div>
-      )}
     </div>
   );
 }
