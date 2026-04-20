@@ -19,12 +19,12 @@ run = "pnpm --filter @workspace/united-mechanic run dev"
 
 [services.production]
 build = [ "pnpm", "--filter", "@workspace/united-mechanic", "run", "build" ]
-publicDir = "artifacts/united-mechanic/dist/public"
+publicDir = "artifacts/united-mechanic/out"
 serve = "static"
 
 [[services.production.rewrites]]
 from = "/*"
-to = "/index.html"
+to = "/404.html"
 
 [services.env]
 PORT = "19414"
