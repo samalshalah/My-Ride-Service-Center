@@ -1,9 +1,10 @@
 import React from "react";
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, Router as WouterRouter, Link } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
+import ServicePageLayout, { SERVICES } from "@/pages/ServicePage";
 import { motion } from "framer-motion";
 import { Wrench, Settings, MapPin, Phone, ShieldCheck, CheckCircle2, Car, Map, Clock, Star, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,9 +20,9 @@ function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-border">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); }} className="flex items-center">
+        <Link href="/" className="flex items-center">
           <img src="https://www.myunitedmechanic.com/logo.png" alt="United Mechanic" className="h-12 object-contain" />
-        </a>
+        </Link>
         <div className="hidden md:flex items-center gap-8">
           <button onClick={() => scrollTo('services')} className="text-sm font-medium hover:text-primary transition-colors">Services</button>
           <button onClick={() => scrollTo('about')} className="text-sm font-medium hover:text-primary transition-colors">About Us</button>
@@ -44,7 +45,6 @@ function Hero() {
         <img src="/hero.png" alt="Auto Shop Interior" className="w-full h-full object-cover opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent" />
       </div>
-      
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
           <motion.div
@@ -93,7 +93,7 @@ function TrustSignals() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((f, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ function About() {
     <section id="about" className="py-24 bg-zinc-50">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -129,7 +129,7 @@ function About() {
           >
             <h2 className="text-4xl font-bold mb-6 text-foreground">More than 20 years delivering safety and confidence.</h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              United Mechanic isn't a chain—it's a community fixture. We are the shop where your neighbors have been bringing their cars for over two decades. 
+              United Mechanic isn't a chain—it's a community fixture. We are the shop where your neighbors have been bringing their cars for over two decades.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               We specialize in transmission rebuilds, expert diagnostics, and general auto repair for all makes and models. Our philosophy is simple: we fix it right the first time, providing transparent pricing and honest advice.
@@ -144,7 +144,7 @@ function About() {
               </div>
             </div>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -164,50 +164,50 @@ function About() {
   );
 }
 
-function Services() {
-  const services = [
-    { title: "Transmission Repair & Rebuild", desc: "Expert transmission diagnostics, repairs, and complete rebuilds for lasting performance.", icon: Settings },
-    { title: "Virginia State Inspection", desc: "Official VA state safety inspection station to keep your vehicle street legal.", icon: ShieldCheck },
-    { title: "Engine Diagnostics & Repair", desc: "Advanced computer diagnostics to pinpoint engine issues accurately and quickly.", icon: Wrench },
-    { title: "Brake Service", desc: "Comprehensive brake pad, rotor, and fluid replacement for ultimate stopping power.", icon: Car },
-    { title: "Oil Change & Maintenance", desc: "Factory-scheduled maintenance and oil changes to extend your engine's life.", icon: Clock },
-    { title: "All Makes & Models", desc: "Specialized service for both domestic and import vehicles of all brands.", icon: Map },
-  ];
+// Short one-sentence descriptions for homepage service cards
+const SERVICES_WITH_DESC = SERVICES.map(s => ({
+  ...s,
+  desc: s.description.split('.')[0] + '.',
+}));
 
+function ServicesWithDesc() {
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-24 bg-primary">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-4xl font-bold mb-4">Comprehensive Auto Care</h2>
-          <p className="text-lg text-muted-foreground">From routine maintenance to complex transmission rebuilds, our expert technicians handle it all.</p>
+          <h2 className="text-4xl font-bold mb-4 text-white uppercase tracking-wide">Our Specialized Services</h2>
+          <div className="h-1 w-16 bg-white/50 mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, i) => (
-            <motion.div 
-              key={i}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {SERVICES_WITH_DESC.map((service, i) => (
+            <motion.div
+              key={service.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-8 rounded-3xl border border-border bg-zinc-50 hover:shadow-lg transition-shadow"
+              transition={{ delay: i * 0.07 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-md flex flex-col"
             >
-              <div className="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
-                <service.icon className="h-6 w-6" />
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
               </div>
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{service.desc}</p>
+              <div className="p-5 flex flex-col flex-1">
+                <h3 className="font-bold text-sm uppercase tracking-wider mb-2">{service.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1 line-clamp-3">{service.desc}</p>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="mt-4 flex items-center justify-center w-full h-10 rounded-md bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-medium transition-colors"
+                >
+                  More Information
+                </Link>
+              </div>
             </motion.div>
           ))}
-        </div>
-
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-md">
-            <img src="/engine.png" alt="Engine repair" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-          </div>
-          <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-md">
-            <img src="/brakes.png" alt="Brake service" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-          </div>
         </div>
       </div>
     </section>
@@ -217,7 +217,6 @@ function Services() {
 function Locations() {
   return (
     <section id="locations" className="py-24 bg-zinc-950 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-primary/5 pattern-grid" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-4xl font-bold mb-4">Two Convenient Locations</h2>
@@ -225,7 +224,7 @@ function Locations() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -235,7 +234,6 @@ function Locations() {
               <h3 className="text-2xl font-bold">Fredericksburg</h3>
               <span className="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">VA Inspection Station</span>
             </div>
-            
             <div className="space-y-6 mb-8 flex-1">
               <div className="flex items-start gap-4">
                 <MapPin className="h-6 w-6 text-primary shrink-0 mt-1" />
@@ -258,7 +256,6 @@ function Locations() {
                 </div>
               </div>
             </div>
-
             <a href="tel:5046581818" className="mt-auto">
               <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-12 text-lg">
                 Call Fredericksburg
@@ -266,7 +263,7 @@ function Locations() {
             </a>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -276,7 +273,6 @@ function Locations() {
             <div className="mb-6 flex items-center justify-between">
               <h3 className="text-2xl font-bold">Woodbridge</h3>
             </div>
-            
             <div className="space-y-6 mb-8 flex-1">
               <div className="flex items-start gap-4">
                 <MapPin className="h-6 w-6 text-primary shrink-0 mt-1" />
@@ -299,7 +295,6 @@ function Locations() {
                 </div>
               </div>
             </div>
-
             <a href="tel:5714587251" className="mt-auto">
               <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-12 text-lg">
                 Call Woodbridge
@@ -334,14 +329,17 @@ function Footer() {
 
 function FloatingWhatsApp() {
   return (
-    <a 
-      href="https://wa.me/15046581818" 
-      target="_blank" 
+    <a
+      href="https://wa.me/15046581818"
+      target="_blank"
       rel="noreferrer"
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform hover:shadow-[#25D366]/50 focus:outline-none focus:ring-4 focus:ring-[#25D366]/30 flex items-center justify-center"
+      className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform hover:shadow-[#25D366]/50 flex items-center justify-center"
       aria-label="Chat on WhatsApp"
     >
-      <MessageSquare className="h-8 w-8" />
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.557 4.112 1.528 5.836L.057 23.929a.5.5 0 0 0 .622.607l6.248-1.637A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.534-5.21-1.457l-.374-.224-3.874 1.016 1.03-3.765-.244-.386A9.948 9.948 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+      </svg>
     </a>
   );
 }
@@ -353,7 +351,7 @@ function Home() {
       <Hero />
       <TrustSignals />
       <About />
-      <Services />
+      <ServicesWithDesc />
       <Locations />
       <Footer />
       <FloatingWhatsApp />
@@ -365,6 +363,11 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      {SERVICES.map((service) => (
+        <Route key={service.slug} path={`/services/${service.slug}`}>
+          {() => <ServicePageLayout service={service} />}
+        </Route>
+      ))}
       <Route component={NotFound} />
     </Switch>
   );
