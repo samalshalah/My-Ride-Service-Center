@@ -35,9 +35,11 @@ export default function HomeContent() {
             {/* Accent Bar */}
             <div className="h-1 w-20 bg-primary mb-5 rounded-full" />
 
-            {/* Subtitle */}
-            <p className="text-zinc-300 text-base sm:text-lg max-w-2xl mb-8 font-medium">
-              From minor dents to major repairs — we bring your car back to life.
+            {/* SEO Description */}
+            <p className="text-zinc-300 text-sm sm:text-base max-w-2xl mb-8 leading-relaxed">
+              Serving Fredericksburg, Stafford, and Spotsylvania, VA — we handle everything from
+              oil changes, brake repairs, and engine diagnostics to full collision repair,
+              dent removal, and auto painting. All makes and models accepted, with direct insurance billing.
             </p>
 
             {/* CTAs */}
