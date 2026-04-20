@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Phone, ShieldCheck, Star, Car, CheckCircle2, ArrowRight, Wrench, PaintBucket } from "lucide-react";
+import { Phone, ShieldCheck, Star, Car, CheckCircle2, ArrowRight, Wrench, PaintBucket, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AUTO_REPAIR_SERVICES, BODY_SHOP_SERVICES } from "@/data/services";
 
@@ -11,46 +11,67 @@ export default function HomeContent() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-zinc-950">
+        {/* Background Image & Overlays */}
+        <div className="absolute inset-0 z-0">
           <img src="/myride-hero.jpg" alt="My Ride Service Center" className="w-full h-full object-cover" style={{ objectPosition: "65% center" }} />
-          <div className="absolute inset-0 bg-zinc-950/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/40 via-zinc-950/60 to-zinc-950/90" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
-        <div className="relative container mx-auto px-4 py-20">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl">
-            <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">My Ride Service Center</p>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+
+        {/* Main Content */}
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="flex flex-col items-center">
+            {/* Eyebrow */}
+            <p className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-6">
+              My Ride Service Center
+            </p>
+
+            {/* Headline */}
+            <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight max-w-5xl leading-[1.1] mb-6">
               Fredericksburg's Trusted Collision &amp; Auto Repair Experts
             </h1>
-            <p className="text-zinc-300 text-lg md:text-xl mb-10 max-w-xl">
-              From minor dents to major repairs — we bring your car back to life with certified technicians, fast turnaround, and insurance support.
+
+            {/* Accent Bar */}
+            <div className="h-1.5 w-24 bg-primary mb-8 rounded-full" />
+
+            {/* Subtitle */}
+            <p className="text-zinc-300 text-lg sm:text-xl md:text-2xl max-w-3xl mb-12 font-medium">
+              From minor dents to major repairs — we bring your car back to life.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Link href="/appointment">
-                <Button size="lg" className="font-semibold w-full sm:w-auto text-base px-8">Book Appointment</Button>
+                <Button size="lg" className="w-full sm:w-auto font-bold text-base px-10 py-4 h-auto">
+                  Book Appointment
+                </Button>
               </Link>
               <a href="tel:5404186626">
-                <Button size="lg" variant="outline" className="font-semibold border-white/30 text-white hover:bg-white/10 w-full sm:w-auto text-base px-8">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto font-bold border-2 border-white/80 text-white hover:bg-white/10 text-base px-10 py-4 h-auto">
                   <Phone className="mr-2 h-5 w-5" /> 540-418-6626
                 </Button>
               </a>
             </div>
           </motion.div>
         </div>
-      </section>
 
-      {/* Trust Bar */}
-      <section className="bg-primary py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-8 text-white text-sm font-semibold">
-            {[
-              { icon: <ShieldCheck className="h-4 w-4" />, text: "Certified Technicians" },
-              { icon: <Star className="h-4 w-4" />, text: "5-Star Rated Service" },
-              { icon: <Car className="h-4 w-4" />, text: "All Makes & Models" },
-              { icon: <CheckCircle2 className="h-4 w-4" />, text: "Insurance Support" },
-            ].map(({ icon, text }) => (
-              <div key={text} className="flex items-center gap-2">{icon} {text}</div>
-            ))}
+        {/* Trust Strip */}
+        <div className="relative z-10 w-full bg-zinc-950/80 backdrop-blur-md border-t border-white/10 py-5">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:divide-x divide-white/20">
+              {[
+                { icon: <ShieldCheck className="w-5 h-5 text-primary" />, text: "Certified Experts" },
+                { icon: <Star className="w-5 h-5 text-primary" />, text: "5-Star Rated" },
+                { icon: <Wrench className="w-5 h-5 text-primary" />, text: "All Makes & Models" },
+                { icon: <Shield className="w-5 h-5 text-primary" />, text: "Insurance Accepted" },
+              ].map(({ icon, text }) => (
+                <div key={text} className="flex items-center justify-center gap-3 px-4">
+                  {icon}
+                  <span className="text-white font-semibold tracking-wide text-sm">{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

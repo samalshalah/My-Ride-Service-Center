@@ -19,15 +19,6 @@ export function CenteredBold() {
       {/* Main Content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center pt-20 pb-16">
         
-        {/* Logo (Optional, but included based on available images if we want to show it, though brief says 'Centered CTAs, eyebrow, etc', let's stick closely to brief) */}
-        <div className="mb-8">
-          <img 
-            src="/__mockup/images/myride-logo-white.png" 
-            alt="My Ride Service Center Logo" 
-            className="h-16 w-auto mx-auto opacity-90"
-          />
-        </div>
-
         {/* Eyebrow */}
         <p className="text-red-600 font-bold tracking-[0.2em] uppercase text-sm mb-6">
           My Ride Service Center
