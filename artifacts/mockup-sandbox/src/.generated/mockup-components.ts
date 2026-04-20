@@ -6,5 +6,8 @@ export const modules: ModuleMap = {
   "./components/mockups/service-layouts/C_Editorial.tsx": () => import("../components/mockups/service-layouts/C_Editorial.tsx"),
   "./components/mockups/service-layouts/D_BoldDark.tsx": () => import("../components/mockups/service-layouts/D_BoldDark.tsx"),
   "./components/mockups/service-layouts/E_BoxedSplit.tsx": () => import("../components/mockups/service-layouts/E_BoxedSplit.tsx"),
-  "./components/mockups/service-layouts/F_BoxedCard.tsx": () => import("../components/mockups/service-layouts/F_BoxedCard.tsx")
+  "./components/mockups/service-layouts/F_BoxedCard.tsx": () => import("../components/mockups/service-layouts/F_BoxedCard.tsx"),
+  "./components/mockups/home-hero/CenteredBold.tsx": () => import("../components/mockups/home-hero/CenteredBold.tsx"),
+  "./components/mockups/home-hero/DarkPanelSplit.tsx": () => import("../components/mockups/home-hero/DarkPanelSplit.tsx"),
+  "./components/mockups/home-hero/DiagonalSplit.tsx": () => import("../components/mockups/home-hero/DiagonalSplit.tsx")
 };
