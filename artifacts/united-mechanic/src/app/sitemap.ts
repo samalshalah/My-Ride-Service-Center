@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { ALL_SERVICES } from "@/data/services";
 
+export const dynamic = "force-static";
+
 const BASE = "https://www.myrideserivcecenter.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {

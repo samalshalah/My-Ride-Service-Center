@@ -43,12 +43,11 @@ export default function AppointmentContent() {
               transition={{ duration: 0.5 }}
               className="lg:col-span-2"
             >
-              {/* @ts-ignore */}
               <iframe
                 id="JotFormIFrame-261094961811156"
                 title="My Ride Service Center - Appointment"
                 onLoad={() => window.parent.scrollTo(0, 0)}
-                allowtransparency="true"
+                allowTransparency={true}
                 allow="geolocation; microphone; camera; fullscreen; payment"
                 src="https://form.jotform.com/261094961811156"
                 frameBorder={0}
