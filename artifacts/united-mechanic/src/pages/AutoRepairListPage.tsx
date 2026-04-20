@@ -17,8 +17,8 @@ export default function AutoRepairListPage() {
         badge={<><Wrench className="h-4 w-4" /><span>Auto Repair</span></>}
         title="Auto Repair Services"
         subtitle="Complete mechanical repair and maintenance for all makes and models — performed by certified technicians in Fredericksburg, VA."
-        image="/shop-interior.jpg"
-        imageAlt="Auto repair shop"
+        image="/myride-auto-repair.jpg"
+        imageAlt="My Ride Service Center auto repair"
         actions={
           <>
             <a href="tel:5404186626">

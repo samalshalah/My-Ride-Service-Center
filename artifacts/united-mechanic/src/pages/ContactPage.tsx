@@ -16,8 +16,8 @@ export default function ContactPage() {
         badge={<><span>Get in Touch</span></>}
         title="Contact Us"
         subtitle="Call or stop by our Fredericksburg location — we're ready to help with your vehicle."
-        image="/shop-exterior.jpg"
-        imageAlt="My Ride Service Center"
+        image="/myride-fredericksburg.jpg"
+        imageAlt="My Ride Service Center in Fredericksburg, VA"
       />
 
       <section className="py-16 bg-white">

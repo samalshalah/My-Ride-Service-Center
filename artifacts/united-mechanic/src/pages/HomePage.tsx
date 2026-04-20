@@ -15,7 +15,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/myride-body-shop.jpg" alt="My Ride Service Center" className="w-full h-full object-cover" />
+          <img src="/myride-hero.jpg" alt="My Ride Service Center" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-zinc-950/65" />
         </div>
         <div className="relative container mx-auto px-4 py-20">
@@ -220,7 +220,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="rounded-3xl overflow-hidden h-80"
             >
-              <img src="/shop-interior.jpg" alt="Our shop" className="w-full h-full object-cover" />
+              <img src="/myride-auto-repair.jpg" alt="Our shop" className="w-full h-full object-cover" />
             </motion.div>
           </div>
         </div>

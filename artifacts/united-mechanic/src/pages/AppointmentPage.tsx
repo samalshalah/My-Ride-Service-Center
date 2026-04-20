@@ -69,7 +69,7 @@ export default function AppointmentPage() {
         badge={<><Calendar className="h-4 w-4" /><span>Schedule a Visit</span></>}
         title="Book a Repair Appointment"
         subtitle="Tell us about your vehicle and we'll get you in as soon as possible — same-day appointments often available."
-        image="/myride-body-shop.jpg"
+        image="/myride-auto-repair.jpg"
         imageAlt="My Ride Service Center"
       />
 

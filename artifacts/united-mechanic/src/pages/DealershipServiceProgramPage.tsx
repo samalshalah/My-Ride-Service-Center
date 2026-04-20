@@ -16,7 +16,7 @@ export default function DealershipServiceProgramPage() {
         badge={<><Car className="h-4 w-4" /><span>Dealership Program</span></>}
         title="My Ride Dealership Service Program"
         subtitle="Fleet-level service quality for dealerships — fast turnaround, transparent pricing, and certified repairs your customers can trust."
-        image="/shop-exterior.jpg"
+        image="/myride-dealership.jpg"
         imageAlt="My Ride Service Center dealership program"
         actions={
           <>
@@ -62,7 +62,7 @@ export default function DealershipServiceProgramPage() {
               viewport={{ once: true }}
               className="rounded-3xl overflow-hidden h-80"
             >
-              <img src="/shop-interior.jpg" alt="Professional service" className="w-full h-full object-cover" />
+              <img src="/myride-fredericksburg.jpg" alt="Professional service" className="w-full h-full object-cover" />
             </motion.div>
           </div>
         </div>

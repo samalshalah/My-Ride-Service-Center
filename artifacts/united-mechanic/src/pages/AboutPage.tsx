@@ -16,7 +16,7 @@ export default function AboutPage() {
         badge={<><span>Our Story</span></>}
         title="About My Ride Service Center"
         subtitle="Fredericksburg's trusted auto repair and collision body shop — built on honest service, certified expertise, and community."
-        image="/shop-exterior.jpg"
+        image="/myride-fredericksburg.jpg"
         imageAlt="My Ride Service Center"
       />
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="rounded-3xl overflow-hidden h-80"
             >
-              <img src="/shop-interior.jpg" alt="My Ride Service Center shop" className="w-full h-full object-cover" />
+              <img src="/myride-body-shop-hero.jpg" alt="My Ride Service Center shop" className="w-full h-full object-cover" />
             </motion.div>
           </div>
         </div>

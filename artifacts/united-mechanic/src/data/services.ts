@@ -14,7 +14,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     slug: "ac-heating",
     title: "AC & Heating System Service",
     tagline: "Stay comfortable year-round with expert climate control service.",
-    image: "/ac-heat.png",
+    image: "/myride-ac-heating.jpg",
     category: "auto-repair",
     description:
       "A properly functioning AC and heating system is essential for driving comfort and safety. My Ride Service Center's technicians are trained to diagnose and repair all makes and models — from refrigerant recharges to blower motor replacements and full compressor rebuilds.",
@@ -37,7 +37,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     slug: "battery-electrical",
     title: "Battery & Electrical System Repair",
     tagline: "Precision electrical diagnostics for today's complex vehicles.",
-    image: "/electrical.png",
+    image: "/myride-battery-electrical.jpg",
     category: "auto-repair",
     description:
       "Modern vehicles contain miles of wiring and dozens of control modules. Electrical problems can be intermittent and expensive if misdiagnosed. My Ride Service Center's technicians use specialized diagnostic tools to accurately identify and fix electrical faults — fast.",
@@ -60,7 +60,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     slug: "brakes",
     title: "Brake Repair & Replacement",
     tagline: "Maximum stopping power. Your safety depends on it.",
-    image: "/brakes.png",
+    image: "/myride-brakes.jpg",
     category: "auto-repair",
     description:
       "Brake failure is one of the leading causes of road accidents. At My Ride Service Center, we perform thorough brake inspections and provide reliable repairs using quality parts. Whether you need new brake pads or a complete brake system overhaul, we make sure your vehicle stops when it needs to.",
@@ -83,7 +83,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     slug: "engine-diagnostics",
     title: "Engine Diagnostics & Tune-Ups",
     tagline: "Find the problem fast with advanced diagnostic technology.",
-    image: "/diagnostics.png",
+    image: "/myride-engine-diagnostics.jpg",
     category: "auto-repair",
     description:
       "Modern vehicles are sophisticated machines with hundreds of sensors and control modules. When a warning light appears, our advanced diagnostic equipment reads fault codes, pinpoints the root cause, and gives you a clear explanation — no guesswork, just accurate answers.",
@@ -106,7 +106,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     slug: "exhaust-emissions",
     title: "Exhaust & Emissions Repairs",
     tagline: "Keep your exhaust system clean, quiet, and compliant.",
-    image: "/engine.png",
+    image: "/myride-auto-repair.jpg",
     category: "auto-repair",
     description:
       "A damaged exhaust system affects performance, fuel efficiency, and air quality. My Ride Service Center handles everything from muffler replacements to catalytic converter repairs, ensuring your vehicle runs cleanly and passes Virginia emissions inspections.",
@@ -129,7 +129,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     slug: "oil-change",
     title: "Oil Change & Routine Maintenance",
     tagline: "The simplest investment in your engine's long-term health.",
-    image: "/oil-change.png",
+    image: "/myride-oil-change.jpg",
     category: "auto-repair",
     description:
       "Regular oil changes are the single most important maintenance task for extending engine life. My Ride Service Center uses the right oil for your engine — conventional, synthetic, or high-mileage — and performs a complimentary multi-point check at every visit.",
@@ -152,7 +152,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     slug: "suspension-steering",
     title: "Suspension & Steering Repairs",
     tagline: "Smooth handling and a safe, comfortable ride.",
-    image: "/alignment.png",
+    image: "/myride-suspension.jpg",
     category: "auto-repair",
     description:
       "A worn suspension system affects ride quality, tire wear, and vehicle safety. My Ride Service Center's technicians diagnose and repair everything from worn shocks and struts to damaged control arms and tie rods — restoring proper handling and stability.",
@@ -175,7 +175,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     slug: "transmission",
     title: "Transmission Repair & Service",
     tagline: "Expert transmission service you can count on.",
-    image: "/transmission.png",
+    image: "/myride-transmission.jpg",
     category: "auto-repair",
     description:
       "Transmission repair is one of the most complex jobs in auto service. Whether you're experiencing slipping, hard shifts, or a complete failure, My Ride Service Center's specialists diagnose and repair both automatic and manual transmissions with precision.",
@@ -201,7 +201,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     slug: "auto-painting",
     title: "Auto Painting",
     tagline: "Factory-quality paint work that turns heads.",
-    image: "/shop-exterior.jpg",
+    image: "/myride-body-shop-hero.jpg",
     category: "body-shop",
     description:
       "A flawless paint job requires proper surface preparation, precise color matching, and professional application. My Ride Service Center uses computer color matching to ensure your vehicle's new paint blends perfectly with existing panels — whether it's a full respray or a spot repair.",
@@ -247,7 +247,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     slug: "dent-repair",
     title: "Dent Repair",
     tagline: "Remove dents quickly without compromising your paint.",
-    image: "/shop-interior.jpg",
+    image: "/myride-fredericksburg.jpg",
     category: "body-shop",
     description:
       "Dents from parking lots, hail, or minor collisions don't have to mean a costly body panel replacement. My Ride Service Center offers both traditional dent repair and paintless dent removal — choosing the best method based on the damage to preserve your original paint finish.",
@@ -270,7 +270,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     slug: "frame-straightening",
     title: "Frame Straightening",
     tagline: "Structural precision after a collision — your safety demands it.",
-    image: "/hero.png",
+    image: "/myride-body-shop-hero.jpg",
     category: "body-shop",
     description:
       "After a significant collision, frame damage can affect how your vehicle drives and how it protects you in a future accident. My Ride Service Center uses professional frame straightening equipment to restore your vehicle's structural integrity to factory specifications.",
@@ -293,7 +293,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     slug: "glass-replacement",
     title: "Glass Replacement",
     tagline: "Clear visibility. Safe, sealed, and professionally installed.",
-    image: "/diesel.png",
+    image: "/myride-glass-replacement.jpg",
     category: "body-shop",
     description:
       "A cracked windshield or broken side window is both a safety hazard and a security risk. My Ride Service Center provides professional auto glass replacement using quality glass with proper sealing — so you can see clearly and your vehicle stays weatherproof.",
@@ -316,7 +316,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     slug: "paintless-dent-removal",
     title: "Paintless Dent Removal",
     tagline: "The fastest way to remove dents without touching the paint.",
-    image: "/oil-change.png",
+    image: "/myride-fredericksburg.jpg",
     category: "body-shop",
     description:
       "Paintless dent removal (PDR) is the most cost-effective way to fix dents on undamaged paint. My Ride Service Center's PDR technicians use specialized tools to massage dents out from behind the panel — no filler, no repainting, and a fraction of the cost of traditional bodywork.",
@@ -339,7 +339,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     slug: "rust-repair",
     title: "Rust Repair",
     tagline: "Stop rust before it spreads — protect your vehicle's value.",
-    image: "/engine.png",
+    image: "/myride-rust-repair.jpg",
     category: "body-shop",
     description:
       "Rust is more than cosmetic — left untreated, it eats through metal and compromises your vehicle's structural integrity. My Ride Service Center removes rust, treats affected areas, and applies protective coatings so the damage doesn't come back.",
@@ -362,7 +362,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     slug: "scratch-repair",
     title: "Scratch Repair",
     tagline: "From surface scuffs to deep scratches — we make it disappear.",
-    image: "/alignment.png",
+    image: "/myride-scratch-repair.jpg",
     category: "body-shop",
     description:
       "Scratches range from minor clear coat scuffs to deep gouges that expose bare metal. My Ride Service Center evaluates every scratch and applies the right solution — paint correction for light damage or professional respray for deeper cuts — to restore your finish.",

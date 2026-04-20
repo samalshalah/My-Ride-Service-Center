@@ -17,7 +17,7 @@ export default function BodyShopListPage() {
         badge={<><PaintBucket className="h-4 w-4" /><span>Body Shop</span></>}
         title="Collision & Body Shop Services"
         subtitle="Professional collision repair, dent removal, painting, and glass replacement — with insurance support every step of the way."
-        image="/myride-body-shop.jpg"
+        image="/myride-body-shop-hero.jpg"
         imageAlt="My Ride Service Center body shop"
         actions={
           <>
