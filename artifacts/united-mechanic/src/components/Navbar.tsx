@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Phone, ChevronDown, Menu, X } from "lucide-react";
+import { Phone, ChevronDown, Menu, X, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/data/services";
 
@@ -118,8 +118,13 @@ export default function Navbar() {
               </Link>
             )
           )}
+          <Link href="/appointment">
+            <Button size="sm" variant="outline" className="font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-colors">
+              <Calendar className="mr-2 h-3.5 w-3.5" /> Book Appointment
+            </Button>
+          </Link>
           <a href="tel:5046581818">
-            <Button size="sm" className="font-semibold shadow-sm ml-2">
+            <Button size="sm" className="font-semibold shadow-sm">
               <Phone className="mr-2 h-3.5 w-3.5" /> Call Now
             </Button>
           </a>
@@ -163,7 +168,12 @@ export default function Navbar() {
               )}
             </div>
           ))}
-          <div className="pt-3 border-t border-border">
+          <div className="pt-3 border-t border-border space-y-2">
+            <Link href="/appointment" onClick={() => setMobileOpen(false)} className="block">
+              <Button variant="outline" className="w-full font-semibold border-primary text-primary">
+                <Calendar className="mr-2 h-4 w-4" /> Book Appointment
+              </Button>
+            </Link>
             <a href="tel:5046581818" className="block">
               <Button className="w-full font-semibold">
                 <Phone className="mr-2 h-4 w-4" /> Call Now

@@ -12,6 +12,7 @@ import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import FinancingPage from "@/pages/FinancingPage";
 import WarrantyPage from "@/pages/WarrantyPage";
+import AppointmentPage from "@/pages/AppointmentPage";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ function Router() {
       <Route path="/contact" component={ContactPage} />
       <Route path="/financing" component={FinancingPage} />
       <Route path="/warranty" component={WarrantyPage} />
+      <Route path="/appointment" component={AppointmentPage} />
       <Route component={NotFound} />
     </Switch>
     </>
