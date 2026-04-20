@@ -795,6 +795,9 @@
   .w-\[100px\] {
     width: 100px;
   }
+  .w-\[180px\] {
+    width: 180px;
+  }
   .w-\[var\(--sidebar-width\)\] {
     width: var(--sidebar-width);
   }
@@ -1617,6 +1620,9 @@
   }
   .object-cover {
     object-fit: cover;
+  }
+  .object-left {
+    object-position: left;
   }
   .p-0 {
     padding: calc(var(--spacing) * 0);

@@ -83,7 +83,7 @@ export default function Navbar() {
             <img
               src={scrolled ? "/myride-logo-white.png" : "/myride-logo-horiz.jpg"}
               alt="My Ride Service Center"
-              className="h-14 w-auto object-contain transition-all duration-300"
+              className="h-14 w-[180px] object-contain object-left transition-all duration-300"
             />
           </Link>
 
