@@ -15,8 +15,8 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/myride-hero.jpg" alt="My Ride Service Center" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-zinc-950/65" />
+          <img src="/myride-hero.jpg" alt="My Ride Service Center" className="w-full h-full object-cover" style={{ objectPosition: "65% center" }} />
+          <div className="absolute inset-0 bg-zinc-950/55" />
         </div>
         <div className="relative container mx-auto px-4 py-20">
           <motion.div
