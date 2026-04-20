@@ -63,6 +63,7 @@ export default function Navbar() {
   const dropdownDivider = scrolled ? "bg-zinc-700" : "bg-border";
 
   return (
+    <>
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
@@ -250,5 +251,23 @@ export default function Navbar() {
         </div>
       )}
     </header>
+
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-border flex" style={{ boxShadow: "0 -2px 12px rgba(0,0,0,0.08)" }}>
+        <a
+          href="tel:5404186626"
+          className="flex-1 flex items-center justify-center gap-2 py-4 text-sm font-bold text-white bg-primary hover:bg-primary/90 transition-colors"
+        >
+          <Phone className="h-4 w-4" />
+          Call Now
+        </a>
+        <Link
+          href="/appointment"
+          className="flex-1 flex items-center justify-center gap-2 py-4 text-sm font-bold text-primary border-l border-border hover:bg-zinc-50 transition-colors"
+        >
+          <Calendar className="h-4 w-4" />
+          Book Appointment
+        </Link>
+      </div>
+    </>
   );
 }
