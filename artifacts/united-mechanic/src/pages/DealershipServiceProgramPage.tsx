@@ -32,8 +32,18 @@ export default function DealershipServiceProgramPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Image — left */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="rounded-3xl overflow-hidden aspect-[4/3]"
+            >
+              <img src="/myride-hero.jpg" alt="Certified technician servicing a vehicle at My Ride Service Center" className="w-full h-full object-cover" />
+            </motion.div>
+            {/* Text — right */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
@@ -49,14 +59,6 @@ export default function DealershipServiceProgramPage() {
               <p className="text-muted-foreground leading-relaxed">
                 Whether you need trade-in reconditioning, body work, mechanical repairs, or a reliable shop to refer customers to, My Ride Service Center delivers consistent quality with fast turnaround.
               </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="rounded-3xl overflow-hidden"
-            >
-              <img src="/myride-fredericksburg.jpg" alt="Professional service" className="w-full h-auto" />
             </motion.div>
           </div>
         </div>
