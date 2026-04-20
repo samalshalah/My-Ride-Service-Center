@@ -82,7 +82,8 @@ export default function BodyShopListPage() {
       <BoxedHero
         category="Body Shop"
         title="Collision & Body Shop"
-        subtitle="Professional collision repair, dent removal, painting, and glass replacement — with insurance support every step of the way."
+        description="My Ride Service Center is Fredericksburg, VA's trusted collision repair and body shop — handling everything from parking lot dents and door dings to major collision damage, frame straightening, and complete vehicle repaints. We work directly with all major insurance companies and use computer color matching technology to restore your vehicle to factory condition."
+        tagline="Professional collision repair, dent removal, painting, and glass replacement — with insurance support every step of the way."
         image="/myride-body-shop-hero.jpg"
         imageAlt="My Ride Service Center collision and body shop Fredericksburg VA"
         stats={[
@@ -99,15 +100,6 @@ export default function BodyShopListPage() {
         extraFeaturesCount={4}
         breadcrumb={[{ href: "/body-shop", label: "Body Shop" }]}
       />
-
-      {/* SEO Lede */}
-      <div className="bg-white border-b border-border">
-        <div className="container mx-auto px-4 max-w-4xl py-10 text-center">
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            My Ride Service Center is Fredericksburg, VA's trusted collision repair and body shop — handling everything from parking lot dents and door dings to major collision damage, frame straightening, and complete vehicle repaints. We work directly with all major insurance companies and use computer color matching technology to restore your vehicle to factory condition.
-          </p>
-        </div>
-      </div>
 
       {/* Service Cards */}
       <section className="py-16 bg-zinc-50" aria-labelledby="bodyshop-services-heading">

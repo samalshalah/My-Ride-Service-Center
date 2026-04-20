@@ -13,7 +13,8 @@ interface BoxedHeroProps {
   category: string;
   title: string;
   locationLine?: string;
-  subtitle: string;
+  description: string;
+  tagline?: string;
   image: string;
   imageAlt: string;
   stats: Stat[];
@@ -27,7 +28,8 @@ export default function BoxedHero({
   category,
   title,
   locationLine = "in Fredericksburg, VA",
-  subtitle,
+  description,
+  tagline,
   image,
   imageAlt,
   stats,
@@ -84,11 +86,14 @@ export default function BoxedHero({
           {/* Right — dark info panel */}
           <div className="bg-zinc-950 flex flex-col justify-between p-8 lg:p-9">
             <div>
+              {/* H1 + location */}
               <h1 className="text-2xl md:text-3xl font-extrabold text-white leading-tight mb-2">
                 {title}
                 <span className="block text-primary text-xl md:text-2xl mt-1">{locationLine}</span>
               </h1>
-              <p className="text-zinc-400 text-sm leading-relaxed mt-3 mb-6">{subtitle}</p>
+
+              {/* Description — now directly after H1 */}
+              <p className="text-zinc-400 text-sm leading-relaxed mt-3 mb-6">{description}</p>
 
               {/* Stat chips */}
               <div className="grid grid-cols-3 gap-2 mb-6">
@@ -134,6 +139,13 @@ export default function BoxedHero({
           </div>
         </motion.div>
       </div>
+
+      {/* Tagline — shown below the hero box */}
+      {tagline && (
+        <div className="max-w-4xl mx-auto px-4 py-8 text-center">
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{tagline}</p>
+        </div>
+      )}
     </div>
   );
 }

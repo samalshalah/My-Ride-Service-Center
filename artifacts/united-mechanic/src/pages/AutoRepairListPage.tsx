@@ -82,7 +82,8 @@ export default function AutoRepairListPage() {
       <BoxedHero
         category="Auto Repair"
         title="Auto Repair Services"
-        subtitle="Complete mechanical repair and maintenance for all makes and models — performed by certified technicians with same-day service on most common repairs."
+        description="My Ride Service Center is Fredericksburg, VA's trusted auto repair shop for all makes and models. From routine oil changes and brake service to complex engine diagnostics and transmission repair, our certified technicians deliver honest, accurate repairs — backed by a warranty and completed with same-day service whenever possible."
+        tagline="Complete mechanical repair and maintenance for all makes and models — performed by certified technicians with same-day service on most common repairs."
         image="/myride-auto-repair.jpg"
         imageAlt="My Ride Service Center auto repair shop Fredericksburg VA"
         stats={[
@@ -99,15 +100,6 @@ export default function AutoRepairListPage() {
         extraFeaturesCount={4}
         breadcrumb={[{ href: "/auto-repair", label: "Auto Repair" }]}
       />
-
-      {/* SEO Lede */}
-      <div className="bg-white border-b border-border">
-        <div className="container mx-auto px-4 max-w-4xl py-10 text-center">
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            My Ride Service Center is Fredericksburg, VA's trusted auto repair shop for all makes and models. From routine oil changes and brake service to complex engine diagnostics and transmission repair, our certified technicians deliver honest, accurate repairs — backed by a warranty and completed with same-day service whenever possible.
-          </p>
-        </div>
-      </div>
 
       {/* Service Cards */}
       <section className="py-16 bg-zinc-50" aria-labelledby="services-heading">

@@ -91,7 +91,8 @@ export default function ServicePage({ service }: Props) {
       <BoxedHero
         category={backLabel}
         title={service.title}
-        subtitle={service.tagline}
+        description={service.description}
+        tagline={service.tagline}
         image={service.image}
         imageAlt={`${service.title} in ${locationKeyword} — My Ride Service Center`}
         stats={heroStats}
@@ -110,16 +111,6 @@ export default function ServicePage({ service }: Props) {
 
             {/* ── Main Content ── */}
             <div className="lg:col-span-2 space-y-14">
-
-              {/* SEO Lede */}
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45 }}
-                className="text-base md:text-lg text-muted-foreground leading-relaxed border-l-4 border-primary pl-5 py-1"
-              >
-                {service.description}
-              </motion.p>
 
               {/* Sectioned Long-Form Content */}
               {service.sections.map((section, i) => (
