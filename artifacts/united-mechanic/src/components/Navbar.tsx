@@ -81,7 +81,7 @@ export default function Navbar() {
 
           <Link href="/" className="flex items-center shrink-0">
             <img
-              src={scrolled ? "/myride-logo-white.png" : "/myride-logo-horiz.jpg"}
+              src={scrolled ? "/myride-logo-white-new.png" : "/myride-logo-horiz-new.png"}
               alt="My Ride Service Center"
               className="h-14 w-[180px] object-contain object-left transition-all duration-300"
             />

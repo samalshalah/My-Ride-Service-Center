@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
             <div className="mb-4">
-              <img src="/myride-logo-white.png" alt="My Ride Service Center" className="h-16 w-auto object-contain" />
+              <img src="/myride-logo-white-new.png" alt="My Ride Service Center" className="h-16 w-auto object-contain" />
             </div>
             <p className="text-sm leading-relaxed mb-4">
               Fredericksburg's trusted auto repair and collision body shop — certified technicians, fast turnaround, and insurance support.
