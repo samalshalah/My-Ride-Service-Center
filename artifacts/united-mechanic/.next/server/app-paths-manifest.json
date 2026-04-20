@@ -1,0 +1,4 @@
+{
+  "/auto-repair/page": "app/auto-repair/page.js",
+  "/body-shop/[slug]/page": "app/body-shop/[slug]/page.js"
+}

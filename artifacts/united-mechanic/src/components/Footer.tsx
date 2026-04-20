@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "wouter";
+import Link from "next/link";
 import { Phone, MapPin, Facebook } from "lucide-react";
 import { AUTO_REPAIR_SERVICES, BODY_SHOP_SERVICES } from "@/data/services";
 

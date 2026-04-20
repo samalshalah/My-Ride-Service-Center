@@ -1,5 +1,8 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "wouter";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Phone, ChevronDown, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AUTO_REPAIR_SERVICES, BODY_SHOP_SERVICES } from "@/data/services";
@@ -10,7 +13,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
-  const [location] = useLocation();
+  const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,7 +26,7 @@ export default function Navbar() {
     setMenuOpen(false);
     setActiveDropdown(null);
     setMobileExpanded(null);
-  }, [location]);
+  }, [pathname]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -36,9 +39,8 @@ export default function Navbar() {
   }, []);
 
   const isActive = (path: string) =>
-    location === path || location.startsWith(path + "/");
+    pathname === path || (pathname?.startsWith(path + "/") ?? false);
 
-  /* Link color: primary when active, else adapts to scroll state */
   const linkColor = (path: string) =>
     isActive(path)
       ? "text-primary"
@@ -46,7 +48,6 @@ export default function Navbar() {
       ? "text-zinc-300 hover:text-white"
       : "text-foreground/80 hover:text-foreground";
 
-  /* Dropdown menu panel */
   const dropdownPanel = scrolled
     ? "bg-zinc-900 border border-zinc-700"
     : "bg-white border border-border";
@@ -73,7 +74,6 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
 
-          {/* Logo — colored on white, white version on dark */}
           <Link href="/" className="flex items-center shrink-0">
             <img
               src={scrolled ? "/myride-logo-white.png" : "/myride-logo-horiz.jpg"}
@@ -82,47 +82,27 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop Nav */}
           <nav ref={dropdownRef} className="hidden lg:flex items-center gap-6">
-
-            <Link
-              href="/"
-              className={cn("text-sm font-medium transition-colors", linkColor("/"))}
-            >
+            <Link href="/" className={cn("text-sm font-medium transition-colors", linkColor("/"))}>
               Home
             </Link>
 
-            {/* Auto Repair dropdown */}
             <div className="relative">
               <button
-                className={cn(
-                  "flex items-center gap-1 text-sm font-medium transition-colors",
-                  linkColor("/auto-repair")
-                )}
-                onClick={() =>
-                  setActiveDropdown(activeDropdown === "auto-repair" ? null : "auto-repair")
-                }
+                className={cn("flex items-center gap-1 text-sm font-medium transition-colors", linkColor("/auto-repair"))}
+                onClick={() => setActiveDropdown(activeDropdown === "auto-repair" ? null : "auto-repair")}
               >
                 Auto Repair
                 <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", activeDropdown === "auto-repair" && "rotate-180")} />
               </button>
               {activeDropdown === "auto-repair" && (
                 <div className={cn("absolute left-0 top-full mt-2 w-64 rounded-xl shadow-xl py-1 z-50", dropdownPanel)}>
-                  <Link
-                    href="/auto-repair"
-                    className={cn("block px-4 py-2 text-sm font-semibold transition-colors", dropdownHeading)}
-                    onClick={() => setActiveDropdown(null)}
-                  >
+                  <Link href="/auto-repair" className={cn("block px-4 py-2 text-sm font-semibold transition-colors", dropdownHeading)} onClick={() => setActiveDropdown(null)}>
                     All Auto Repair Services
                   </Link>
                   <div className={cn("h-px mx-2 my-1", dropdownDivider)} />
                   {AUTO_REPAIR_SERVICES.map((s) => (
-                    <Link
-                      key={s.slug}
-                      href={`/auto-repair/${s.slug}`}
-                      className={cn("block px-4 py-1.5 text-sm transition-colors", dropdownItem)}
-                      onClick={() => setActiveDropdown(null)}
-                    >
+                    <Link key={s.slug} href={`/auto-repair/${s.slug}`} className={cn("block px-4 py-1.5 text-sm transition-colors", dropdownItem)} onClick={() => setActiveDropdown(null)}>
                       {s.title}
                     </Link>
                   ))}
@@ -130,37 +110,22 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Body Shop dropdown */}
             <div className="relative">
               <button
-                className={cn(
-                  "flex items-center gap-1 text-sm font-medium transition-colors",
-                  linkColor("/body-shop")
-                )}
-                onClick={() =>
-                  setActiveDropdown(activeDropdown === "body-shop" ? null : "body-shop")
-                }
+                className={cn("flex items-center gap-1 text-sm font-medium transition-colors", linkColor("/body-shop"))}
+                onClick={() => setActiveDropdown(activeDropdown === "body-shop" ? null : "body-shop")}
               >
                 Body Shop
                 <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", activeDropdown === "body-shop" && "rotate-180")} />
               </button>
               {activeDropdown === "body-shop" && (
                 <div className={cn("absolute left-0 top-full mt-2 w-64 rounded-xl shadow-xl py-1 z-50", dropdownPanel)}>
-                  <Link
-                    href="/body-shop"
-                    className={cn("block px-4 py-2 text-sm font-semibold transition-colors", dropdownHeading)}
-                    onClick={() => setActiveDropdown(null)}
-                  >
+                  <Link href="/body-shop" className={cn("block px-4 py-2 text-sm font-semibold transition-colors", dropdownHeading)} onClick={() => setActiveDropdown(null)}>
                     All Body Shop Services
                   </Link>
                   <div className={cn("h-px mx-2 my-1", dropdownDivider)} />
                   {BODY_SHOP_SERVICES.map((s) => (
-                    <Link
-                      key={s.slug}
-                      href={`/body-shop/${s.slug}`}
-                      className={cn("block px-4 py-1.5 text-sm transition-colors", dropdownItem)}
-                      onClick={() => setActiveDropdown(null)}
-                    >
+                    <Link key={s.slug} href={`/body-shop/${s.slug}`} className={cn("block px-4 py-1.5 text-sm transition-colors", dropdownItem)} onClick={() => setActiveDropdown(null)}>
                       {s.title}
                     </Link>
                   ))}
@@ -179,19 +144,9 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-2">
             <Link href="/appointment">
-              <Button
-                variant="outline"
-                size="sm"
-                className={cn(
-                  "font-semibold gap-1.5 transition-all",
-                  scrolled
-                    ? "border-zinc-600 text-zinc-200 bg-transparent hover:bg-zinc-800 hover:border-zinc-500"
-                    : "border-primary text-primary hover:bg-primary hover:text-white"
-                )}
-              >
+              <Button variant="outline" size="sm" className={cn("font-semibold gap-1.5 transition-all", scrolled ? "border-zinc-600 text-zinc-200 bg-transparent hover:bg-zinc-800 hover:border-zinc-500" : "border-primary text-primary hover:bg-primary hover:text-white")}>
                 <Calendar className="h-3.5 w-3.5" /> Appointment
               </Button>
             </Link>
@@ -202,14 +157,8 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile hamburger */}
           <button
-            className={cn(
-              "lg:hidden p-2 rounded-md transition-colors",
-              scrolled
-                ? "text-zinc-300 hover:text-white hover:bg-zinc-800"
-                : "text-foreground/80 hover:text-foreground hover:bg-secondary"
-            )}
+            className={cn("lg:hidden p-2 rounded-md transition-colors", scrolled ? "text-zinc-300 hover:text-white hover:bg-zinc-800" : "text-foreground/80 hover:text-foreground hover:bg-secondary")}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -218,39 +167,27 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
-        <div className={cn(
-          "lg:hidden border-t",
-          scrolled ? "border-zinc-800 bg-zinc-900" : "border-border bg-white"
-        )}>
+        <div className={cn("lg:hidden border-t", scrolled ? "border-zinc-800 bg-zinc-900" : "border-border bg-white")}>
           <div className="container mx-auto px-4 py-4 space-y-1">
-            <Link href="/" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-              scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary"
-            )}>
+            <Link href="/" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
               Home
             </Link>
 
             <div>
               <button
-                className={cn("w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-                  scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary"
-                )}
+                className={cn("w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}
                 onClick={() => setMobileExpanded(mobileExpanded === "auto-repair" ? null : "auto-repair")}
               >
                 Auto Repair <ChevronDown className={cn("h-4 w-4 transition-transform", mobileExpanded === "auto-repair" && "rotate-180")} />
               </button>
               {mobileExpanded === "auto-repair" && (
                 <div className="pl-4 mt-1 space-y-0.5">
-                  <Link href="/auto-repair" className={cn("block px-3 py-1.5 text-sm font-semibold text-primary rounded",
-                    scrolled ? "hover:bg-zinc-800" : "hover:bg-secondary"
-                  )}>
+                  <Link href="/auto-repair" className={cn("block px-3 py-1.5 text-sm font-semibold text-primary rounded", scrolled ? "hover:bg-zinc-800" : "hover:bg-secondary")}>
                     All Auto Repair
                   </Link>
                   {AUTO_REPAIR_SERVICES.map((s) => (
-                    <Link key={s.slug} href={`/auto-repair/${s.slug}`} className={cn("block px-3 py-1.5 text-sm rounded transition-colors",
-                      scrolled ? "text-zinc-400 hover:bg-zinc-800 hover:text-white" : "text-muted-foreground hover:bg-secondary"
-                    )}>
+                    <Link key={s.slug} href={`/auto-repair/${s.slug}`} className={cn("block px-3 py-1.5 text-sm rounded transition-colors", scrolled ? "text-zinc-400 hover:bg-zinc-800 hover:text-white" : "text-muted-foreground hover:bg-secondary")}>
                       {s.title}
                     </Link>
                   ))}
@@ -260,24 +197,18 @@ export default function Navbar() {
 
             <div>
               <button
-                className={cn("w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-                  scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary"
-                )}
+                className={cn("w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}
                 onClick={() => setMobileExpanded(mobileExpanded === "body-shop" ? null : "body-shop")}
               >
                 Body Shop <ChevronDown className={cn("h-4 w-4 transition-transform", mobileExpanded === "body-shop" && "rotate-180")} />
               </button>
               {mobileExpanded === "body-shop" && (
                 <div className="pl-4 mt-1 space-y-0.5">
-                  <Link href="/body-shop" className={cn("block px-3 py-1.5 text-sm font-semibold text-primary rounded",
-                    scrolled ? "hover:bg-zinc-800" : "hover:bg-secondary"
-                  )}>
+                  <Link href="/body-shop" className={cn("block px-3 py-1.5 text-sm font-semibold text-primary rounded", scrolled ? "hover:bg-zinc-800" : "hover:bg-secondary")}>
                     All Body Shop Services
                   </Link>
                   {BODY_SHOP_SERVICES.map((s) => (
-                    <Link key={s.slug} href={`/body-shop/${s.slug}`} className={cn("block px-3 py-1.5 text-sm rounded transition-colors",
-                      scrolled ? "text-zinc-400 hover:bg-zinc-800 hover:text-white" : "text-muted-foreground hover:bg-secondary"
-                    )}>
+                    <Link key={s.slug} href={`/body-shop/${s.slug}`} className={cn("block px-3 py-1.5 text-sm rounded transition-colors", scrolled ? "text-zinc-400 hover:bg-zinc-800 hover:text-white" : "text-muted-foreground hover:bg-secondary")}>
                       {s.title}
                     </Link>
                   ))}
@@ -285,29 +216,19 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link href="/dealership-service-program" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-              scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary"
-            )}>
+            <Link href="/dealership-service-program" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
               Dealership Program
             </Link>
-            <Link href="/about" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-              scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary"
-            )}>
+            <Link href="/about" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
               About
             </Link>
-            <Link href="/contact" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-              scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary"
-            )}>
+            <Link href="/contact" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
               Contact
             </Link>
 
             <div className={cn("pt-3 border-t flex flex-col gap-2", scrolled ? "border-zinc-800" : "border-border")}>
               <Link href="/appointment">
-                <Button variant="outline" className={cn("w-full font-semibold gap-2",
-                  scrolled
-                    ? "border-zinc-600 text-zinc-200 bg-transparent hover:bg-zinc-800"
-                    : "border-primary text-primary hover:bg-primary hover:text-white"
-                )}>
+                <Button variant="outline" className={cn("w-full font-semibold gap-2", scrolled ? "border-zinc-600 text-zinc-200 bg-transparent hover:bg-zinc-800" : "border-primary text-primary hover:bg-primary hover:text-white")}>
                   <Calendar className="h-4 w-4" /> Book Appointment
                 </Button>
               </Link>
