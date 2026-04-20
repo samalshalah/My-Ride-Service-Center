@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Phone, ArrowRight, PaintBucket, CheckCircle2, ChevronDown, ChevronUp, Shield, Clock, FileCheck, Palette } from "lucide-react";
+import { Phone, ArrowRight, CheckCircle2, ChevronDown, ChevronUp, Shield, Clock, FileCheck, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHero from "@/components/PageHero";
+import BoxedHero from "@/components/BoxedHero";
 import { BODY_SHOP_SERVICES } from "@/data/services";
 
 const FAQ = [
@@ -79,27 +79,25 @@ export default function BodyShopListPage() {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
 
-      {/* H1 */}
-      <PageHero
-        badge={<><PaintBucket className="h-4 w-4" /><span>Body Shop</span></>}
-        title="Collision & Body Shop in Fredericksburg, VA"
+      <BoxedHero
+        category="Body Shop"
+        title="Collision & Body Shop"
         subtitle="Professional collision repair, dent removal, painting, and glass replacement — with insurance support every step of the way."
         image="/myride-body-shop-hero.jpg"
         imageAlt="My Ride Service Center collision and body shop Fredericksburg VA"
-        actions={
-          <>
-            <a href="tel:5404186626">
-              <Button size="lg" className="font-semibold w-full sm:w-auto">
-                <Phone className="mr-2 h-4 w-4" /> Call Now
-              </Button>
-            </a>
-            <Link href="/appointment">
-              <Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
-                Book Appointment
-              </Button>
-            </Link>
-          </>
-        }
+        stats={[
+          { label: "Insurance", sub: "All Major Carriers" },
+          { label: "Color", sub: "Computer Matched" },
+          { label: "Warranty", sub: "Parts & Labor" },
+        ]}
+        features={[
+          "Collision damage repair",
+          "Dent & scratch removal",
+          "Auto painting & refinishing",
+          "Frame straightening",
+        ]}
+        extraFeaturesCount={4}
+        breadcrumb={[{ href: "/body-shop", label: "Body Shop" }]}
       />
 
       {/* SEO Lede */}

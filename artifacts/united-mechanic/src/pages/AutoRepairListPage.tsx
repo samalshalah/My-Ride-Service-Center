@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Phone, ArrowRight, Wrench, CheckCircle2, ChevronDown, ChevronUp, Shield, Clock, Star, ThumbsUp } from "lucide-react";
+import { Phone, ArrowRight, CheckCircle2, ChevronDown, ChevronUp, Shield, Clock, Star, ThumbsUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHero from "@/components/PageHero";
+import BoxedHero from "@/components/BoxedHero";
 import { AUTO_REPAIR_SERVICES } from "@/data/services";
 
 const FAQ = [
@@ -79,27 +79,25 @@ export default function AutoRepairListPage() {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
 
-      {/* H1 */}
-      <PageHero
-        badge={<><Wrench className="h-4 w-4" /><span>Auto Repair</span></>}
-        title="Auto Repair Services in Fredericksburg, VA"
-        subtitle="Complete mechanical repair and maintenance for all makes and models — performed by certified technicians."
+      <BoxedHero
+        category="Auto Repair"
+        title="Auto Repair Services"
+        subtitle="Complete mechanical repair and maintenance for all makes and models — performed by certified technicians with same-day service on most common repairs."
         image="/myride-auto-repair.jpg"
         imageAlt="My Ride Service Center auto repair shop Fredericksburg VA"
-        actions={
-          <>
-            <a href="tel:5404186626">
-              <Button size="lg" className="font-semibold w-full sm:w-auto">
-                <Phone className="mr-2 h-4 w-4" /> Call Now
-              </Button>
-            </a>
-            <Link href="/appointment">
-              <Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
-                Book Appointment
-              </Button>
-            </Link>
-          </>
-        }
+        stats={[
+          { label: "Same-Day", sub: "Service Available" },
+          { label: "All Makes", sub: "& Models" },
+          { label: "Warranty", sub: "Parts & Labor" },
+        ]}
+        features={[
+          "Brake repair & replacement",
+          "Engine diagnostics & repair",
+          "Oil changes & fluid service",
+          "Transmission service",
+        ]}
+        extraFeaturesCount={4}
+        breadcrumb={[{ href: "/auto-repair", label: "Auto Repair" }]}
       />
 
       {/* SEO Lede */}

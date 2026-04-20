@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Phone, MapPin, CheckCircle2, ArrowLeft, ChevronDown, ChevronUp } from "lucide-react";
+import { Phone, MapPin, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHero from "@/components/PageHero";
+import BoxedHero from "@/components/BoxedHero";
 import type { ServiceData } from "@/data/services";
 
 export type { ServiceData };
@@ -38,6 +38,19 @@ export default function ServicePage({ service }: Props) {
   const backHref = service.category === "body-shop" ? "/body-shop" : "/auto-repair";
   const backLabel = service.category === "body-shop" ? "Body Shop" : "Auto Repair";
   const locationKeyword = "Fredericksburg, VA";
+
+  const heroStats =
+    service.category === "body-shop"
+      ? [
+          { label: "Insurance", sub: "All Major Carriers" },
+          { label: "Color", sub: "Computer Matched" },
+          { label: "Warranty", sub: "Parts & Labor" },
+        ]
+      : [
+          { label: "Same-Day", sub: "Service Available" },
+          { label: "All Makes", sub: "& Models" },
+          { label: "Warranty", sub: "Parts & Labor" },
+        ];
 
   useEffect(() => {
     document.title = service.metaTitle;
@@ -75,33 +88,23 @@ export default function ServicePage({ service }: Props) {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
 
-      <PageHero
-        badge={<><span>{backLabel}</span></>}
-        title={`${service.title} in Fredericksburg, VA`}
+      <BoxedHero
+        category={backLabel}
+        title={service.title}
         subtitle={service.tagline}
         image={service.image}
-        imageAlt={`${service.title} in Fredericksburg, VA — My Ride Service Center`}
-        actions={
-          <>
-            <a href="tel:5404186626">
-              <Button size="lg" className="font-semibold w-full sm:w-auto">
-                <Phone className="mr-2 h-4 w-4" /> Call Now
-              </Button>
-            </a>
-            <Link href="/appointment">
-              <Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
-                Book Appointment
-              </Button>
-            </Link>
-          </>
-        }
+        imageAlt={`${service.title} in ${locationKeyword} — My Ride Service Center`}
+        stats={heroStats}
+        features={service.details.slice(0, 4)}
+        extraFeaturesCount={Math.max(0, service.details.length - 4)}
+        breadcrumb={[
+          { href: backHref, label: backLabel },
+          { href: `${backHref}/${service.slug}`, label: service.title },
+        ]}
       />
 
       <div className="bg-white">
         <div className="container mx-auto px-4 max-w-6xl py-12">
-          <Link href={backHref} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-10 transition-colors">
-            <ArrowLeft className="h-4 w-4" /> Back to {backLabel}
-          </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
@@ -252,45 +255,38 @@ export default function ServicePage({ service }: Props) {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="space-y-5"
             >
-              <div className="bg-zinc-50 rounded-3xl border border-border p-6 sticky top-24">
-                <h3 className="font-bold text-foreground mb-4">Contact Us</h3>
-                <div className="space-y-3 text-sm text-muted-foreground mb-5">
-                  <div className="flex items-start gap-2">
-                    <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
-                    <div>
-                      <p className="font-medium text-foreground">My Ride Service Center</p>
-                      <p>2715 Lafayette Blvd</p>
-                      <p>Fredericksburg, VA 22408</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone className="h-4 w-4 shrink-0 text-primary" />
-                    <a href="tel:5404186626" className="font-medium text-foreground hover:text-primary">540-418-6626</a>
+              <div className="bg-zinc-950 rounded-3xl border border-zinc-800 overflow-hidden sticky top-24">
+                <div className="p-6 pb-0">
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary mb-1">My Ride Service Center</p>
+                  <p className="text-white font-bold text-sm leading-snug mb-1">2715 Lafayette Blvd<br />Fredericksburg, VA 22408</p>
+                  <div className="flex items-center gap-2 mt-2">
+                    <Phone className="h-3.5 w-3.5 text-primary shrink-0" />
+                    <a href="tel:5404186626" className="text-primary font-bold text-sm hover:underline">540-418-6626</a>
                   </div>
                 </div>
-                <a href="tel:5404186626" className="block mb-2">
-                  <Button className="w-full font-semibold">
-                    <Phone className="mr-2 h-4 w-4" /> Call Now
-                  </Button>
-                </a>
-                <Link href="/appointment">
-                  <Button variant="outline" className="w-full font-semibold">
-                    Book Appointment
-                  </Button>
-                </Link>
-
-                <div className="mt-5 pt-5 border-t border-border">
-                  <h3 className="font-bold text-foreground mb-3">Hours of Operation</h3>
-                  <ul className="space-y-1.5 text-sm text-muted-foreground">
-                    <li className="flex justify-between"><span>Mon – Fri</span><span className="font-medium text-foreground">8:00 AM – 6:00 PM</span></li>
-                    <li className="flex justify-between"><span>Saturday</span><span className="font-medium text-foreground">9:00 AM – 3:00 PM</span></li>
-                    <li className="flex justify-between"><span>Sunday</span><span className="font-medium text-red-500">Closed</span></li>
+                <div className="p-6 space-y-2">
+                  <a href="tel:5404186626" className="block">
+                    <Button className="w-full font-semibold">
+                      <Phone className="mr-2 h-4 w-4" /> Call Now
+                    </Button>
+                  </a>
+                  <Link href="/appointment">
+                    <Button variant="outline" className="w-full font-semibold border-zinc-600 text-zinc-300 hover:bg-zinc-800">
+                      Book Appointment
+                    </Button>
+                  </Link>
+                </div>
+                <div className="px-6 pb-6 border-t border-zinc-800 pt-5">
+                  <h3 className="font-bold text-zinc-300 mb-3 text-sm">Hours of Operation</h3>
+                  <ul className="space-y-1.5 text-sm text-zinc-500">
+                    <li className="flex justify-between"><span>Mon – Fri</span><span className="font-medium text-zinc-300">8:00 AM – 6:00 PM</span></li>
+                    <li className="flex justify-between"><span>Saturday</span><span className="font-medium text-zinc-300">9:00 AM – 3:00 PM</span></li>
+                    <li className="flex justify-between"><span>Sunday</span><span className="font-medium text-primary">Closed</span></li>
                   </ul>
                 </div>
-
-                <div className="mt-5 pt-5 border-t border-border">
-                  <h3 className="font-bold text-foreground mb-2 text-sm">Service Area</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                <div className="px-6 pb-6 border-t border-zinc-800 pt-5">
+                  <h3 className="font-bold text-zinc-300 mb-2 text-sm">Service Area</h3>
+                  <p className="text-xs text-zinc-500 leading-relaxed">
                     Proudly serving Fredericksburg, Spotsylvania, Stafford, King George, and Culpeper counties.
                   </p>
                 </div>
