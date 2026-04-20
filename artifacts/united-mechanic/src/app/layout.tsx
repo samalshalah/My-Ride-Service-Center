@@ -126,13 +126,11 @@ const LOCAL_BUSINESS_SCHEMA = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
+      <body className="min-h-screen bg-background font-sans antialiased" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }}
         />
-      </head>
-      <body className="min-h-screen bg-background font-sans antialiased" suppressHydrationWarning>
         <Navbar />
         <main>{children}</main>
         <Footer />
