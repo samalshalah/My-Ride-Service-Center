@@ -32,18 +32,8 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Image — left */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="rounded-3xl overflow-hidden aspect-[4/3]"
-            >
-              <img src="/myride-body-shop-hero.jpg" alt="My Ride Service Center shop in Fredericksburg VA" className="w-full h-full object-cover" />
-            </motion.div>
-            {/* Text — right */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
@@ -62,6 +52,14 @@ export default function AboutPage() {
               <p className="text-muted-foreground leading-relaxed">
                 We work with all major insurance providers to make collision claims as smooth as possible. Our goal is simple: bring your car back to life and get you back on the road with confidence.
               </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="rounded-3xl overflow-hidden"
+            >
+              <img src="/myride-body-shop-hero.jpg" alt="My Ride Service Center shop" className="w-full h-auto" />
             </motion.div>
           </div>
         </div>
