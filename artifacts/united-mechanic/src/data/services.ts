@@ -106,7 +106,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     slug: "exhaust-emissions",
     title: "Exhaust & Emissions Repairs",
     tagline: "Keep your exhaust system clean, quiet, and compliant.",
-    image: "/myride-auto-repair.jpg",
+    image: "/myride-exhaust-emissions.jpg",
     category: "auto-repair",
     description:
       "A damaged exhaust system affects performance, fuel efficiency, and air quality. My Ride Service Center handles everything from muffler replacements to catalytic converter repairs, ensuring your vehicle runs cleanly and passes Virginia emissions inspections.",
@@ -201,7 +201,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     slug: "auto-painting",
     title: "Auto Painting",
     tagline: "Factory-quality paint work that turns heads.",
-    image: "/myride-body-shop-hero.jpg",
+    image: "/myride-auto-painting.jpg",
     category: "body-shop",
     description:
       "A flawless paint job requires proper surface preparation, precise color matching, and professional application. My Ride Service Center uses computer color matching to ensure your vehicle's new paint blends perfectly with existing panels — whether it's a full respray or a spot repair.",
@@ -247,7 +247,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     slug: "dent-repair",
     title: "Dent Repair",
     tagline: "Remove dents quickly without compromising your paint.",
-    image: "/myride-fredericksburg.jpg",
+    image: "/myride-dent-repair.jpg",
     category: "body-shop",
     description:
       "Dents from parking lots, hail, or minor collisions don't have to mean a costly body panel replacement. My Ride Service Center offers both traditional dent repair and paintless dent removal — choosing the best method based on the damage to preserve your original paint finish.",
@@ -270,7 +270,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     slug: "frame-straightening",
     title: "Frame Straightening",
     tagline: "Structural precision after a collision — your safety demands it.",
-    image: "/myride-body-shop-hero.jpg",
+    image: "/myride-frame-straightening.jpg",
     category: "body-shop",
     description:
       "After a significant collision, frame damage can affect how your vehicle drives and how it protects you in a future accident. My Ride Service Center uses professional frame straightening equipment to restore your vehicle's structural integrity to factory specifications.",
@@ -316,7 +316,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     slug: "paintless-dent-removal",
     title: "Paintless Dent Removal",
     tagline: "The fastest way to remove dents without touching the paint.",
-    image: "/myride-fredericksburg.jpg",
+    image: "/myride-paintless-dent-removal.jpg",
     category: "body-shop",
     description:
       "Paintless dent removal (PDR) is the most cost-effective way to fix dents on undamaged paint. My Ride Service Center's PDR technicians use specialized tools to massage dents out from behind the panel — no filler, no repainting, and a fraction of the cost of traditional bodywork.",
