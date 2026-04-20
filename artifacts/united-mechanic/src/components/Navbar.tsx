@@ -11,13 +11,17 @@ import { cn } from "@/lib/utils";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showStickyBar, setShowStickyBar] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+      setShowStickyBar(window.scrollY > 150);
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -252,7 +256,13 @@ export default function Navbar() {
       )}
     </header>
 
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-border flex" style={{ boxShadow: "0 -2px 12px rgba(0,0,0,0.08)" }}>
+      <div
+        className={cn(
+          "lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-border flex transition-transform duration-300",
+          showStickyBar ? "translate-y-0" : "translate-y-full"
+        )}
+        style={{ boxShadow: "0 -2px 12px rgba(0,0,0,0.08)" }}
+      >
         <a
           href="tel:5404186626"
           className="flex-1 flex items-center justify-center gap-2 py-4 text-sm font-bold text-white bg-primary hover:bg-primary/90 transition-colors"
