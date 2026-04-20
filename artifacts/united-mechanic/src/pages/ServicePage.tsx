@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Phone, MapPin, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
+import { Phone, MapPin, CheckCircle2, ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BoxedHero from "@/components/BoxedHero";
+import { AUTO_REPAIR_SERVICES, BODY_SHOP_SERVICES } from "@/data/services";
 import type { ServiceData } from "@/data/services";
 
 export type { ServiceData };
@@ -37,6 +38,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function ServicePage({ service }: Props) {
   const backHref = service.category === "body-shop" ? "/body-shop" : "/auto-repair";
   const backLabel = service.category === "body-shop" ? "Body Shop" : "Auto Repair";
+
+  const allSiblings = service.category === "body-shop" ? BODY_SHOP_SERVICES : AUTO_REPAIR_SERVICES;
+  const relatedServices = allSiblings.filter((s) => s.slug !== service.slug).slice(0, 3);
   const locationKeyword = "Fredericksburg, VA";
 
   const heroStats =
@@ -287,6 +291,65 @@ export default function ServicePage({ service }: Props) {
           </div>
         </div>
       </div>
+
+      {/* ── Related Services ── */}
+      <section className="bg-zinc-50 border-t border-border py-16">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-primary mb-1">{backLabel}</p>
+              <h2 className="text-2xl font-extrabold text-foreground">Other {backLabel} Services</h2>
+            </div>
+            <Link href={backHref}>
+              <Button variant="outline" size="sm" className="font-semibold gap-1.5 hidden sm:flex">
+                View All <ArrowRight className="h-3.5 w-3.5" />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {relatedServices.map((s, i) => (
+              <motion.div
+                key={s.slug}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+              >
+                <Link href={`${backHref}/${s.slug}`} className="group block h-full">
+                  <div className="bg-white rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+                    <div className="relative h-44 overflow-hidden">
+                      <img
+                        src={s.image}
+                        alt={`${s.title} in Fredericksburg, VA`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    </div>
+                    <div className="p-5 flex flex-col flex-1">
+                      <h3 className="font-bold text-foreground text-base mb-1.5 group-hover:text-primary transition-colors">
+                        {s.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed flex-1">{s.tagline}</p>
+                      <div className="flex items-center gap-1 mt-4 text-primary text-sm font-semibold">
+                        Learn More <ArrowRight className="h-3.5 w-3.5" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-6 sm:hidden text-center">
+            <Link href={backHref}>
+              <Button variant="outline" className="font-semibold gap-1.5">
+                View All {backLabel} Services <ArrowRight className="h-3.5 w-3.5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>
