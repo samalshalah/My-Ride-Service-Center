@@ -77,18 +77,18 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
 
           <Link href="/" className="flex items-center shrink-0">
             <img
               src={scrolled ? "/myride-logo-white.png" : "/myride-logo-horiz.jpg"}
               alt="My Ride Service Center"
-              className="h-11 w-auto object-contain transition-all duration-300"
+              className="h-14 w-auto object-contain transition-all duration-300"
             />
           </Link>
 
           <nav ref={dropdownRef} className="hidden lg:flex items-center gap-6">
-            <Link href="/" className={cn("text-sm font-medium transition-colors", linkColor("/"))}>
+            <Link href="/" className={cn("text-base font-bold transition-colors", linkColor("/"))}>
               Home
             </Link>
 
@@ -98,7 +98,7 @@ export default function Navbar() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={cn("flex items-center gap-1 text-sm font-medium transition-colors", linkColor("/auto-repair"))}
+                className={cn("flex items-center gap-1 text-base font-bold transition-colors", linkColor("/auto-repair"))}
                 onClick={() => setActiveDropdown(activeDropdown === "auto-repair" ? null : "auto-repair")}
               >
                 Auto Repair
@@ -106,12 +106,12 @@ export default function Navbar() {
               </button>
               {activeDropdown === "auto-repair" && (
                 <div className={cn("absolute left-0 top-full mt-0 w-64 rounded-xl shadow-xl py-1 z-50", dropdownPanel)}>
-                  <Link href="/auto-repair" className={cn("block px-4 py-2 text-sm font-semibold transition-colors", dropdownHeading)} onClick={() => setActiveDropdown(null)}>
+                  <Link href="/auto-repair" className={cn("block px-4 py-2.5 text-sm font-bold transition-colors", dropdownHeading)} onClick={() => setActiveDropdown(null)}>
                     All Auto Repair Services
                   </Link>
                   <div className={cn("h-px mx-2 my-1", dropdownDivider)} />
                   {AUTO_REPAIR_SERVICES.map((s) => (
-                    <Link key={s.slug} href={`/auto-repair/${s.slug}`} className={cn("block px-4 py-1.5 text-sm transition-colors", dropdownItem)} onClick={() => setActiveDropdown(null)}>
+                    <Link key={s.slug} href={`/auto-repair/${s.slug}`} className={cn("block px-4 py-2 text-sm font-medium transition-colors", dropdownItem)} onClick={() => setActiveDropdown(null)}>
                       {s.title}
                     </Link>
                   ))}
@@ -125,7 +125,7 @@ export default function Navbar() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={cn("flex items-center gap-1 text-sm font-medium transition-colors", linkColor("/body-shop"))}
+                className={cn("flex items-center gap-1 text-base font-bold transition-colors", linkColor("/body-shop"))}
                 onClick={() => setActiveDropdown(activeDropdown === "body-shop" ? null : "body-shop")}
               >
                 Body Shop
@@ -133,12 +133,12 @@ export default function Navbar() {
               </button>
               {activeDropdown === "body-shop" && (
                 <div className={cn("absolute left-0 top-full mt-0 w-64 rounded-xl shadow-xl py-1 z-50", dropdownPanel)}>
-                  <Link href="/body-shop" className={cn("block px-4 py-2 text-sm font-semibold transition-colors", dropdownHeading)} onClick={() => setActiveDropdown(null)}>
+                  <Link href="/body-shop" className={cn("block px-4 py-2.5 text-sm font-bold transition-colors", dropdownHeading)} onClick={() => setActiveDropdown(null)}>
                     All Body Shop Services
                   </Link>
                   <div className={cn("h-px mx-2 my-1", dropdownDivider)} />
                   {BODY_SHOP_SERVICES.map((s) => (
-                    <Link key={s.slug} href={`/body-shop/${s.slug}`} className={cn("block px-4 py-1.5 text-sm transition-colors", dropdownItem)} onClick={() => setActiveDropdown(null)}>
+                    <Link key={s.slug} href={`/body-shop/${s.slug}`} className={cn("block px-4 py-2 text-sm font-medium transition-colors", dropdownItem)} onClick={() => setActiveDropdown(null)}>
                       {s.title}
                     </Link>
                   ))}
@@ -146,13 +146,13 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link href="/dealership-service-program" className={cn("text-sm font-medium transition-colors", linkColor("/dealership-service-program"))}>
+            <Link href="/dealership-service-program" className={cn("text-base font-bold transition-colors", linkColor("/dealership-service-program"))}>
               Dealership Program
             </Link>
-            <Link href="/about" className={cn("text-sm font-medium transition-colors", linkColor("/about"))}>
+            <Link href="/about" className={cn("text-base font-bold transition-colors", linkColor("/about"))}>
               About
             </Link>
-            <Link href="/contact" className={cn("text-sm font-medium transition-colors", linkColor("/contact"))}>
+            <Link href="/contact" className={cn("text-base font-bold transition-colors", linkColor("/contact"))}>
               Contact
             </Link>
           </nav>
@@ -183,13 +183,13 @@ export default function Navbar() {
       {menuOpen && (
         <div className={cn("lg:hidden border-t", scrolled ? "border-zinc-800 bg-zinc-900" : "border-border bg-white")}>
           <div className="max-w-6xl mx-auto px-4 py-4 space-y-1">
-            <Link href="/" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
+            <Link href="/" className={cn("block px-3 py-2 text-base font-bold rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
               Home
             </Link>
 
             <div>
               <button
-                className={cn("w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}
+                className={cn("w-full flex items-center justify-between px-3 py-2 text-base font-bold rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}
                 onClick={() => setMobileExpanded(mobileExpanded === "auto-repair" ? null : "auto-repair")}
               >
                 Auto Repair <ChevronDown className={cn("h-4 w-4 transition-transform", mobileExpanded === "auto-repair" && "rotate-180")} />
@@ -210,7 +210,7 @@ export default function Navbar() {
 
             <div>
               <button
-                className={cn("w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}
+                className={cn("w-full flex items-center justify-between px-3 py-2 text-base font-bold rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}
                 onClick={() => setMobileExpanded(mobileExpanded === "body-shop" ? null : "body-shop")}
               >
                 Body Shop <ChevronDown className={cn("h-4 w-4 transition-transform", mobileExpanded === "body-shop" && "rotate-180")} />
@@ -229,13 +229,13 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link href="/dealership-service-program" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
+            <Link href="/dealership-service-program" className={cn("block px-3 py-2 text-base font-bold rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
               Dealership Program
             </Link>
-            <Link href="/about" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
+            <Link href="/about" className={cn("block px-3 py-2 text-base font-bold rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
               About
             </Link>
-            <Link href="/contact" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
+            <Link href="/contact" className={cn("block px-3 py-2 text-base font-bold rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
               Contact
             </Link>
 
