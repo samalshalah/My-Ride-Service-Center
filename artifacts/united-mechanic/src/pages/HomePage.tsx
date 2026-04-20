@@ -18,7 +18,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center bg-zinc-950 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/hero.png" alt="United Mechanic Auto Shop" className="w-full h-full object-cover opacity-40" />
+          <img src="/shop-interior.jpg" alt="United Mechanic Auto Shop" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
