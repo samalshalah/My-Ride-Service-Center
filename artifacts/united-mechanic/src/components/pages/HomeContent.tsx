@@ -11,7 +11,7 @@ export default function HomeContent() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="relative h-screen flex flex-col justify-between overflow-hidden bg-zinc-950">
+      <section className="relative h-[82vh] flex flex-col justify-between overflow-hidden bg-zinc-950">
         {/* Background Image & Overlays */}
         <div className="absolute inset-0 z-0">
           <img src="/myride-hero.jpg" alt="My Ride Service Center" className="w-full h-full object-cover" style={{ objectPosition: "65% 10%" }} />
@@ -61,7 +61,7 @@ export default function HomeContent() {
           <div className="max-w-6xl mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:divide-x divide-white/20">
               {[
-                { icon: <ShieldCheck className="w-5 h-5 text-primary" />, text: "Certified Experts" },
+                { icon: <ShieldCheck className="w-5 h-5 text-primary" />, text: "Experienced Technicians" },
                 { icon: <Star className="w-5 h-5 text-primary" />, text: "5-Star Rated" },
                 { icon: <Wrench className="w-5 h-5 text-primary" />, text: "All Makes & Models" },
                 { icon: <Shield className="w-5 h-5 text-primary" />, text: "Insurance Accepted" },

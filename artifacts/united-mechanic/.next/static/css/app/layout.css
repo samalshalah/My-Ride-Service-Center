@@ -651,6 +651,9 @@
   .h-\[1px\] {
     height: 1px;
   }
+  .h-\[82vh\] {
+    height: 82vh;
+  }
   .h-\[var\(--radix-navigation-menu-viewport-height\)\] {
     height: var(--radix-navigation-menu-viewport-height);
   }
