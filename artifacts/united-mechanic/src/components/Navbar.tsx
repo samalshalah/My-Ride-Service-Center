@@ -41,60 +41,69 @@ export default function Navbar() {
   const navLinkClass = (path: string) =>
     cn(
       "text-sm font-medium transition-colors",
-      isActive(path) ? "text-primary" : "text-foreground/80 hover:text-foreground"
+      isActive(path) ? "text-primary" : "text-zinc-300 hover:text-white"
     );
 
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-200",
-        scrolled
-          ? "bg-white/95 backdrop-blur-sm shadow-sm border-b border-border"
-          : "bg-white border-b border-border"
+        "sticky top-0 z-50 w-full transition-all duration-200 bg-zinc-950",
+        scrolled && "shadow-lg shadow-black/30"
       )}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
+
+          {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
             <img
-              src="/myride-logo-horiz.jpg"
+              src="/myride-logo-white.png"
               alt="My Ride Service Center"
-              className="h-10 w-auto object-contain"
+              className="h-11 w-auto object-contain"
             />
           </Link>
 
+          {/* Desktop Nav */}
           <nav ref={dropdownRef} className="hidden lg:flex items-center gap-6">
-            <Link href="/" className={cn("text-sm font-medium transition-colors", location === "/" ? "text-primary" : "text-foreground/80 hover:text-foreground")}>
+            <Link
+              href="/"
+              className={cn(
+                "text-sm font-medium transition-colors",
+                location === "/" ? "text-primary" : "text-zinc-300 hover:text-white"
+              )}
+            >
               Home
             </Link>
 
+            {/* Auto Repair dropdown */}
             <div className="relative">
               <button
                 className={cn(
                   "flex items-center gap-1 text-sm font-medium transition-colors",
-                  isActive("/auto-repair") ? "text-primary" : "text-foreground/80 hover:text-foreground"
+                  isActive("/auto-repair") ? "text-primary" : "text-zinc-300 hover:text-white"
                 )}
                 onClick={() =>
                   setActiveDropdown(activeDropdown === "auto-repair" ? null : "auto-repair")
                 }
               >
-                Auto Repair <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", activeDropdown === "auto-repair" && "rotate-180")} />
+                Auto Repair
+                <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", activeDropdown === "auto-repair" && "rotate-180")} />
               </button>
               {activeDropdown === "auto-repair" && (
-                <div className="absolute left-0 top-full mt-2 w-64 bg-white border border-border rounded-xl shadow-lg py-1 z-50">
+                <div className="absolute left-0 top-full mt-2 w-64 bg-zinc-900 border border-zinc-700 rounded-xl shadow-xl py-1 z-50">
                   <Link
                     href="/auto-repair"
-                    className="block px-4 py-2 text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                    className="block px-4 py-2 text-sm font-semibold text-white hover:bg-zinc-800 transition-colors"
                     onClick={() => setActiveDropdown(null)}
                   >
                     All Auto Repair Services
                   </Link>
-                  <div className="h-px bg-border mx-2 my-1" />
+                  <div className="h-px bg-zinc-700 mx-2 my-1" />
                   {AUTO_REPAIR_SERVICES.map((s) => (
                     <Link
                       key={s.slug}
                       href={`/auto-repair/${s.slug}`}
-                      className="block px-4 py-1.5 text-sm text-foreground/80 hover:bg-accent hover:text-accent-foreground transition-colors"
+                      className="block px-4 py-1.5 text-sm text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors"
                       onClick={() => setActiveDropdown(null)}
                     >
                       {s.title}
@@ -104,33 +113,35 @@ export default function Navbar() {
               )}
             </div>
 
+            {/* Body Shop dropdown */}
             <div className="relative">
               <button
                 className={cn(
                   "flex items-center gap-1 text-sm font-medium transition-colors",
-                  isActive("/body-shop") ? "text-primary" : "text-foreground/80 hover:text-foreground"
+                  isActive("/body-shop") ? "text-primary" : "text-zinc-300 hover:text-white"
                 )}
                 onClick={() =>
                   setActiveDropdown(activeDropdown === "body-shop" ? null : "body-shop")
                 }
               >
-                Body Shop <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", activeDropdown === "body-shop" && "rotate-180")} />
+                Body Shop
+                <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", activeDropdown === "body-shop" && "rotate-180")} />
               </button>
               {activeDropdown === "body-shop" && (
-                <div className="absolute left-0 top-full mt-2 w-64 bg-white border border-border rounded-xl shadow-lg py-1 z-50">
+                <div className="absolute left-0 top-full mt-2 w-64 bg-zinc-900 border border-zinc-700 rounded-xl shadow-xl py-1 z-50">
                   <Link
                     href="/body-shop"
-                    className="block px-4 py-2 text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                    className="block px-4 py-2 text-sm font-semibold text-white hover:bg-zinc-800 transition-colors"
                     onClick={() => setActiveDropdown(null)}
                   >
                     All Body Shop Services
                   </Link>
-                  <div className="h-px bg-border mx-2 my-1" />
+                  <div className="h-px bg-zinc-700 mx-2 my-1" />
                   {BODY_SHOP_SERVICES.map((s) => (
                     <Link
                       key={s.slug}
                       href={`/body-shop/${s.slug}`}
-                      className="block px-4 py-1.5 text-sm text-foreground/80 hover:bg-accent hover:text-accent-foreground transition-colors"
+                      className="block px-4 py-1.5 text-sm text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors"
                       onClick={() => setActiveDropdown(null)}
                     >
                       {s.title}
@@ -151,9 +162,14 @@ export default function Navbar() {
             </Link>
           </nav>
 
+          {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-2">
             <Link href="/appointment">
-              <Button variant="outline" size="sm" className="font-semibold gap-1.5 border-primary text-primary hover:bg-primary hover:text-white">
+              <Button
+                variant="outline"
+                size="sm"
+                className="font-semibold gap-1.5 border-zinc-600 text-zinc-200 bg-transparent hover:bg-zinc-800 hover:text-white hover:border-zinc-500"
+              >
                 <Calendar className="h-3.5 w-3.5" /> Appointment
               </Button>
             </Link>
@@ -164,8 +180,9 @@ export default function Navbar() {
             </a>
           </div>
 
+          {/* Mobile hamburger */}
           <button
-            className="lg:hidden p-2 rounded-md hover:bg-secondary transition-colors"
+            className="lg:hidden p-2 rounded-md text-zinc-300 hover:text-white hover:bg-zinc-800 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -174,27 +191,28 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden border-t border-border bg-white">
+        <div className="lg:hidden border-t border-zinc-800 bg-zinc-900">
           <div className="container mx-auto px-4 py-4 space-y-1">
-            <Link href="/" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary transition-colors">
+            <Link href="/" className="block px-3 py-2 text-sm font-medium text-zinc-300 rounded-lg hover:bg-zinc-800 hover:text-white transition-colors">
               Home
             </Link>
 
             <div>
               <button
-                className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary transition-colors"
+                className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-zinc-300 rounded-lg hover:bg-zinc-800 hover:text-white transition-colors"
                 onClick={() => setMobileExpanded(mobileExpanded === "auto-repair" ? null : "auto-repair")}
               >
                 Auto Repair <ChevronDown className={cn("h-4 w-4 transition-transform", mobileExpanded === "auto-repair" && "rotate-180")} />
               </button>
               {mobileExpanded === "auto-repair" && (
                 <div className="pl-4 mt-1 space-y-0.5">
-                  <Link href="/auto-repair" className="block px-3 py-1.5 text-sm font-semibold text-primary rounded hover:bg-secondary">
+                  <Link href="/auto-repair" className="block px-3 py-1.5 text-sm font-semibold text-primary rounded hover:bg-zinc-800">
                     All Auto Repair
                   </Link>
                   {AUTO_REPAIR_SERVICES.map((s) => (
-                    <Link key={s.slug} href={`/auto-repair/${s.slug}`} className="block px-3 py-1.5 text-sm text-muted-foreground rounded hover:bg-secondary">
+                    <Link key={s.slug} href={`/auto-repair/${s.slug}`} className="block px-3 py-1.5 text-sm text-zinc-400 rounded hover:bg-zinc-800 hover:text-white">
                       {s.title}
                     </Link>
                   ))}
@@ -204,18 +222,18 @@ export default function Navbar() {
 
             <div>
               <button
-                className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary transition-colors"
+                className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-zinc-300 rounded-lg hover:bg-zinc-800 hover:text-white transition-colors"
                 onClick={() => setMobileExpanded(mobileExpanded === "body-shop" ? null : "body-shop")}
               >
                 Body Shop <ChevronDown className={cn("h-4 w-4 transition-transform", mobileExpanded === "body-shop" && "rotate-180")} />
               </button>
               {mobileExpanded === "body-shop" && (
                 <div className="pl-4 mt-1 space-y-0.5">
-                  <Link href="/body-shop" className="block px-3 py-1.5 text-sm font-semibold text-primary rounded hover:bg-secondary">
+                  <Link href="/body-shop" className="block px-3 py-1.5 text-sm font-semibold text-primary rounded hover:bg-zinc-800">
                     All Body Shop Services
                   </Link>
                   {BODY_SHOP_SERVICES.map((s) => (
-                    <Link key={s.slug} href={`/body-shop/${s.slug}`} className="block px-3 py-1.5 text-sm text-muted-foreground rounded hover:bg-secondary">
+                    <Link key={s.slug} href={`/body-shop/${s.slug}`} className="block px-3 py-1.5 text-sm text-zinc-400 rounded hover:bg-zinc-800 hover:text-white">
                       {s.title}
                     </Link>
                   ))}
@@ -223,19 +241,19 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link href="/dealership-service-program" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary transition-colors">
+            <Link href="/dealership-service-program" className="block px-3 py-2 text-sm font-medium text-zinc-300 rounded-lg hover:bg-zinc-800 hover:text-white transition-colors">
               Dealership Program
             </Link>
-            <Link href="/about" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary transition-colors">
+            <Link href="/about" className="block px-3 py-2 text-sm font-medium text-zinc-300 rounded-lg hover:bg-zinc-800 hover:text-white transition-colors">
               About
             </Link>
-            <Link href="/contact" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary transition-colors">
+            <Link href="/contact" className="block px-3 py-2 text-sm font-medium text-zinc-300 rounded-lg hover:bg-zinc-800 hover:text-white transition-colors">
               Contact
             </Link>
 
-            <div className="pt-3 border-t border-border flex flex-col gap-2">
+            <div className="pt-3 border-t border-zinc-800 flex flex-col gap-2">
               <Link href="/appointment">
-                <Button variant="outline" className="w-full font-semibold gap-2 border-primary text-primary hover:bg-primary hover:text-white">
+                <Button variant="outline" className="w-full font-semibold gap-2 border-zinc-600 text-zinc-200 bg-transparent hover:bg-zinc-800">
                   <Calendar className="h-4 w-4" /> Book Appointment
                 </Button>
               </Link>
