@@ -5,33 +5,27 @@ import { Phone, CheckCircle2, Car, ShieldCheck, Clock, DollarSign, Users } from 
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHero from "@/components/PageHero";
+import BoxedHero from "@/components/BoxedHero";
 
 export default function DealershipServiceProgramPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <PageHero
-        badge={<><Car className="h-4 w-4" /><span>Dealership Program</span></>}
+      <BoxedHero
+        category="Dealership Program"
         title="My Ride Dealership Service Program"
-        subtitle="Fleet-level service quality for dealerships — fast turnaround, transparent pricing, and certified repairs your customers can trust."
+        locationLine="in Fredericksburg, VA"
+        description="Fleet-level service quality for dealerships — fast turnaround, transparent pricing, and certified repairs your customers can trust. One trusted local partner for reconditioning, overflow work, and collision claims."
         image="/myride-dealership.jpg"
         imageAlt="My Ride Service Center dealership program"
-        actions={
-          <>
-            <a href="tel:5404186626">
-              <Button size="lg" className="font-semibold w-full sm:w-auto">
-                <Phone className="mr-2 h-4 w-4" /> Call Now
-              </Button>
-            </a>
-            <Link href="/contact">
-              <Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
-                Get in Touch
-              </Button>
-            </Link>
-          </>
-        }
+        stats={[
+          { label: "Priority", sub: "Scheduling" },
+          { label: "Full-Service", sub: "One Shop" },
+          { label: "Volume", sub: "Pricing" },
+        ]}
+        breadcrumb={[{ href: "/dealership-service-program", label: "Dealership Program" }]}
+        appointmentHref="/contact"
       />
 
       {/* Program Overview */}

@@ -5,19 +5,27 @@ import { Phone, ShieldCheck, Wrench, Users, ArrowRight, Car } from "lucide-react
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHero from "@/components/PageHero";
+import BoxedHero from "@/components/BoxedHero";
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
 
-      <PageHero
-        badge={<><span>Our Story</span></>}
+      <BoxedHero
+        category="About Us"
         title="About My Ride Service Center"
-        subtitle="Fredericksburg's trusted auto repair and collision body shop — built on honest service, certified expertise, and community."
+        locationLine="Fredericksburg, VA"
+        description="Fredericksburg's trusted auto repair and collision body shop — built on honest service, certified expertise, and a commitment to our community. From routine maintenance to complex collision repairs, we handle it all under one roof."
         image="/myride-fredericksburg.jpg"
-        imageAlt="My Ride Service Center"
+        imageAlt="My Ride Service Center Fredericksburg"
+        stats={[
+          { label: "Certified", sub: "Technicians" },
+          { label: "All Makes", sub: "& Models" },
+          { label: "Insurance", sub: "Approved" },
+        ]}
+        breadcrumb={[{ href: "/about", label: "About" }]}
+        appointmentHref="/appointment"
       />
 
       {/* Story */}
