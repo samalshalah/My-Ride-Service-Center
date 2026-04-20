@@ -17,8 +17,8 @@ export default function AboutPage() {
         title="About My Ride Service Center"
         locationLine="Fredericksburg, VA"
         description="Fredericksburg's trusted auto repair and collision body shop — built on honest service, certified expertise, and a commitment to our community. From routine maintenance to complex collision repairs, we handle it all under one roof."
-        image="/myride-fredericksburg.jpg"
-        imageAlt="My Ride Service Center Fredericksburg"
+        image="/myride-about-hero.jpg"
+        imageAlt="My Ride Service Center certified mechanic in Fredericksburg, VA"
         stats={[
           { label: "Certified", sub: "Technicians" },
           { label: "All Makes", sub: "& Models" },
