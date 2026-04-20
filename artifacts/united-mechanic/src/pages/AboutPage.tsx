@@ -57,9 +57,9 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-3xl overflow-hidden h-80"
+              className="rounded-3xl overflow-hidden"
             >
-              <img src="/myride-body-shop-hero.jpg" alt="My Ride Service Center shop" className="w-full h-full object-cover" />
+              <img src="/myride-body-shop-hero.jpg" alt="My Ride Service Center shop" className="w-full h-auto" />
             </motion.div>
           </div>
         </div>
