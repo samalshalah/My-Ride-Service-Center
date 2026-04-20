@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PageHero from "@/components/PageHero";
 import { SERVICES } from "@/data/services";
 
 export interface LocationData {
@@ -108,24 +109,13 @@ export default function LocationPage({ slug }: { slug: string }) {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative h-[55vh] min-h-[420px] flex items-end overflow-hidden bg-zinc-950">
-        <img src={location.heroImage} alt={location.name} className="absolute inset-0 w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
-        <div className="container mx-auto px-4 relative z-10 pb-14">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            {location.badge && (
-              <div className="inline-flex items-center gap-2 bg-primary/20 text-primary border border-primary/30 rounded-full px-4 py-1.5 text-sm font-semibold mb-4">
-                <ShieldCheck className="h-4 w-4" /> {location.badge}
-              </div>
-            )}
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-2">
-              United Mechanic — {location.name}
-            </h1>
-            <p className="text-lg text-zinc-300 max-w-xl">{location.address}, {location.city}, {location.state} {location.zip}</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        badge={location.badge ? <><ShieldCheck className="h-4 w-4" /><span>{location.badge}</span></> : <><span>Our Location</span></>}
+        title={`United Mechanic — ${location.name}`}
+        subtitle={`${location.address}, ${location.city}, ${location.state} ${location.zip}`}
+        image={location.heroImage}
+        imageAlt={location.name}
+      />
 
       {/* Quick Contact Bar */}
       <section className="bg-primary py-5">

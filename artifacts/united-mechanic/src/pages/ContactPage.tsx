@@ -6,6 +6,7 @@ import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PageHero from "@/components/PageHero";
 
 export default function ContactPage() {
   const locations = [
@@ -37,16 +38,11 @@ export default function ContactPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="py-16 bg-primary">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
-            <p className="text-lg text-primary-foreground/80 max-w-xl mx-auto">
-              Call, get directions, or chat on WhatsApp — we're ready to help with your vehicle.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        badge={<><span>Get in Touch</span></>}
+        title="Contact Us"
+        subtitle="Call, get directions, or chat on WhatsApp — we're ready to help with your vehicle."
+      />
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">

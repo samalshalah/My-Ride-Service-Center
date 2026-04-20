@@ -6,6 +6,7 @@ import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PageHero from "@/components/PageHero";
 
 export type { ServiceData } from "@/data/services";
 export { SERVICES } from "@/data/services";
@@ -17,27 +18,13 @@ function ServicePageLayout({ service }: { service: ServiceData }) {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="relative h-[50vh] min-h-[380px] flex items-end overflow-hidden bg-zinc-950">
-        <img
-          src={service.image}
-          alt={service.title}
-          className="absolute inset-0 w-full h-full object-cover opacity-45"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
-        <div className="container mx-auto px-4 relative z-10 pb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Link href="/" className="inline-flex items-center text-zinc-400 hover:text-white text-sm mb-4 transition-colors">
-              <ArrowLeft className="h-4 w-4 mr-1" /> Back to Home
-            </Link>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-3">{service.title}</h1>
-            <p className="text-xl text-zinc-300 max-w-2xl">{service.tagline}</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        badge={<><span>Auto Services</span></>}
+        title={service.title}
+        subtitle={service.tagline}
+        image={service.image}
+        imageAlt={service.title}
+      />
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">

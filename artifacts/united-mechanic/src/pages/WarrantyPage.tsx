@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PageHero from "@/components/PageHero";
 
 const coverageItems = [
   "Parts and labor on repairs performed at our facility",
@@ -50,41 +51,25 @@ export default function WarrantyPage() {
       <Navbar />
       <WhatsAppButton />
 
-      {/* Hero */}
-      <section className="relative bg-zinc-950 py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent pointer-events-none" />
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-              <Shield className="h-4 w-4" /> TechNet Professional
-            </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-              Warranty Protection<br />
-              <span className="text-primary">You Can Count On</span>
-            </h1>
-            <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-              Every repair we perform is backed by a nationwide TechNet warranty — 24 months or 24,000 miles,
-              honored at over 15,000 locations across North America.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:5046581818">
-                <Button size="lg" className="font-semibold w-full sm:w-auto">
-                  <Phone className="mr-2 h-4 w-4" /> Fredericksburg: 504-658-1818
-                </Button>
-              </a>
-              <a href="tel:5714587251">
-                <Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
-                  <Phone className="mr-2 h-4 w-4" /> Woodbridge: 571-458-7251
-                </Button>
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        badge={<><Shield className="h-4 w-4" /><span>TechNet Professional</span></>}
+        title="Warranty Protection You Can Count On"
+        subtitle="Every repair we perform is backed by a nationwide TechNet warranty — 24 months or 24,000 miles, honored at over 15,000 locations across North America."
+        actions={
+          <>
+            <a href="tel:5046581818">
+              <Button size="lg" className="font-semibold w-full sm:w-auto">
+                <Phone className="mr-2 h-4 w-4" /> Fredericksburg: 504-658-1818
+              </Button>
+            </a>
+            <a href="tel:5714587251">
+              <Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
+                <Phone className="mr-2 h-4 w-4" /> Woodbridge: 571-458-7251
+              </Button>
+            </a>
+          </>
+        }
+      />
 
       {/* Three Shields */}
       <section className="py-16 bg-zinc-900">

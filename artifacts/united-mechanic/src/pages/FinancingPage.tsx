@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PageHero from "@/components/PageHero";
 
 const FINANCE_PARTNERS = [
   {
@@ -84,35 +85,25 @@ export default function FinancingPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero */}
-      <section className="py-20 bg-zinc-950 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary border border-primary/30 rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
-              <ShieldCheck className="h-4 w-4" /> Financing Available
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-5">
-              Don't let the cost wait.<br />Fix it today.
-            </h1>
-            <p className="text-lg text-zinc-300 max-w-2xl mx-auto mb-8">
-              We partner with three flexible financing companies so you can get your vehicle repaired now and pay over time — with options for all credit types.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:5046581818">
-                <Button size="lg" className="h-12 px-8 font-bold">
-                  <Phone className="mr-2 h-4 w-4" /> Fredericksburg: 504-658-1818
-                </Button>
-              </a>
-              <a href="tel:5714587251">
-                <Button size="lg" variant="outline" className="h-12 px-8 font-bold border-zinc-600 text-white hover:bg-zinc-800">
-                  <Phone className="mr-2 h-4 w-4" /> Woodbridge: 571-458-7251
-                </Button>
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        badge={<><ShieldCheck className="h-4 w-4" /><span>Financing Available</span></>}
+        title={<>Don't let the cost wait.<br />Fix it today.</>}
+        subtitle="We partner with three flexible financing companies so you can get your vehicle repaired now and pay over time — with options for all credit types."
+        actions={
+          <>
+            <a href="tel:5046581818">
+              <Button size="lg" className="font-semibold w-full sm:w-auto">
+                <Phone className="mr-2 h-4 w-4" /> Fredericksburg: 504-658-1818
+              </Button>
+            </a>
+            <a href="tel:5714587251">
+              <Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
+                <Phone className="mr-2 h-4 w-4" /> Woodbridge: 571-458-7251
+              </Button>
+            </a>
+          </>
+        }
+      />
 
       {/* Finance Partners Banner */}
       <section className="py-6 bg-primary">

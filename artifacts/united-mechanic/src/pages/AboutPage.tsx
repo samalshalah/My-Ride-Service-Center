@@ -6,23 +6,20 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PageHero from "@/components/PageHero";
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative h-[45vh] min-h-[340px] flex items-end overflow-hidden bg-zinc-950">
-        <img src="/hero.png" alt="United Mechanic Shop" className="absolute inset-0 w-full h-full object-cover opacity-35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
-        <div className="container mx-auto px-4 relative z-10 pb-12">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-2">About United Mechanic</h1>
-            <p className="text-lg text-zinc-300">A community fixture in Northern Virginia for over two decades</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        badge={<><span>Our Story</span></>}
+        title="About United Mechanic"
+        subtitle="A community fixture in Northern Virginia for over two decades."
+        image="/hero.png"
+        imageAlt="United Mechanic shop"
+      />
 
       {/* Story */}
       <section className="py-20 bg-white">

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PageHero from "@/components/PageHero";
 import { SERVICES } from "@/data/services";
 
 export default function ServicesListPage() {
@@ -13,18 +14,13 @@ export default function ServicesListPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="py-16 bg-primary">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 uppercase tracking-wide">
-              Our Specialized Services
-            </h1>
-            <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-              From routine maintenance to complex transmission rebuilds — our experienced technicians handle it all.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        badge={<><span>Auto Services</span></>}
+        title="Our Specialized Services"
+        subtitle="From routine maintenance to complex transmission rebuilds — our experienced technicians handle it all."
+        image="/shop-interior.jpg"
+        imageAlt="United Mechanic shop"
+      />
 
       <section className="py-16 bg-zinc-50">
         <div className="container mx-auto px-4">
