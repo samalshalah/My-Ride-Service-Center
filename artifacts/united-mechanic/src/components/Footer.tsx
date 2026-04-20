@@ -13,7 +13,7 @@ export default function Footer() {
               <img src="/myride-logo-white-new.png" alt="My Ride Service Center" className="h-16 w-auto object-contain" />
             </div>
             <p className="text-sm leading-relaxed mb-4">
-              Fredericksburg's trusted auto repair and collision body shop — certified technicians, fast turnaround, and insurance support.
+              Fredericksburg's trusted auto repair and collision body shop — experienced technicians, fast turnaround, and insurance support.
             </p>
             <a
               href="https://www.facebook.com/profile.php?id=61583662515240"

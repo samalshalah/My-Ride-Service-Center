@@ -24,11 +24,11 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     metaTitle: "AC & Heating System Service in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Expert AC & heating repair in Fredericksburg, VA. My Ride Service Center diagnoses and repairs all makes and models — refrigerant recharge, compressor, blower motor. Call 540-418-6626.",
     description:
-      "My Ride Service Center in Fredericksburg, VA provides expert AC and heating system diagnosis and repair for all makes and models. Whether your AC is blowing warm air or your heat isn't keeping up on cold Virginia mornings, our certified technicians identify the root cause accurately and fix it right the first time — no guesswork, no unnecessary parts.",
+      "My Ride Service Center in Fredericksburg, VA provides expert AC and heating system diagnosis and repair for all makes and models. Whether your AC is blowing warm air or your heat isn't keeping up on cold Virginia mornings, our experienced technicians identify the root cause accurately and fix it right the first time — no guesswork, no unnecessary parts.",
     sections: [
       {
         heading: "Year-Round Climate Control You Can Count On",
-        body: "Whether it's the middle of a Virginia summer or a cold December morning, your vehicle's climate control system plays a critical role in your comfort and safety. At My Ride Service Center, our certified technicians perform comprehensive AC and heating diagnostics using industry-leading equipment. We identify the root cause of climate control failures quickly and get you back on the road fast — with the correct repair the first time.",
+        body: "Whether it's the middle of a Virginia summer or a cold December morning, your vehicle's climate control system plays a critical role in your comfort and safety. At My Ride Service Center, our experienced technicians perform comprehensive AC and heating diagnostics using industry-leading equipment. We identify the root cause of climate control failures quickly and get you back on the road fast — with the correct repair the first time.",
       },
       {
         heading: "Common AC & Heating Problems We Diagnose and Fix",
@@ -57,8 +57,8 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
       { step: "Performance Verification", description: "We run the system through all modes and temperatures to confirm everything works correctly before returning your vehicle." },
     ],
     whyUs: [
-      "Certified technicians with factory-level HVAC training",
-      "R-1234yf and R-134a refrigerant certified",
+      "Experienced technicians with factory-level HVAC training",
+      "Equipped for R-1234yf and R-134a refrigerant service",
       "Same-day AC service available — no week-long waits",
       "Transparent diagnosis — you know the cause before we repair",
       "Serving Fredericksburg, Spotsylvania, Stafford, and surrounding areas",
@@ -173,7 +173,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     whyUs: [
       "Complimentary brake inspection with every service visit",
       "Quality parts with warranty on parts and labor",
-      "Certified technicians trained on all brake system types",
+      "Experienced technicians trained on all brake system types",
       "Same-day brake service — most jobs completed in under 2 hours",
       "Honest pricing — no upsells, no hidden fees",
     ],

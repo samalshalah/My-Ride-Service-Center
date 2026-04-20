@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/body-shop/auto-painting":{},"/body-shop/bumper-repair":{},"/body-shop/dent-repair":{},"/body-shop/frame-straightening":{},"/body-shop/glass-replacement":{},"/body-shop/paintless-dent-removal":{},"/body-shop/rust-repair":{},"/body-shop/scratch-repair":{},"/auto-repair/ac-heating":{},"/auto-repair/battery-electrical":{},"/auto-repair/brakes":{},"/auto-repair/engine-diagnostics":{},"/auto-repair/exhaust-emissions":{},"/auto-repair/oil-change":{},"/auto-repair/suspension-steering":{},"/auto-repair/transmission":{}},"dynamicRoutes":{"/body-shop/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/body-shop/[slug]","routeRegex":"^\\/body\\-shop\\/([^/]+?)(?:\\/)?$","allowHeader":[]},"/auto-repair/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/auto-repair/[slug]","routeRegex":"^\\/auto\\-repair\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"761b099de83f420d39d2ce381bb70061","previewModeSigningKey":"05df5bfa6e7bcdbd2eae09af07b70fe792343831063e7df40fcdbce1d0913b37","previewModeEncryptionKey":"bc7c8a9f772aff7ae28bd21f24f0ccdd497b5e31dd28c74d13ee08d3eb6ab03d"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "d0e3b7bb9373ea24dd7bdf2896655e88",
+    "previewModeSigningKey": "7014623b50fa94fb924553068b0e4cf133f79a6002f8c26696f8f5e85b746caa",
+    "previewModeEncryptionKey": "1dcd7fc53e17262d441c875aaf68f1919ce1c42f9a8ab92e2920c66ac80b5e09"
+  }
+}

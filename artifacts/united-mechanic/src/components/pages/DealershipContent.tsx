@@ -14,7 +14,7 @@ export default function DealershipContent() {
         category="Dealership Program"
         title="My Ride Dealership Service Program"
         locationLine="in Fredericksburg, VA"
-        description="Fleet-level service quality for dealerships — fast turnaround, transparent pricing, and certified repairs your customers can trust. One trusted local partner for reconditioning, overflow work, and collision claims."
+        description="Fleet-level service quality for dealerships — fast turnaround, transparent pricing, and quality repairs your customers can trust. One trusted local partner for reconditioning, overflow work, and collision claims."
         image="/myride-dealership.jpg"
         imageAlt="My Ride Service Center dealership program"
         stats={[
@@ -58,7 +58,7 @@ export default function DealershipContent() {
             {[
               { icon: <Clock className="h-6 w-6" />, title: "Fast Turnaround", desc: "Priority scheduling for dealership partners — we respect your reconditioning timelines." },
               { icon: <DollarSign className="h-6 w-6" />, title: "Competitive Pricing", desc: "Volume-friendly rates with transparent invoicing — no hidden fees, ever." },
-              { icon: <ShieldCheck className="h-6 w-6" />, title: "Certified Quality", desc: "Every repair is performed by certified technicians using quality parts." },
+              { icon: <ShieldCheck className="h-6 w-6" />, title: "Quality Guaranteed", desc: "Every repair is performed by experienced technicians using quality parts." },
               { icon: <Car className="h-6 w-6" />, title: "Full-Service Capability", desc: "Mechanical, body shop, paint, and glass — one shop handles it all." },
               { icon: <Users className="h-6 w-6" />, title: "Dedicated Contact", desc: "A direct line to our team — no being transferred or waiting in queues." },
               { icon: <CheckCircle2 className="h-6 w-6" />, title: "Insurance Support", desc: "We handle all insurance coordination for collision and body work claims." },

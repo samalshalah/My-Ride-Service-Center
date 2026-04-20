@@ -28,10 +28,20 @@ export const metadata: Metadata = {
   },
 };
 
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.myrideserivcecenter.com" },
+    { "@type": "ListItem", position: 2, name: "Body Shop", item: "https://www.myrideserivcecenter.com/body-shop" },
+  ],
+};
+
 export default function BodyShopPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
       <BodyShopContent />
     </>
   );

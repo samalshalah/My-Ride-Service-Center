@@ -21,7 +21,7 @@ const WHY_US = [
   { icon: Shield, title: "Warranty-Backed Repairs", body: "Every repair is backed by a warranty on parts and labor — you leave confident the job is done right." },
   { icon: Clock, title: "Same-Day Service Available", body: "Most common repairs are completed same day so you're not without your vehicle any longer than necessary." },
   { icon: ThumbsUp, title: "Honest Estimates Always", body: "We provide written estimates before starting any work and never add charges without your explicit approval." },
-  { icon: Star, title: "Certified Technicians", body: "Our team is trained on all makes and models — domestic, Asian, and European — with the tools to match." },
+  { icon: Star, title: "Experienced Technicians", body: "Our team is trained on all makes and models — domestic, Asian, and European — with the tools to match." },
 ];
 
 function FAQItem({ q, a }: { q: string; a: string }) {
@@ -43,8 +43,8 @@ export default function AutoRepairContent() {
       <BoxedHero
         category="Auto Repair"
         title="Auto Repair Services"
-        description="My Ride Service Center is Fredericksburg, VA's trusted auto repair shop for all makes and models. From routine oil changes and brake service to complex engine diagnostics and transmission repair, our certified technicians deliver honest, accurate repairs — backed by a warranty and completed with same-day service whenever possible."
-        tagline="Complete mechanical repair and maintenance for all makes and models — performed by certified technicians with same-day service on most common repairs."
+        description="My Ride Service Center is Fredericksburg, VA's trusted auto repair shop for all makes and models. From routine oil changes and brake service to complex engine diagnostics and transmission repair, our experienced technicians deliver honest, accurate repairs — backed by a warranty and completed with same-day service whenever possible."
+        tagline="Complete mechanical repair and maintenance for all makes and models — performed by experienced technicians with same-day service on most common repairs."
         image="/myride-auto-repair.jpg"
         imageAlt="My Ride Service Center auto repair shop Fredericksburg VA"
         stats={[
@@ -116,7 +116,7 @@ export default function AutoRepairContent() {
             <h2 id="why-repair-heading" className="text-2xl md:text-3xl font-extrabold text-foreground">Why Fredericksburg Drivers Choose My Ride Service Center</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {["All makes and models — domestic, Asian, and European","Certified technicians with ongoing training","Professional-grade diagnostic equipment","Written estimates before every repair","Same-day service on most common repairs","Warranty on all parts and labor","No unnecessary repairs — ever","Convenient Mon–Fri 8–6, Sat 9–3 hours","Serving Fredericksburg and surrounding counties"].map((point) => (
+            {["All makes and models — domestic, Asian, and European","Experienced technicians with ongoing training","Professional-grade diagnostic equipment","Written estimates before every repair","Same-day service on most common repairs","Warranty on all parts and labor","No unnecessary repairs — ever","Convenient Mon–Fri 8–6, Sat 9–3 hours","Serving Fredericksburg and surrounding counties"].map((point) => (
               <div key={point} className="flex items-start gap-3 bg-white rounded-xl px-4 py-3 border border-border">
                 <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                 <span className="text-sm text-muted-foreground">{point}</span>
