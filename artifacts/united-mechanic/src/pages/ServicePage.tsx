@@ -77,10 +77,10 @@ export default function ServicePage({ service }: Props) {
 
       <PageHero
         badge={<><span>{backLabel}</span></>}
-        title={service.title}
+        title={`${service.title} in Fredericksburg, VA`}
         subtitle={service.tagline}
         image={service.image}
-        imageAlt={service.title}
+        imageAlt={`${service.title} in Fredericksburg, VA — My Ride Service Center`}
         actions={
           <>
             <a href="tel:5404186626">
