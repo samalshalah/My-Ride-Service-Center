@@ -23,6 +23,10 @@ publicDir = "artifacts/united-mechanic/out"
 serve = "static"
 
 [[services.production.rewrites]]
+from = "/"
+to = "/index.html"
+
+[[services.production.rewrites]]
 from = "/*"
 to = "/404.html"
 
