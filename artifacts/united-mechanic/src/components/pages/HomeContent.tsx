@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Phone, ShieldCheck, Star, Car, CheckCircle2, ArrowRight, Wrench, PaintBucket, Shield } from "lucide-react";
+import { Phone, ShieldCheck, Star, Car, CheckCircle2, ArrowRight, Wrench, PaintBucket, Shield, Clock, DollarSign, Users, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AUTO_REPAIR_SERVICES, BODY_SHOP_SERVICES } from "@/data/services";
 
@@ -154,6 +154,55 @@ export default function HomeContent() {
         </div>
       </section>
 
+      {/* Dealership Program */}
+      <section className="py-20 bg-zinc-950 relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <img src="/myride-dealership.jpg" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-zinc-950/80" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <div className="inline-flex items-center gap-2 bg-primary/20 text-primary border border-primary/30 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+                <Building2 className="h-4 w-4" /> Dealership Service Program
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                A Trusted Repair Partner for Automotive Dealers
+              </h2>
+              <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+                My Ride Service Center partners with dealerships across Fredericksburg, VA for trade-in reconditioning, overflow repairs, collision claims, and customer referrals — handled with fast turnaround and transparent pricing.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/dealership-service-program">
+                  <Button size="lg" className="font-semibold w-full sm:w-auto">
+                    Learn About the Program <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <a href="tel:5404186626">
+                  <Button size="lg" variant="outline" className="font-semibold border-white/30 text-white hover:bg-white/10 w-full sm:w-auto">
+                    <Phone className="mr-2 h-4 w-4" /> 540-418-6626
+                  </Button>
+                </a>
+              </div>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { icon: <Clock className="h-5 w-5 text-primary" />, title: "Priority Scheduling", desc: "Fast turnaround to keep your reconditioning pipeline moving." },
+                { icon: <DollarSign className="h-5 w-5 text-primary" />, title: "Volume Pricing", desc: "Competitive rates with transparent invoicing — no hidden fees." },
+                { icon: <Wrench className="h-5 w-5 text-primary" />, title: "Full-Service Shop", desc: "Mechanical repairs, body work, and painting under one roof." },
+                { icon: <Users className="h-5 w-5 text-primary" />, title: "Dedicated Support", desc: "A single point of contact who knows your dealership's needs." },
+              ].map(({ icon, title, desc }) => (
+                <div key={title} className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                  <div className="mb-3">{icon}</div>
+                  <p className="text-white font-semibold mb-1">{title}</p>
+                  <p className="text-zinc-400 text-sm leading-relaxed">{desc}</p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
@@ -165,7 +214,7 @@ export default function HomeContent() {
               <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-6">Fredericksburg's Repair Shop You Can Trust</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Certified Technicians", desc: "Our team is trained and certified for both mechanical and body shop repairs." },
+                  { title: "Experienced Technicians", desc: "Our team is trained for both mechanical and body shop repairs across all makes and models." },
                   { title: "Insurance Support", desc: "We work directly with your insurance company to make claims stress-free." },
                   { title: "Fast Turnaround", desc: "We respect your time — same-day service available on qualifying repairs." },
                   { title: "All Makes & Models", desc: "Domestic and foreign vehicles, from sedans to trucks and SUVs." },
