@@ -22,14 +22,8 @@ const NAV_LINKS = [
       { label: "Woodbridge", href: "/locations/woodbridge" },
     ],
   },
-  {
-    label: "Plans",
-    href: "/financing",
-    children: [
-      { label: "Financing Options", href: "/financing" },
-      { label: "Warranty Protection", href: "/warranty" },
-    ],
-  },
+  { label: "Financing", href: "/financing" },
+  { label: "Warranty", href: "/warranty" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
