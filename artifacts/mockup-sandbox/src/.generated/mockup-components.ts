@@ -4,5 +4,7 @@ export const modules: ModuleMap = {
   "./components/mockups/service-layouts/A_ClassicSidebar.tsx": () => import("../components/mockups/service-layouts/A_ClassicSidebar.tsx"),
   "./components/mockups/service-layouts/B_ImmersiveSplit.tsx": () => import("../components/mockups/service-layouts/B_ImmersiveSplit.tsx"),
   "./components/mockups/service-layouts/C_Editorial.tsx": () => import("../components/mockups/service-layouts/C_Editorial.tsx"),
-  "./components/mockups/service-layouts/D_BoldDark.tsx": () => import("../components/mockups/service-layouts/D_BoldDark.tsx")
+  "./components/mockups/service-layouts/D_BoldDark.tsx": () => import("../components/mockups/service-layouts/D_BoldDark.tsx"),
+  "./components/mockups/service-layouts/E_BoxedSplit.tsx": () => import("../components/mockups/service-layouts/E_BoxedSplit.tsx"),
+  "./components/mockups/service-layouts/F_BoxedCard.tsx": () => import("../components/mockups/service-layouts/F_BoxedCard.tsx")
 };
