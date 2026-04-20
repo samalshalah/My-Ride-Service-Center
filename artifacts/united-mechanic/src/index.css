@@ -68,7 +68,7 @@
   --popover-foreground: 0 0% 10%;
   --popover-border: 0 0% 90%;
   
-  --primary: 119 44% 48%;
+  --primary: 4 85% 46%;
   --primary-foreground: 0 0% 100%;
   
   --secondary: 0 0% 96%;
@@ -77,16 +77,16 @@
   --muted: 0 0% 96%;
   --muted-foreground: 0 0% 40%;
   
-  --accent: 119 44% 95%;
-  --accent-foreground: 119 44% 20%;
+  --accent: 4 85% 95%;
+  --accent-foreground: 4 85% 25%;
   
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   
   --input: 0 0% 90%;
-  --ring: 119 44% 48%;
+  --ring: 4 85% 46%;
   
-  --chart-1: 119 44% 48%;
+  --chart-1: 4 85% 46%;
   --chart-2: 0 0% 40%;
   --chart-3: 0 0% 60%;
   --chart-4: 0 0% 80%;
@@ -95,11 +95,11 @@
   --sidebar: 0 0% 98%;
   --sidebar-foreground: 0 0% 20%;
   --sidebar-border: 0 0% 90%;
-  --sidebar-primary: 119 44% 48%;
+  --sidebar-primary: 4 85% 46%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 0 0% 90%;
   --sidebar-accent-foreground: 0 0% 10%;
-  --sidebar-ring: 119 44% 48%;
+  --sidebar-ring: 4 85% 46%;
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: Georgia, serif;
@@ -126,7 +126,7 @@
   --popover-foreground: 0 0% 95%;
   --popover-border: 0 0% 20%;
   
-  --primary: 119 44% 48%;
+  --primary: 4 85% 52%;
   --primary-foreground: 0 0% 100%;
   
   --secondary: 0 0% 15%;
@@ -135,36 +135,37 @@
   --muted: 0 0% 15%;
   --muted-foreground: 0 0% 60%;
   
-  --accent: 119 44% 15%;
-  --accent-foreground: 119 44% 80%;
+  --accent: 4 85% 15%;
+  --accent-foreground: 4 85% 80%;
   
   --destructive: 0 62% 30%;
-  --destructive-foreground: 0 0% 100%;
+  --destructive-foreground: 0 0% 95%;
   
-  --input: 0 0% 25%;
-  --ring: 119 44% 48%;
-  
-  --chart-1: 119 44% 48%;
+  --input: 0 0% 20%;
+  --ring: 4 85% 52%;
+
+  --chart-1: 4 85% 52%;
   --chart-2: 0 0% 60%;
   --chart-3: 0 0% 40%;
   --chart-4: 0 0% 20%;
   --chart-5: 0 0% 10%;
 
-  --sidebar: 0 0% 10%;
+  --sidebar: 0 0% 8%;
   --sidebar-foreground: 0 0% 80%;
   --sidebar-border: 0 0% 20%;
-  --sidebar-primary: 119 44% 48%;
+  --sidebar-primary: 4 85% 52%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 20%;
-  --sidebar-accent-foreground: 0 0% 95%;
-  --sidebar-ring: 119 44% 48%;
+  --sidebar-accent: 0 0% 15%;
+  --sidebar-accent-foreground: 0 0% 80%;
+  --sidebar-ring: 4 85% 52%;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply font-sans antialiased bg-background text-foreground scroll-smooth;
-  }
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--app-font-sans);
 }

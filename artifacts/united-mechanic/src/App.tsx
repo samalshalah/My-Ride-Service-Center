@@ -5,14 +5,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
-import ServicesListPage from "@/pages/ServicesListPage";
-import ServicePageLayout, { SERVICES } from "@/pages/ServicePage";
-import LocationPage from "@/pages/LocationPage";
+import AutoRepairListPage from "@/pages/AutoRepairListPage";
+import BodyShopListPage from "@/pages/BodyShopListPage";
+import ServicePage from "@/pages/ServicePage";
+import DealershipServiceProgramPage from "@/pages/DealershipServiceProgramPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
-import FinancingPage from "@/pages/FinancingPage";
-import WarrantyPage from "@/pages/WarrantyPage";
 import AppointmentPage from "@/pages/AppointmentPage";
+import { ALL_SERVICES } from "@/data/services";
 
 const queryClient = new QueryClient();
 
@@ -29,26 +29,23 @@ function Router() {
     <>
       <ScrollToTop />
       <Switch>
-      <Route path="/" component={HomePage} />
-      <Route path="/services" component={ServicesListPage} />
-      {SERVICES.map((service) => (
-        <Route key={service.slug} path={`/services/${service.slug}`}>
-          {() => <ServicePageLayout service={service} />}
-        </Route>
-      ))}
-      <Route path="/locations/fredericksburg">
-        {() => <LocationPage slug="fredericksburg" />}
-      </Route>
-      <Route path="/locations/woodbridge">
-        {() => <LocationPage slug="woodbridge" />}
-      </Route>
-      <Route path="/about" component={AboutPage} />
-      <Route path="/contact" component={ContactPage} />
-      <Route path="/financing" component={FinancingPage} />
-      <Route path="/warranty" component={WarrantyPage} />
-      <Route path="/appointment" component={AppointmentPage} />
-      <Route component={NotFound} />
-    </Switch>
+        <Route path="/" component={HomePage} />
+        <Route path="/auto-repair" component={AutoRepairListPage} />
+        <Route path="/body-shop" component={BodyShopListPage} />
+        {ALL_SERVICES.map((service) => (
+          <Route
+            key={service.slug}
+            path={`/${service.category}/${service.slug}`}
+          >
+            {() => <ServicePage service={service} />}
+          </Route>
+        ))}
+        <Route path="/dealership-service-program" component={DealershipServiceProgramPage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/contact" component={ContactPage} />
+        <Route path="/appointment" component={AppointmentPage} />
+        <Route component={NotFound} />
+      </Switch>
     </>
   );
 }

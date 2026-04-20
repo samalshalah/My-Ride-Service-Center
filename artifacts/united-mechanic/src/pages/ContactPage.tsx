@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Phone, MapPin, Clock, MessageSquare, ArrowRight } from "lucide-react";
+import { Phone, MapPin, Clock, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
@@ -8,126 +8,165 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 
 export default function ContactPage() {
-  const locations = [
-    {
-      name: "Fredericksburg",
-      address: "31 Perchwood Dr",
-      city: "Fredericksburg, VA 22405",
-      phone: "504-658-1818",
-      tel: "5046581818",
-      badge: "Virginia State Inspection Station",
-      mapUrl: "https://maps.google.com/?q=31+Perchwood+Dr+Fredericksburg+VA+22405",
-      href: "/locations/fredericksburg",
-      hours: ["Mon – Fri: 8:00 AM – 6:00 PM", "Saturday: 8:00 AM – 3:00 PM", "Sunday: Closed"],
-    },
-    {
-      name: "Woodbridge",
-      address: "1025 Cannons Ct Unit 2",
-      city: "Woodbridge, VA 22191",
-      phone: "571-458-7251",
-      tel: "5714587251",
-      badge: null,
-      mapUrl: "https://maps.google.com/?q=1025+Cannons+Ct+Unit+2+Woodbridge+VA+22191",
-      href: "/locations/woodbridge",
-      hours: ["Mon – Fri: 8:00 AM – 6:00 PM", "Saturday: 8:00 AM – 3:00 PM", "Sunday: Closed"],
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background font-sans">
       <Navbar />
 
       <PageHero
         badge={<><span>Get in Touch</span></>}
         title="Contact Us"
-        subtitle="Call or stop by — we're ready to help with your vehicle."
+        subtitle="Call or stop by our Fredericksburg location — we're ready to help with your vehicle."
         image="/shop-exterior.jpg"
-        imageAlt="United Mechanic shop exterior"
+        imageAlt="My Ride Service Center"
       />
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
-            {locations.map((loc, i) => (
-              <motion.div
-                key={loc.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                className="rounded-3xl border border-border p-8 shadow-sm hover:shadow-lg transition-shadow"
-              >
-                <div className="flex items-start justify-between mb-6">
-                  <h2 className="text-2xl font-bold">{loc.name}</h2>
-                  {loc.badge && (
-                    <span className="text-xs font-bold bg-primary/10 text-primary px-3 py-1 rounded-full uppercase tracking-wider">
-                      {loc.badge}
-                    </span>
-                  )}
-                </div>
-
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            {/* Location Info */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-6"
+            >
+              <div className="bg-zinc-50 rounded-3xl border border-border p-8">
+                <h2 className="text-xl font-bold text-foreground mb-6">Fredericksburg Location</h2>
+                <div className="space-y-5">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center shrink-0">
+                      <MapPin className="h-5 w-5 text-primary" />
+                    </div>
                     <div>
-                      <p className="font-medium">{loc.address}</p>
-                      <p className="text-muted-foreground">{loc.city}</p>
+                      <p className="font-semibold text-foreground mb-1">Address</p>
+                      <p className="text-muted-foreground">2715 Lafayette Blvd</p>
+                      <p className="text-muted-foreground">Fredericksburg, VA 22408</p>
+                      <a
+                        href="https://www.google.com/maps/search/2715+Lafayette+Blvd+Fredericksburg+VA+22408"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-block mt-2 text-primary text-sm font-medium hover:underline"
+                      >
+                        Get Directions →
+                      </a>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-primary shrink-0" />
-                    <a href={`tel:${loc.tel}`} className="font-bold text-xl hover:text-primary transition-colors">
-                      {loc.phone}
-                    </a>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center shrink-0">
+                      <Phone className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground mb-1">Phone</p>
+                      <a href="tel:5404186626" className="text-primary font-semibold hover:underline text-lg">
+                        540-418-6626
+                      </a>
+                    </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Clock className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <div className="text-sm text-muted-foreground space-y-0.5">
-                      {loc.hours.map((h) => <p key={h}>{h}</p>)}
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center shrink-0">
+                      <Clock className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground mb-2">Hours of Operation</p>
+                      <ul className="space-y-1.5 text-sm text-muted-foreground">
+                        <li className="flex justify-between gap-8">
+                          <span>Monday – Friday</span>
+                          <span className="font-medium text-foreground">8:00 AM – 6:00 PM</span>
+                        </li>
+                        <li className="flex justify-between gap-8">
+                          <span>Saturday</span>
+                          <span className="font-medium text-foreground">9:00 AM – 3:00 PM</span>
+                        </li>
+                        <li className="flex justify-between gap-8">
+                          <span>Sunday</span>
+                          <span className="font-medium text-red-500">Closed</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center shrink-0">
+                      <Facebook className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground mb-1">Follow Us</p>
+                      <a
+                        href="https://www.facebook.com/profile.php?id=61583662515240"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-[#1877F2] font-medium hover:underline"
+                      >
+                        Facebook →
+                      </a>
                     </div>
                   </div>
                 </div>
+              </div>
+            </motion.div>
 
-                <div className="grid grid-cols-2 gap-3">
-                  <a href={`tel:${loc.tel}`}>
-                    <Button className="w-full font-semibold">
-                      <Phone className="mr-2 h-4 w-4" /> Call Now
-                    </Button>
-                  </a>
-                  <a href={loc.mapUrl} target="_blank" rel="noreferrer">
-                    <Button variant="outline" className="w-full">
-                      Get Directions
-                    </Button>
-                  </a>
-                  <Link href={loc.href} className="col-span-2">
-                    <Button variant="ghost" className="w-full text-primary hover:bg-primary/5">
-                      View Location Page <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+            {/* Call to Action */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-6"
+            >
+              <div className="bg-primary rounded-3xl p-8 text-white">
+                <h2 className="text-xl font-bold mb-2">Ready to Get Started?</h2>
+                <p className="text-white/80 mb-6 text-sm">
+                  Call us now or book an appointment online. Same-day service often available.
+                </p>
+                <a href="tel:5404186626" className="block mb-3">
+                  <Button variant="outline" size="lg" className="w-full font-semibold border-white text-white hover:bg-white hover:text-primary">
+                    <Phone className="mr-2 h-5 w-5" /> Call 540-418-6626
+                  </Button>
+                </a>
+                <Link href="/appointment">
+                  <Button size="lg" className="w-full font-semibold bg-white text-primary hover:bg-white/90">
+                    Book Appointment
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="bg-zinc-50 rounded-3xl border border-border p-8">
+                <h3 className="font-bold text-foreground mb-4">Auto Repair Services</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  From oil changes and brakes to transmission repair and engine diagnostics — we handle it all.
+                </p>
+                <Link href="/auto-repair">
+                  <Button variant="outline" className="font-semibold border-primary text-primary hover:bg-primary hover:text-white">
+                    View Auto Repair →
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="bg-zinc-50 rounded-3xl border border-border p-8">
+                <h3 className="font-bold text-foreground mb-4">Body Shop Services</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Collision repair, dent removal, painting, and glass replacement with insurance support.
+                </p>
+                <Link href="/body-shop">
+                  <Button variant="outline" className="font-semibold border-primary text-primary hover:bg-primary hover:text-white">
+                    View Body Shop →
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* WhatsApp Section */}
-      <section className="py-14 bg-zinc-50">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <div className="h-16 w-16 bg-[#25D366]/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-              <MessageSquare className="h-8 w-8 text-[#25D366]" />
-            </div>
-            <h2 className="text-2xl font-bold mb-3">Prefer to chat?</h2>
-            <p className="text-muted-foreground mb-6">
-              Reach us on WhatsApp for quick questions, appointment requests, or to send photos of your vehicle.
-            </p>
-            <a href="https://wa.me/15046581818" target="_blank" rel="noreferrer">
-              <Button size="lg" className="bg-[#25D366] hover:bg-[#1da851] text-white font-bold h-12 px-8">
-                <MessageSquare className="mr-2 h-5 w-5" /> Chat on WhatsApp
-              </Button>
-            </a>
-          </motion.div>
+      {/* Map Embed */}
+      <section className="pb-16 bg-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="rounded-3xl overflow-hidden h-80 border border-border shadow-sm">
+            <iframe
+              title="My Ride Service Center Map"
+              src="https://maps.google.com/maps?q=2715+Lafayette+Blvd+Fredericksburg+VA+22408&output=embed"
+              className="w-full h-full"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 

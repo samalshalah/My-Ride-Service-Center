@@ -1,187 +1,253 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
-import { Phone, ChevronDown, Menu, X, Calendar } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SERVICES } from "@/data/services";
-
-const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  {
-    label: "Services",
-    href: "/services",
-    children: [
-      { label: "All Services", href: "/services" },
-      ...SERVICES.map((s) => ({ label: s.title, href: `/services/${s.slug}` })),
-    ],
-  },
-  {
-    label: "Locations",
-    href: "/locations",
-    children: [
-      { label: "Fredericksburg", href: "/locations/fredericksburg" },
-      { label: "Woodbridge", href: "/locations/woodbridge" },
-    ],
-  },
-  { label: "Financing", href: "/financing" },
-  { label: "Warranty", href: "/warranty" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
-
-function DropdownMenu({
-  label,
-  href,
-  children,
-}: {
-  label: string;
-  href: string;
-  children: { label: string; href: string }[];
-}) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  const [location] = useLocation();
-
-  const isActive =
-    location === href || children.some((c) => location.startsWith(c.href) && c.href !== "/");
-
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
-
-  return (
-    <div ref={ref} className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-      <button
-        className={`inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary ${
-          isActive ? "text-primary" : "text-foreground/80"
-        }`}
-        onClick={() => setOpen((v) => !v)}
-      >
-        {label}
-        <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-
-      {open && (
-        <div className="absolute top-full left-0 mt-1 w-56 bg-white border border-border rounded-xl shadow-xl py-2 z-50">
-          {children.map((child) => (
-            <Link
-              key={child.href}
-              href={child.href}
-              onClick={() => setOpen(false)}
-              className="block px-4 py-2.5 text-sm hover:bg-zinc-50 hover:text-primary transition-colors font-medium"
-            >
-              {child.label}
-            </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
+import { AUTO_REPAIR_SERVICES, BODY_SHOP_SERVICES } from "@/data/services";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [location] = useLocation();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setMenuOpen(false);
+    setActiveDropdown(null);
+    setMobileExpanded(null);
+  }, [location]);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setActiveDropdown(null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const isActive = (path: string) =>
+    location === path || location.startsWith(path + "/");
+
+  const navLinkClass = (path: string) =>
+    cn(
+      "text-sm font-medium transition-colors",
+      isActive(path) ? "text-primary" : "text-foreground/80 hover:text-foreground"
+    );
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-border">
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center shrink-0">
-          <img
-            src="https://www.myunitedmechanic.com/logo.png"
-            alt="United Mechanic"
-            className="h-12 object-contain"
-          />
-        </Link>
-
-        <div className="hidden lg:flex items-center gap-7">
-          {NAV_LINKS.map((link) =>
-            link.children ? (
-              <DropdownMenu
-                key={link.href}
-                label={link.label}
-                href={link.href}
-                children={link.children}
-              />
-            ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location === link.href ? "text-primary" : "text-foreground/80"
-                }`}
-              >
-                {link.label}
-              </Link>
-            )
-          )}
-          <Link href="/appointment">
-            <Button size="sm" variant="outline" className="font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-colors">
-              <Calendar className="mr-2 h-3.5 w-3.5" /> Book Appointment
-            </Button>
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-200",
+        scrolled
+          ? "bg-white/95 backdrop-blur-sm shadow-sm border-b border-border"
+          : "bg-white border-b border-border"
+      )}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center shrink-0">
+            <img
+              src="/myride-logo.png"
+              alt="My Ride Service Center"
+              className="h-10 w-auto"
+            />
           </Link>
-          <a href="tel:5046581818">
-            <Button size="sm" className="font-semibold shadow-sm">
-              <Phone className="mr-2 h-3.5 w-3.5" /> Call Now
-            </Button>
-          </a>
-        </div>
 
-        <button
-          className="lg:hidden p-2 rounded-lg hover:bg-zinc-100 transition-colors"
-          onClick={() => setMobileOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
+          <nav ref={dropdownRef} className="hidden lg:flex items-center gap-6">
+            <Link href="/" className={cn("text-sm font-medium transition-colors", location === "/" ? "text-primary" : "text-foreground/80 hover:text-foreground")}>
+              Home
+            </Link>
 
-      {mobileOpen && (
-        <div className="lg:hidden border-t border-border bg-white px-4 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
-          {NAV_LINKS.map((link) => (
-            <div key={link.href}>
-              <Link
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className={`block py-2.5 px-2 text-sm font-semibold rounded-lg hover:bg-zinc-50 hover:text-primary transition-colors ${
-                  location === link.href ? "text-primary bg-primary/5" : ""
-                }`}
+            <div className="relative">
+              <button
+                className={cn(
+                  "flex items-center gap-1 text-sm font-medium transition-colors",
+                  isActive("/auto-repair") ? "text-primary" : "text-foreground/80 hover:text-foreground"
+                )}
+                onClick={() =>
+                  setActiveDropdown(activeDropdown === "auto-repair" ? null : "auto-repair")
+                }
               >
-                {link.label}
-              </Link>
-              {link.children && (
-                <div className="ml-4 mt-1 space-y-0.5 border-l-2 border-primary/20 pl-3">
-                  {link.children.map((child) => (
+                Auto Repair <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", activeDropdown === "auto-repair" && "rotate-180")} />
+              </button>
+              {activeDropdown === "auto-repair" && (
+                <div className="absolute left-0 top-full mt-2 w-64 bg-white border border-border rounded-xl shadow-lg py-1 z-50">
+                  <Link
+                    href="/auto-repair"
+                    className="block px-4 py-2 text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    All Auto Repair Services
+                  </Link>
+                  <div className="h-px bg-border mx-2 my-1" />
+                  {AUTO_REPAIR_SERVICES.map((s) => (
                     <Link
-                      key={child.href}
-                      href={child.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                      key={s.slug}
+                      href={`/auto-repair/${s.slug}`}
+                      className="block px-4 py-1.5 text-sm text-foreground/80 hover:bg-accent hover:text-accent-foreground transition-colors"
+                      onClick={() => setActiveDropdown(null)}
                     >
-                      {child.label}
+                      {s.title}
                     </Link>
                   ))}
                 </div>
               )}
             </div>
-          ))}
-          <div className="pt-3 border-t border-border space-y-2">
-            <Link href="/appointment" onClick={() => setMobileOpen(false)} className="block">
-              <Button variant="outline" className="w-full font-semibold border-primary text-primary">
-                <Calendar className="mr-2 h-4 w-4" /> Book Appointment
+
+            <div className="relative">
+              <button
+                className={cn(
+                  "flex items-center gap-1 text-sm font-medium transition-colors",
+                  isActive("/body-shop") ? "text-primary" : "text-foreground/80 hover:text-foreground"
+                )}
+                onClick={() =>
+                  setActiveDropdown(activeDropdown === "body-shop" ? null : "body-shop")
+                }
+              >
+                Body Shop <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", activeDropdown === "body-shop" && "rotate-180")} />
+              </button>
+              {activeDropdown === "body-shop" && (
+                <div className="absolute left-0 top-full mt-2 w-64 bg-white border border-border rounded-xl shadow-lg py-1 z-50">
+                  <Link
+                    href="/body-shop"
+                    className="block px-4 py-2 text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    All Body Shop Services
+                  </Link>
+                  <div className="h-px bg-border mx-2 my-1" />
+                  {BODY_SHOP_SERVICES.map((s) => (
+                    <Link
+                      key={s.slug}
+                      href={`/body-shop/${s.slug}`}
+                      className="block px-4 py-1.5 text-sm text-foreground/80 hover:bg-accent hover:text-accent-foreground transition-colors"
+                      onClick={() => setActiveDropdown(null)}
+                    >
+                      {s.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link href="/dealership-service-program" className={navLinkClass("/dealership-service-program")}>
+              Dealership Program
+            </Link>
+            <Link href="/about" className={navLinkClass("/about")}>
+              About
+            </Link>
+            <Link href="/contact" className={navLinkClass("/contact")}>
+              Contact
+            </Link>
+          </nav>
+
+          <div className="hidden lg:flex items-center gap-2">
+            <Link href="/appointment">
+              <Button variant="outline" size="sm" className="font-semibold gap-1.5 border-primary text-primary hover:bg-primary hover:text-white">
+                <Calendar className="h-3.5 w-3.5" /> Appointment
               </Button>
             </Link>
-            <a href="tel:5046581818" className="block">
-              <Button className="w-full font-semibold">
-                <Phone className="mr-2 h-4 w-4" /> Call Now
+            <a href="tel:5404186626">
+              <Button size="sm" className="font-semibold gap-1.5">
+                <Phone className="h-3.5 w-3.5" /> 540-418-6626
               </Button>
             </a>
           </div>
+
+          <button
+            className="lg:hidden p-2 rounded-md hover:bg-secondary transition-colors"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+      </div>
+
+      {menuOpen && (
+        <div className="lg:hidden border-t border-border bg-white">
+          <div className="container mx-auto px-4 py-4 space-y-1">
+            <Link href="/" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary transition-colors">
+              Home
+            </Link>
+
+            <div>
+              <button
+                className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary transition-colors"
+                onClick={() => setMobileExpanded(mobileExpanded === "auto-repair" ? null : "auto-repair")}
+              >
+                Auto Repair <ChevronDown className={cn("h-4 w-4 transition-transform", mobileExpanded === "auto-repair" && "rotate-180")} />
+              </button>
+              {mobileExpanded === "auto-repair" && (
+                <div className="pl-4 mt-1 space-y-0.5">
+                  <Link href="/auto-repair" className="block px-3 py-1.5 text-sm font-semibold text-primary rounded hover:bg-secondary">
+                    All Auto Repair
+                  </Link>
+                  {AUTO_REPAIR_SERVICES.map((s) => (
+                    <Link key={s.slug} href={`/auto-repair/${s.slug}`} className="block px-3 py-1.5 text-sm text-muted-foreground rounded hover:bg-secondary">
+                      {s.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div>
+              <button
+                className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary transition-colors"
+                onClick={() => setMobileExpanded(mobileExpanded === "body-shop" ? null : "body-shop")}
+              >
+                Body Shop <ChevronDown className={cn("h-4 w-4 transition-transform", mobileExpanded === "body-shop" && "rotate-180")} />
+              </button>
+              {mobileExpanded === "body-shop" && (
+                <div className="pl-4 mt-1 space-y-0.5">
+                  <Link href="/body-shop" className="block px-3 py-1.5 text-sm font-semibold text-primary rounded hover:bg-secondary">
+                    All Body Shop Services
+                  </Link>
+                  {BODY_SHOP_SERVICES.map((s) => (
+                    <Link key={s.slug} href={`/body-shop/${s.slug}`} className="block px-3 py-1.5 text-sm text-muted-foreground rounded hover:bg-secondary">
+                      {s.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link href="/dealership-service-program" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary transition-colors">
+              Dealership Program
+            </Link>
+            <Link href="/about" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary transition-colors">
+              About
+            </Link>
+            <Link href="/contact" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary transition-colors">
+              Contact
+            </Link>
+
+            <div className="pt-3 border-t border-border flex flex-col gap-2">
+              <Link href="/appointment">
+                <Button variant="outline" className="w-full font-semibold gap-2 border-primary text-primary hover:bg-primary hover:text-white">
+                  <Calendar className="h-4 w-4" /> Book Appointment
+                </Button>
+              </Link>
+              <a href="tel:5404186626" className="block">
+                <Button className="w-full font-semibold gap-2">
+                  <Phone className="h-4 w-4" /> Call 540-418-6626
+                </Button>
+              </a>
+            </div>
+          </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

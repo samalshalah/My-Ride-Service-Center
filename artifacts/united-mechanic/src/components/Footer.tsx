@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
-import { Phone, MapPin } from "lucide-react";
-import { SERVICES } from "@/data/services";
+import { Phone, MapPin, Facebook } from "lucide-react";
+import { AUTO_REPAIR_SERVICES, BODY_SHOP_SERVICES } from "@/data/services";
 
 export default function Footer() {
   return (
@@ -9,80 +9,87 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
-            <img
-              src="https://www.myunitedmechanic.com/logo.png"
-              alt="United Mechanic"
-              className="h-10 opacity-80 grayscale mb-4"
-            />
-            <p className="text-sm leading-relaxed">
-              More than 20 years delivering safety and confidence in every mile. Serving Fredericksburg and Woodbridge, VA.
+            <img src="/myride-logo.png" alt="My Ride Service Center" className="h-12 w-auto mb-4 brightness-200" />
+            <p className="text-sm leading-relaxed mb-4">
+              Fredericksburg's trusted auto repair and collision body shop — certified technicians, fast turnaround, and insurance support.
             </p>
+            <a
+              href="https://www.facebook.com/profile.php?id=61583662515240"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-[#1877F2] hover:underline text-sm"
+            >
+              <Facebook className="h-4 w-4" /> Facebook
+            </a>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Services</h4>
+            <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Auto Repair</h3>
             <ul className="space-y-2">
-              {SERVICES.map((s) => (
+              {AUTO_REPAIR_SERVICES.slice(0, 5).map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/services/${s.slug}`} className="text-sm hover:text-white transition-colors">{s.title}</Link>
+                  <Link href={`/auto-repair/${s.slug}`} className="text-sm hover:text-white transition-colors">
+                    {s.title}
+                  </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/auto-repair" className="text-sm text-primary hover:underline">
+                  View all →
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Locations</h4>
-            <div className="space-y-4">
-              <div>
-                <p className="text-white text-sm font-medium mb-1">Fredericksburg</p>
-                <div className="flex items-start gap-2 text-sm">
-                  <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
-                  <span>31 Perchwood Dr<br />Fredericksburg, VA 22405</span>
+            <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Body Shop</h3>
+            <ul className="space-y-2">
+              {BODY_SHOP_SERVICES.slice(0, 5).map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/body-shop/${s.slug}`} className="text-sm hover:text-white transition-colors">
+                    {s.title}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/body-shop" className="text-sm text-primary hover:underline">
+                  View all →
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Contact</h3>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
+                <div>
+                  <p className="text-white font-medium">Fredericksburg, VA</p>
+                  <p>2715 Lafayette Blvd</p>
+                  <p>Fredericksburg, VA 22408</p>
                 </div>
-                <a href="tel:5046581818" className="flex items-center gap-2 mt-1 text-sm hover:text-white transition-colors">
-                  <Phone className="h-4 w-4 text-primary shrink-0" /> 504-658-1818
-                </a>
               </div>
-              <div>
-                <p className="text-white text-sm font-medium mb-1">Woodbridge</p>
-                <div className="flex items-start gap-2 text-sm">
-                  <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
-                  <span>1025 Cannons Ct Unit 2<br />Woodbridge, VA 22191</span>
-                </div>
-                <a href="tel:5714587251" className="flex items-center gap-2 mt-1 text-sm hover:text-white transition-colors">
-                  <Phone className="h-4 w-4 text-primary shrink-0" /> 571-458-7251
-                </a>
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4 shrink-0 text-primary" />
+                <a href="tel:5404186626" className="hover:text-white transition-colors">540-418-6626</a>
+              </div>
+              <div className="text-sm">
+                <p className="text-white font-medium mb-1">Hours</p>
+                <p>Mon – Fri: 8:00 AM – 6:00 PM</p>
+                <p>Sat: 9:00 AM – 3:00 PM</p>
+                <p>Sun: Closed</p>
               </div>
             </div>
-          </div>
-
-          <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Navigation</h4>
-            <ul className="space-y-2">
-              {[
-                { label: "Home", href: "/" },
-                { label: "Book Appointment", href: "/appointment" },
-                { label: "All Services", href: "/services" },
-                { label: "Financing", href: "/financing" },
-                { label: "Warranty", href: "/warranty" },
-                { label: "Fredericksburg", href: "/locations/fredericksburg" },
-                { label: "Woodbridge", href: "/locations/woodbridge" },
-                { label: "About Us", href: "/about" },
-                { label: "Contact", href: "/contact" },
-              ].map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className="text-sm hover:text-white transition-colors">{l.label}</Link>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 
         <div className="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p>© {new Date().getFullYear()} United Mechanic Auto Service LLC. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} My Ride Service Center. All rights reserved.</p>
           <div className="flex gap-5">
-            <a href="tel:5046581818" className="text-zinc-400 hover:text-white transition-colors text-sm">Fredericksburg</a>
-            <a href="tel:5714587251" className="text-zinc-400 hover:text-white transition-colors text-sm">Woodbridge</a>
+            <Link href="/about" className="text-zinc-400 hover:text-white transition-colors">About</Link>
+            <Link href="/contact" className="text-zinc-400 hover:text-white transition-colors">Contact</Link>
+            <Link href="/appointment" className="text-zinc-400 hover:text-white transition-colors">Appointment</Link>
           </div>
         </div>
       </div>

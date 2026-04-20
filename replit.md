@@ -4,6 +4,30 @@
 
 pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
 
+## Client: My Ride Service Center
+
+**Business:** My Ride Service Center — Auto Repair & Collision Body Shop in Fredericksburg, VA  
+**Website artifact:** `artifacts/united-mechanic`  
+**Phone:** 540-418-6626  
+**Address:** 2715 Lafayette Blvd, Fredericksburg, VA 22408  
+**Brand color:** Red (hsl 4 85% 46%)  
+**Logo:** `/myride-logo.png` (downloaded from client site)
+
+### Routes
+- `/` — Home  
+- `/auto-repair` — Auto Repair list (8 services)  
+- `/auto-repair/:slug` — Individual auto repair service page  
+- `/body-shop` — Body Shop list (8 services)  
+- `/body-shop/:slug` — Individual body shop service page  
+- `/dealership-service-program` — Dealership Service Program  
+- `/about` — About  
+- `/contact` — Contact  
+- `/appointment` — Book Appointment  
+
+### Services Data
+`src/data/services.ts` exports `AUTO_REPAIR_SERVICES`, `BODY_SHOP_SERVICES`, `ALL_SERVICES`  
+Each has: slug, title, tagline, image, description, details, whyUs, category
+
 ## Stack
 
 - **Monorepo tool**: pnpm workspaces
