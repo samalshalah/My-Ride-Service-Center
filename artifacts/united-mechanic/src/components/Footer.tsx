@@ -62,6 +62,7 @@ export default function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "All Services", href: "/services" },
+                { label: "Financing", href: "/financing" },
                 { label: "Fredericksburg", href: "/locations/fredericksburg" },
                 { label: "Woodbridge", href: "/locations/woodbridge" },
                 { label: "About Us", href: "/about" },

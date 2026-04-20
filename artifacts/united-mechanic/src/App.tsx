@@ -10,6 +10,7 @@ import ServicePageLayout, { SERVICES } from "@/pages/ServicePage";
 import LocationPage from "@/pages/LocationPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
+import FinancingPage from "@/pages/FinancingPage";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ function Router() {
       </Route>
       <Route path="/about" component={AboutPage} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/financing" component={FinancingPage} />
       <Route component={NotFound} />
     </Switch>
   );

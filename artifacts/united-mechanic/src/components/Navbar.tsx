@@ -22,6 +22,7 @@ const NAV_LINKS = [
       { label: "Woodbridge", href: "/locations/woodbridge" },
     ],
   },
+  { label: "Financing", href: "/financing" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
