@@ -1,7 +1,7 @@
 {
   "/page": "app/page.js",
-  "/about/page": "app/about/page.js",
   "/appointment/page": "app/appointment/page.js",
   "/auto-repair/page": "app/auto-repair/page.js",
-  "/auto-repair/[slug]/page": "app/auto-repair/[slug]/page.js"
+  "/auto-repair/[slug]/page": "app/auto-repair/[slug]/page.js",
+  "/about/page": "app/about/page.js"
 }
