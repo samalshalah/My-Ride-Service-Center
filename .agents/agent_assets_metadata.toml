@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "_l24iEz11_b2DY6VxoHBE"
+uri = "file://artifacts/united-mechanic/public/hero.png"
+type = "image"
+title = "Auto shop interior hero"
+
+[[generated]]
+id = "F4uwLjmRcUY721BMqps0e"
+uri = "file://artifacts/united-mechanic/public/transmission.png"
+type = "image"
+title = "Mechanic working on transmission"
+
+[[generated]]
+id = "vm1kV06JOUUlpkTJ1Ko7W"
+uri = "file://artifacts/united-mechanic/public/engine.png"
+type = "image"
+title = "Open car engine bay"
+
+[[generated]]
+id = "u3-UK0ew0fs0PUBX5S9Pq"
+uri = "file://artifacts/united-mechanic/public/brakes.png"
+type = "image"
+title = "Car brakes being serviced"
