@@ -49,8 +49,8 @@ export default function Navbar() {
     isActive(path)
       ? "text-primary"
       : scrolled
-      ? "text-zinc-300 hover:text-white"
-      : "text-foreground/80 hover:text-foreground";
+      ? "text-white hover:text-primary"
+      : "text-foreground hover:text-primary";
 
   const dropdownPanel = scrolled
     ? "bg-zinc-900 border border-zinc-700"
