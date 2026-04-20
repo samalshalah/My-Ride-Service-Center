@@ -7,7 +7,7 @@ export interface ServiceData {
   metaTitle: string;
   metaDescription: string;
   description: string;
-  longDescription: string[];
+  sections: { heading: string; body: string }[];
   details: string[];
   process: { step: string; description: string }[];
   whyUs: string[];
@@ -24,11 +24,20 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     metaTitle: "AC & Heating System Service in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Expert AC & heating repair in Fredericksburg, VA. My Ride Service Center diagnoses and repairs all makes and models — refrigerant recharge, compressor, blower motor. Call 540-418-6626.",
     description:
-      "A properly functioning AC and heating system is essential for driving comfort and safety. My Ride Service Center's technicians are trained to diagnose and repair all makes and models — from refrigerant recharges to blower motor replacements and full compressor rebuilds.",
-    longDescription: [
-      "Whether it's the middle of a Virginia summer or a cold December morning, your vehicle's climate control system plays a critical role in your comfort and safety. At My Ride Service Center in Fredericksburg, VA, our certified technicians perform comprehensive AC and heating diagnostics using industry-leading equipment. We identify the root cause of climate control failures quickly — without unnecessary guesswork — and get you back on the road fast.",
-      "AC system failures can stem from a variety of causes: low refrigerant due to a slow leak, a failing compressor, a clogged expansion valve, or a malfunctioning blend door actuator. Our team has the tools and training to pinpoint the exact issue and repair it correctly the first time. We service all makes and models including domestic trucks, import sedans, and European vehicles.",
-      "Your heating system relies on a healthy engine cooling system — if your coolant is low or your thermostat is failing, your cabin heat suffers too. We inspect the entire HVAC loop, from the heater core to the blower motor resistor, ensuring every component is working together. After every repair, we test the system at operating temperature to confirm full performance before returning your vehicle.",
+      "My Ride Service Center in Fredericksburg, VA provides expert AC and heating system diagnosis and repair for all makes and models. Whether your AC is blowing warm air or your heat isn't keeping up on cold Virginia mornings, our certified technicians identify the root cause accurately and fix it right the first time — no guesswork, no unnecessary parts.",
+    sections: [
+      {
+        heading: "Year-Round Climate Control You Can Count On",
+        body: "Whether it's the middle of a Virginia summer or a cold December morning, your vehicle's climate control system plays a critical role in your comfort and safety. At My Ride Service Center, our certified technicians perform comprehensive AC and heating diagnostics using industry-leading equipment. We identify the root cause of climate control failures quickly and get you back on the road fast — with the correct repair the first time.",
+      },
+      {
+        heading: "Common AC & Heating Problems We Diagnose and Fix",
+        body: "AC system failures can stem from a variety of causes: low refrigerant due to a slow leak, a failing compressor, a clogged expansion valve, or a malfunctioning blend door actuator. Heating problems are often tied to low coolant, a stuck thermostat, or a failing heater core. Our team has the tools and training to pinpoint the exact issue for any make or model — from everyday commuters to European imports.",
+      },
+      {
+        heading: "Thorough Testing Before and After Every Repair",
+        body: "After every AC or heating repair, we test the system at operating temperature through all modes and temperature settings to confirm full performance before returning your vehicle. We don't hand your keys back until the climate system is functioning the way it should — so you're not making a second trip back to the shop.",
+      },
     ],
     details: [
       "AC refrigerant recharge (R-134a and R-1234yf)",
@@ -58,7 +67,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
       { q: "How do I know if my AC needs a recharge?", a: "Common signs include warm air from vents even on the coldest setting, reduced airflow, or a clicking sound when the AC is turned on. We perform a free AC inspection to confirm the issue before any work is done." },
       { q: "How often should car AC be serviced?", a: "Most manufacturers recommend an AC inspection every 2 years or if you notice any change in performance. Regular checks catch small leaks before they become expensive repairs." },
       { q: "Why is my heat not working in my car?", a: "A lack of cabin heat is usually caused by low coolant, a stuck thermostat, a clogged heater core, or a faulty blend door actuator. Our technicians will diagnose the exact cause quickly." },
-      { q: "How long does AC repair take?", a: "A refrigerant recharge typically takes under an hour. More complex repairs such as compressor or heater core replacement may take 2–4 hours depending on the vehicle. We'll give you an accurate time estimate before starting." },
+      { q: "How long does AC repair take?", a: "A refrigerant recharge typically takes under an hour. More complex repairs such as compressor or heater core replacement may take 2–4 hours depending on the vehicle." },
       { q: "Do you work on all car makes and models?", a: "Yes — My Ride Service Center services all domestic, Asian, and European makes and models including Ford, GM, Honda, Toyota, BMW, Mercedes-Benz, and more." },
       { q: "Is AC service covered by insurance?", a: "Standard auto insurance does not typically cover mechanical AC repairs unless caused by a covered collision. However, if your AC failed due to an accident, we can assist with the insurance claim process." },
     ],
@@ -72,11 +81,20 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     metaTitle: "Battery & Electrical System Repair in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Professional battery testing and electrical system repair in Fredericksburg, VA. My Ride Service Center diagnoses check engine lights, dead batteries, alternator issues & more. Call 540-418-6626.",
     description:
-      "Modern vehicles contain miles of wiring and dozens of control modules. Electrical problems can be intermittent and expensive if misdiagnosed. My Ride Service Center's technicians use specialized diagnostic tools to accurately identify and fix electrical faults — fast.",
-    longDescription: [
-      "Modern vehicles are some of the most electrically complex machines on the road today — with dozens of control modules, hundreds of sensors, and thousands of feet of wiring all working together. When something goes wrong electrically, the symptoms can be confusing and the source difficult to trace without the right equipment. At My Ride Service Center in Fredericksburg, VA, we have professional-grade scan tools and electrical testing equipment to trace faults quickly and repair them correctly.",
-      "A failing battery is one of the most common electrical issues we see — but not every battery failure is straightforward. If your alternator isn't charging properly, you may go through batteries rapidly. If a module is drawing excessive current overnight, you'll wake up to a dead car. Our technicians don't just replace parts — we diagnose the complete charging and electrical circuit to make sure the real cause is addressed.",
-      "From blown fuses and bad grounds to failing alternators and corroded connectors, our team handles all levels of electrical repair. We also service advanced systems including power windows, keyless entry, lighting, starter motors, and infotainment systems. Every repair is backed by our commitment to accuracy — we verify our fix before you leave the shop.",
+      "My Ride Service Center in Fredericksburg, VA uses professional-grade diagnostic equipment to accurately trace and repair electrical faults in all vehicle makes and models. From dead batteries and failing alternators to mysterious overnight drains and check engine lights, we find the real cause and fix it — not just the symptom.",
+    sections: [
+      {
+        heading: "Modern Vehicles Demand Professional Electrical Diagnosis",
+        body: "Modern vehicles contain dozens of control modules, hundreds of sensors, and thousands of feet of wiring all working together. When something goes wrong electrically, the symptoms can be confusing and the source difficult to trace without the right equipment. Our professional-grade scan tools and electrical testing equipment allow us to trace faults quickly and repair them correctly the first time.",
+      },
+      {
+        heading: "Battery Failures Are Rarely Just a Dead Battery",
+        body: "A failing battery is one of the most common electrical issues we see — but not every battery failure is straightforward. If your alternator isn't charging properly, you may go through batteries rapidly. If a module is drawing excessive current overnight (a parasitic draw), you'll wake up to a dead car repeatedly. Our technicians diagnose the complete charging and electrical circuit so the root cause is addressed — not just the symptom.",
+      },
+      {
+        heading: "Complete Electrical System Coverage",
+        body: "From blown fuses and bad grounds to failing alternators and corroded connectors, our team handles all levels of electrical repair. We also service power windows, keyless entry, lighting, starter motors, and infotainment systems. Every repair is verified with a final electrical test before we return your vehicle — so you leave confident the problem is solved.",
+      },
     ],
     details: [
       "Battery testing, charging, and replacement",
@@ -104,9 +122,9 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     ],
     faq: [
       { q: "How do I know if my car battery needs replacement?", a: "Signs include slow engine cranking, dimming lights when starting, a battery warning light, or a battery older than 3–5 years. We can test your battery's health for free." },
-      { q: "Why does my car battery keep dying?", a: "Repeated battery failures are usually caused by a faulty alternator, a parasitic electrical draw, or an undersized battery for your vehicle's demands. We identify and fix the root cause, not just the symptom." },
+      { q: "Why does my car battery keep dying?", a: "Repeated battery failures are usually caused by a faulty alternator, a parasitic electrical draw, or an undersized battery. We identify and fix the root cause, not just the symptom." },
       { q: "What is a parasitic draw and how do you test for it?", a: "A parasitic draw is an electrical component that continues drawing current after the vehicle is shut off. We use an ammeter to measure overnight drain and systematically isolate which circuit is causing the problem." },
-      { q: "How long does alternator replacement take?", a: "Alternator replacement typically takes 1–2 hours depending on the vehicle. Some engines require more disassembly to access the alternator, which can add time. We'll give you an accurate estimate upfront." },
+      { q: "How long does alternator replacement take?", a: "Alternator replacement typically takes 1–2 hours depending on the vehicle. Some engines require more disassembly to access the alternator, which can add time." },
       { q: "Can you diagnose why my check engine light is on?", a: "Absolutely. We read all fault codes stored in your vehicle's computer and perform follow-up testing to confirm the root cause. Many shops just read the code — we diagnose the actual problem." },
       { q: "Do you service electric and hybrid vehicle batteries?", a: "We service 12-volt auxiliary systems on hybrids and EVs. For high-voltage battery pack service, we recommend a dealer or specialty EV shop." },
     ],
@@ -120,11 +138,20 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     metaTitle: "Brake Repair & Replacement in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Trusted brake repair in Fredericksburg, VA. My Ride Service Center replaces brake pads, rotors, calipers & more on all makes and models. Same-day service available. Call 540-418-6626.",
     description:
-      "Brake failure is one of the leading causes of road accidents. At My Ride Service Center, we perform thorough brake inspections and provide reliable repairs using quality parts. Whether you need new brake pads or a complete brake system overhaul, we make sure your vehicle stops when it needs to.",
-    longDescription: [
-      "Your brakes are the single most important safety system on your vehicle, and brake wear is inevitable — every stop you make gradually reduces brake pad thickness and rotor surface. The key is catching wear before it becomes dangerous. At My Ride Service Center in Fredericksburg, VA, we perform comprehensive brake inspections on every visit, measuring pad thickness, rotor depth, and caliper operation to give you an honest assessment of your brake system's health.",
-      "Many drivers wait too long to address brake issues because they're unsure what warning signs to watch for. Squealing or grinding sounds when braking, a soft or spongy brake pedal, pulling to one side when braking, or a vibrating steering wheel are all signs that your brake system needs attention. Ignoring these symptoms can turn a simple pad replacement into a much more expensive rotor or caliper repair.",
-      "At My Ride Service Center, we use quality brake components that meet or exceed OEM specifications — not the cheapest parts available. We believe your safety deserves quality materials, and our repairs are backed by a warranty on both parts and labor. Whether you drive a light car, a heavy pickup truck, or a performance vehicle, we have the right brake solution for your driving style and budget.",
+      "My Ride Service Center in Fredericksburg, VA delivers reliable brake repair and replacement on all makes and models — from brake pad and rotor service to full ABS system diagnostics. We use quality parts, back every repair with a warranty, and offer same-day service so you're never waiting to be safe on the road.",
+    sections: [
+      {
+        heading: "Why Brake Maintenance Is Your #1 Safety Priority",
+        body: "Your brakes are the single most important safety system on your vehicle, and brake wear is inevitable — every stop gradually reduces pad thickness and rotor surface. The key is catching wear before it becomes dangerous. At My Ride Service Center, we measure pad thickness, rotor depth, and caliper operation at every visit to give you an honest assessment of your brake system's health — never an upsell, always an accurate picture.",
+      },
+      {
+        heading: "Warning Signs That Your Brakes Need Attention Now",
+        body: "Squealing or grinding sounds, a soft or spongy pedal, pulling to one side during braking, or a vibrating steering wheel are all signals that your brake system needs attention. Ignoring these symptoms can turn a simple pad replacement into a far more expensive rotor or caliper repair. The sooner you address brake wear, the safer and less expensive the repair will be.",
+      },
+      {
+        heading: "Quality Parts & Warranty-Backed Brake Service",
+        body: "We use brake components that meet or exceed OEM specifications — not the cheapest parts on the shelf. Our repairs are backed by a warranty on both parts and labor. Whether you drive a daily commuter, a heavy-duty pickup, or a performance vehicle, we have the right brake solution for your driving style, vehicle, and budget.",
+      },
     ],
     details: [
       "Brake pad replacement (all axles)",
@@ -151,12 +178,12 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
       "Honest pricing — no upsells, no hidden fees",
     ],
     faq: [
-      { q: "How often should brake pads be replaced?", a: "Brake pads typically last 30,000–70,000 miles depending on your driving habits, vehicle weight, and the type of pads installed. City driving wears pads faster than highway driving. We measure pad thickness at every visit so you're never caught off guard." },
-      { q: "What does it mean when my brakes squeal?", a: "Most brake pads have a built-in wear indicator — a small metal tab that contacts the rotor when pads are low, producing a squealing sound. This is your warning that pad replacement is due soon. Grinding means metal-on-metal contact, which can damage your rotors." },
-      { q: "Do I need to replace rotors with brake pads?", a: "Not always. If your rotors are within the manufacturer's minimum thickness and have no deep grooves or heat cracks, they can often be resurfaced rather than replaced. We'll measure and advise you honestly on the best option." },
-      { q: "Why does my car shake when I brake?", a: "Vibration or pulsation during braking is almost always caused by warped rotors — usually from excessive heat cycles or uneven tightening of wheel lugs. Rotor replacement or resurfacing resolves this." },
-      { q: "How long does a brake job take?", a: "A standard front or rear brake pad and rotor replacement typically takes 1–2 hours. A complete four-wheel brake service takes 2–3 hours. We'll give you an accurate time estimate when you bring your vehicle in." },
-      { q: "Is it safe to drive with the brake warning light on?", a: "No — the brake warning light indicates low brake fluid, a hydraulic system fault, or in some vehicles, low pad thickness. Do not ignore this light. Call us at 540-418-6626 right away or stop driving the vehicle until it has been inspected." },
+      { q: "How often should brake pads be replaced?", a: "Brake pads typically last 30,000–70,000 miles depending on driving habits, vehicle weight, and pad type. City driving wears pads faster than highway driving. We measure pad thickness at every visit so you're never caught off guard." },
+      { q: "What does it mean when my brakes squeal?", a: "Most brake pads have a built-in wear indicator — a small metal tab that contacts the rotor when pads are low, producing a squealing sound. This is your warning that replacement is due soon. Grinding means metal-on-metal contact, which can damage rotors." },
+      { q: "Do I need to replace rotors with brake pads?", a: "Not always. If your rotors are within the manufacturer's minimum thickness with no deep grooves or heat cracks, they can often be resurfaced. We measure and advise you honestly on the best option." },
+      { q: "Why does my car shake when I brake?", a: "Vibration or pulsation during braking is almost always caused by warped rotors — usually from excessive heat cycles or uneven lug tightening. Rotor replacement or resurfacing resolves this." },
+      { q: "How long does a brake job take?", a: "A standard front or rear brake pad and rotor replacement typically takes 1–2 hours. A complete four-wheel brake service takes 2–3 hours." },
+      { q: "Is it safe to drive with the brake warning light on?", a: "No — the brake warning light indicates low brake fluid, a hydraulic fault, or low pad thickness. Do not ignore this light. Call us at 540-418-6626 right away or stop driving until the vehicle has been inspected." },
     ],
   },
   {
@@ -168,11 +195,20 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     metaTitle: "Engine Diagnostics & Tune-Ups in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Check engine light on? Expert engine diagnostics and tune-ups in Fredericksburg, VA. My Ride Service Center finds the real cause fast. Call 540-418-6626 for same-day diagnostics.",
     description:
-      "Modern vehicles are sophisticated machines with hundreds of sensors and control modules. When a warning light appears, our advanced diagnostic equipment reads fault codes, pinpoints the root cause, and gives you a clear explanation — no guesswork, just accurate answers.",
-    longDescription: [
-      "A check engine light is your vehicle's way of telling you something needs attention — but that warning can represent hundreds of different possible issues. At My Ride Service Center in Fredericksburg, VA, we go far beyond reading a simple fault code. We perform comprehensive engine diagnostics that include live data analysis, component-level testing, and physical inspection to identify exactly what's causing your vehicle's symptoms.",
-      "Engine tune-ups have evolved significantly from the days of points and carburetors. Today's tune-ups focus on spark plug replacement, ignition coil inspection, fuel system cleaning, throttle body service, and a full multi-point inspection to ensure your engine is operating at peak efficiency. Regular tune-ups improve fuel economy, reduce emissions, and prevent larger problems from developing.",
-      "Whether you have a stubborn misfire, a rough idle, decreased fuel economy, or a vehicle that simply doesn't feel right, our technicians have the equipment and experience to find the answer. We service all vehicle makes and models — from everyday commuters to high-performance trucks — and we provide a detailed written explanation of every issue found and every repair recommended.",
+      "My Ride Service Center in Fredericksburg, VA goes far beyond reading a fault code. We use professional bi-directional scan tools and live sensor analysis to find exactly what's causing your check engine light, misfire, rough idle, or poor fuel economy — then fix it with the right repair, not the easiest sale.",
+    sections: [
+      {
+        heading: "Advanced Engine Diagnostics That Go Beyond the Code",
+        body: "A check engine light can represent hundreds of different possible issues. At My Ride Service Center, we perform comprehensive engine diagnostics that include live sensor data analysis, component-level testing, and physical inspection to identify exactly what's causing your vehicle's symptoms. We don't just tell you the code — we tell you the cause.",
+      },
+      {
+        heading: "Modern Tune-Ups for Peak Engine Performance",
+        body: "Today's engine tune-ups focus on spark plug replacement, ignition coil inspection, fuel system cleaning, throttle body service, and a full multi-point inspection to ensure your engine is operating at peak efficiency. Regular tune-ups improve fuel economy, reduce emissions, and prevent larger problems from developing — saving you money in the long run.",
+      },
+      {
+        heading: "Serving All Makes, Models & Engine Types in Fredericksburg",
+        body: "Whether you have a stubborn misfire, a rough idle, decreased fuel economy, or a vehicle that simply doesn't feel right, our technicians have the equipment and experience to find the answer. We service all vehicle makes and models — from everyday commuters to high-performance trucks — and provide a written explanation of every issue found and every repair recommended.",
+      },
     ],
     details: [
       "OBD-II fault code reading and diagnosis",
@@ -188,7 +224,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
       { step: "Fault Code Scan", description: "We connect our professional scan tool and read all stored and pending fault codes from every module — engine, transmission, ABS, and more." },
       { step: "Live Data Analysis", description: "We monitor real-time sensor readings at idle and under load to identify sensors reading out of range or components not responding correctly." },
       { step: "Physical Inspection", description: "We inspect spark plugs, coils, wiring, vacuum lines, and fuel system components for wear, damage, or contamination." },
-      { step: "Component Testing", description: "We perform targeted tests — injector balance tests, coil primary/secondary resistance, compression tests — to confirm the diagnosis." },
+      { step: "Component Testing", description: "We perform targeted tests — injector balance tests, coil resistance, compression tests — to confirm the diagnosis." },
       { step: "Repair & Verification", description: "We perform the approved repairs and run the vehicle through a full drive cycle to confirm all monitors pass and the issue is resolved." },
     ],
     whyUs: [
@@ -199,12 +235,12 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
       "Located in Fredericksburg — serving Spotsylvania, Stafford, and King George counties",
     ],
     faq: [
-      { q: "Can I drive with the check engine light on?", a: "It depends on the light. A steady check engine light usually means a non-urgent issue like a loose gas cap or misfiring cylinder. A flashing check engine light means an active misfire that can damage your catalytic converter — stop driving and call us immediately." },
+      { q: "Can I drive with the check engine light on?", a: "A steady check engine light usually means a non-urgent issue like a loose gas cap or misfiring cylinder. A flashing check engine light means an active misfire that can damage your catalytic converter — stop driving and call us immediately." },
       { q: "How much does engine diagnostics cost?", a: "We charge a diagnostic fee that is credited toward your repair if you choose to have the work done at our shop. Call us at 540-418-6626 for current pricing." },
       { q: "What causes a car to misfire?", a: "Misfires are most commonly caused by worn spark plugs, failing ignition coils, dirty or failing fuel injectors, low compression, or vacuum leaks. Our diagnostics identify which cylinder is misfiring and exactly why." },
-      { q: "What is included in an engine tune-up?", a: "A modern tune-up typically includes spark plug replacement, ignition system inspection, fuel system cleaning, air and cabin filter replacement, PCV valve check, and a multi-point inspection. We tailor the tune-up to your vehicle's specific needs and mileage." },
-      { q: "How often does a car need a tune-up?", a: "Most modern vehicles with iridium spark plugs can go 60,000–100,000 miles between tune-ups. Older vehicles with copper plugs should be tuned every 30,000 miles. Check your owner's manual or ask us what's right for your vehicle." },
-      { q: "Will a tune-up fix poor fuel economy?", a: "In many cases, yes. Worn spark plugs, dirty injectors, and clogged air filters all contribute to poor combustion efficiency and reduced fuel economy. A proper tune-up can restore 5–15% in fuel economy on a neglected engine." },
+      { q: "What is included in an engine tune-up?", a: "A modern tune-up typically includes spark plug replacement, ignition system inspection, fuel system cleaning, air and cabin filter replacement, PCV valve check, and a multi-point inspection." },
+      { q: "How often does a car need a tune-up?", a: "Most modern vehicles with iridium spark plugs can go 60,000–100,000 miles between tune-ups. Older vehicles with copper plugs should be tuned every 30,000 miles." },
+      { q: "Will a tune-up fix poor fuel economy?", a: "In many cases, yes. Worn spark plugs, dirty injectors, and clogged air filters all reduce combustion efficiency. A proper tune-up can restore 5–15% in fuel economy on a neglected engine." },
     ],
   },
   {
@@ -216,11 +252,20 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     metaTitle: "Exhaust & Emissions Repair in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Exhaust and emissions repair in Fredericksburg, VA. My Ride Service Center fixes mufflers, catalytic converters, O2 sensors & helps you pass Virginia inspection. Call 540-418-6626.",
     description:
-      "A damaged exhaust system affects performance, fuel efficiency, and air quality. My Ride Service Center handles everything from muffler replacements to catalytic converter repairs, ensuring your vehicle runs cleanly and passes Virginia emissions inspections.",
-    longDescription: [
-      "Your vehicle's exhaust system does much more than route gases out the back — it manages engine backpressure, reduces harmful emissions, and is your first line of defense against cabin carbon monoxide intrusion. An exhaust leak anywhere in the system — from the exhaust manifold to the tailpipe — can reduce performance, hurt fuel economy, and create a serious safety risk. At My Ride Service Center in Fredericksburg, VA, we inspect and repair the entire exhaust path from cylinder head to tailpipe.",
-      "Virginia's emissions inspection program requires vehicles to meet specific hydrocarbon and NOx thresholds. If your catalytic converter is failing, your oxygen sensors are reading incorrectly, or your EGR system is malfunctioning, you may fail your emissions test. Our technicians specialize in emissions system repairs that help Fredericksburg-area drivers pass their annual inspection — the first time.",
-      "Common exhaust complaints we resolve include loud rumbling or roaring from a damaged muffler, a hissing sound from an exhaust manifold crack or gasket failure, rotten egg smell from a failing catalytic converter, and a sulfur or exhaust odor in the cabin that indicates a leak near the firewall. Whatever your exhaust symptom, we'll find the source and fix it correctly.",
+      "My Ride Service Center in Fredericksburg, VA repairs the complete exhaust system — from exhaust manifolds and catalytic converters to mufflers and O2 sensors — and helps drivers pass Virginia's annual emissions inspection. We fix only what's broken, with quality parts and same-day service on most exhaust repairs.",
+    sections: [
+      {
+        heading: "Your Exhaust System Does More Than Make Your Car Quiet",
+        body: "Your vehicle's exhaust system manages engine backpressure, reduces harmful emissions, and is your first defense against cabin carbon monoxide intrusion. An exhaust leak anywhere — from the exhaust manifold to the tailpipe — can reduce performance, hurt fuel economy, and create a serious safety risk. At My Ride Service Center, we inspect and repair the entire exhaust path from cylinder head to tailpipe.",
+      },
+      {
+        heading: "Virginia Emissions Specialists — Pass Your Inspection",
+        body: "Virginia's emissions inspection program requires vehicles to meet specific hydrocarbon and NOx thresholds. If your catalytic converter is failing, your oxygen sensors are reading incorrectly, or your EGR system is malfunctioning, you may fail your emissions test. Our technicians specialize in emissions system repairs that help Fredericksburg-area drivers pass their annual inspection — the first time.",
+      },
+      {
+        heading: "Common Exhaust Symptoms We Diagnose and Resolve",
+        body: "Loud rumbling from a damaged muffler, a hissing from an exhaust manifold crack, rotten egg smell from a failing catalytic converter, and exhaust odor in the cabin that indicates a dangerous leak near the firewall — our team identifies the exact source of every exhaust complaint and repairs it correctly. We use an exhaust smoke machine for small leaks that aren't audible.",
+      },
     ],
     details: [
       "Muffler and exhaust pipe repair or replacement",
@@ -247,12 +292,12 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
       "Serving Fredericksburg, Spotsylvania, and Stafford County",
     ],
     faq: [
-      { q: "Why does my car sound louder than usual?", a: "A sudden increase in exhaust noise is almost always caused by a hole or crack in the muffler, a broken exhaust pipe, or a failed exhaust manifold gasket. We can identify the source during a quick visual inspection." },
+      { q: "Why does my car sound louder than usual?", a: "A sudden increase in exhaust noise is almost always caused by a hole or crack in the muffler, a broken exhaust pipe, or a failed exhaust manifold gasket. We identify the source during a quick visual inspection." },
       { q: "What happens if I ignore an exhaust leak?", a: "An exhaust leak near the firewall or under the floor can allow carbon monoxide to enter the cabin — a potentially fatal risk. Always address exhaust leaks promptly. Noise and odor are your warning signs." },
-      { q: "How do I know if my catalytic converter is failing?", a: "Symptoms of catalytic converter failure include a rotten egg smell from the exhaust, a check engine light with P0420 or P0430 codes, rattling from under the vehicle, or significantly reduced engine power." },
-      { q: "Will exhaust repair help me pass Virginia emissions?", a: "Yes — in most cases, repairing failing emissions components such as O2 sensors, catalytic converters, and EGR systems will allow your vehicle to pass Virginia's annual emissions test. We perform a pre-inspection scan before the repair to confirm what needs to be addressed." },
-      { q: "How long does exhaust repair take?", a: "Simple muffler or pipe replacements take 1–2 hours. Catalytic converter replacement or manifold repair may take 2–4 hours depending on accessibility. We'll give you a firm time estimate before starting any work." },
-      { q: "Can I drive with a broken muffler?", a: "While it won't immediately damage your engine, a broken muffler causes excessive noise, reduces fuel efficiency, and may allow exhaust gases to enter the cabin. In Virginia, a vehicle with a loud exhaust can also result in a failed safety inspection." },
+      { q: "How do I know if my catalytic converter is failing?", a: "Symptoms include a rotten egg smell, a check engine light with P0420 or P0430 codes, rattling from under the vehicle, or significantly reduced engine power." },
+      { q: "Will exhaust repair help me pass Virginia emissions?", a: "Yes — in most cases, repairing failing emissions components such as O2 sensors, catalytic converters, and EGR systems will allow your vehicle to pass Virginia's annual emissions test." },
+      { q: "How long does exhaust repair take?", a: "Simple muffler or pipe replacements take 1–2 hours. Catalytic converter replacement or manifold repair may take 2–4 hours depending on accessibility." },
+      { q: "Can I drive with a broken muffler?", a: "While it won't immediately damage your engine, a broken muffler causes excessive noise, reduces fuel efficiency, and may allow exhaust gases into the cabin. In Virginia it can also cause a failed safety inspection." },
     ],
   },
   {
@@ -264,11 +309,20 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     metaTitle: "Oil Change & Routine Maintenance in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Fast, reliable oil changes in Fredericksburg, VA. My Ride Service Center offers conventional, synthetic, and high-mileage oil changes with a complimentary multi-point inspection. Call 540-418-6626.",
     description:
-      "Regular oil changes are the single most important maintenance task for extending engine life. My Ride Service Center uses the right oil for your engine — conventional, synthetic, or high-mileage — and performs a complimentary multi-point check at every visit.",
-    longDescription: [
-      "Engine oil lubricates, cools, and cleans your engine — but over time it degrades, accumulates contaminants, and loses its protective properties. Staying current on oil changes is the number one way to maximize the lifespan of your engine. At My Ride Service Center in Fredericksburg, VA, we make oil changes fast, affordable, and thorough — with no upsells and no surprises.",
-      "Not all oil is the same, and using the wrong type can hurt your engine rather than help it. We match the oil viscosity and specification to your vehicle manufacturer's requirements — whether that's a full synthetic for a modern turbocharged engine, a conventional blend for an older vehicle, or a high-mileage formula designed to reduce oil consumption and protect seals in engines over 75,000 miles.",
-      "Every oil change at My Ride Service Center includes a complimentary multi-point inspection. Our technicians check your air filter, cabin filter, tire pressure and tread depth, wiper blades, fluid levels, belts, and visible brake condition. This inspection is our way of keeping you informed about your vehicle's overall health — so you can plan ahead rather than react to unexpected failures.",
+      "My Ride Service Center in Fredericksburg, VA makes oil changes fast, affordable, and thorough — with the correct oil specification for your engine, a complimentary multi-point inspection at every visit, and no unnecessary upsells. It's the simplest way to protect your engine for the long haul.",
+    sections: [
+      {
+        heading: "Why Regular Oil Changes Are Your Engine's Best Defense",
+        body: "Engine oil lubricates, cools, and cleans your engine — but over time it degrades, accumulates contaminants, and loses its protective properties. Staying current on oil changes is the number one way to maximize the lifespan of your engine. Skipping changes allows sludge to build up in oil passages, leading to accelerated wear and eventually expensive repairs like camshaft or bearing damage.",
+      },
+      {
+        heading: "The Right Oil for Your Engine — Conventional, Synthetic, or High-Mileage",
+        body: "Not all oil is the same, and using the wrong type can hurt your engine rather than help it. We match oil viscosity and specification to your vehicle manufacturer's requirements — whether that's full synthetic for a modern turbocharged engine, a conventional blend for an older vehicle, or a high-mileage formula with seal conditioners and extra detergents for engines over 75,000 miles.",
+      },
+      {
+        heading: "Complimentary Multi-Point Inspection With Every Oil Change",
+        body: "Every oil change at My Ride Service Center includes a complimentary multi-point inspection. Our technicians check your air filter, cabin filter, tire pressure and tread depth, wiper blades, fluid levels, belts, and visible brake condition. This inspection keeps you informed about your vehicle's overall health — so you plan ahead instead of reacting to unexpected failures.",
+      },
     ],
     details: [
       "Conventional, synthetic, and high-mileage oil options",
@@ -295,12 +349,12 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
       "Convenient Fredericksburg location with flexible hours Mon–Sat",
     ],
     faq: [
-      { q: "How often should I get an oil change?", a: "Modern vehicles with full synthetic oil can often go 7,500–10,000 miles between changes. Older vehicles or those using conventional oil typically need changes every 3,000–5,000 miles. We'll recommend the right interval for your specific vehicle and driving habits." },
-      { q: "What's the difference between conventional and synthetic oil?", a: "Conventional oil is refined from crude oil and breaks down faster under heat and stress. Synthetic oil is engineered for superior protection, better performance in extreme temperatures, and longer service intervals. Many modern engines require full synthetic by the manufacturer." },
-      { q: "What is high-mileage oil?", a: "High-mileage oil is formulated for engines with 75,000+ miles. It contains seal conditioners to reduce oil leaks, additional antioxidants to reduce sludge, and extra detergents to clean older engines. It's a smart choice for well-used vehicles." },
-      { q: "Can I skip an oil change if my car seems fine?", a: "Not recommended. Degraded oil still lubricates, so the engine may seem fine — but internal wear accelerates significantly. Sludge can build up in oil passages, eventually leading to expensive repairs like camshaft or bearing damage." },
+      { q: "How often should I get an oil change?", a: "Modern vehicles with full synthetic oil can often go 7,500–10,000 miles between changes. Older vehicles or those using conventional oil typically need changes every 3,000–5,000 miles." },
+      { q: "What's the difference between conventional and synthetic oil?", a: "Conventional oil breaks down faster under heat and stress. Synthetic oil offers superior protection, better performance in extreme temperatures, and longer service intervals. Many modern engines require full synthetic by the manufacturer." },
+      { q: "What is high-mileage oil?", a: "High-mileage oil is formulated for engines with 75,000+ miles. It contains seal conditioners to reduce oil leaks, antioxidants to reduce sludge, and extra detergents to clean older engines." },
+      { q: "Can I skip an oil change if my car seems fine?", a: "Not recommended. Degraded oil still lubricates, so the engine may seem fine — but internal wear accelerates significantly. Sludge can build up in oil passages, eventually leading to expensive repairs." },
       { q: "Do I need to change my oil filter every time?", a: "Yes — the oil filter traps contaminants from the old oil. Reusing a saturated filter with fresh oil defeats the purpose of the oil change. We always replace the filter as part of every oil change." },
-      { q: "What fluids do you check during an oil change?", a: "We check and top off washer fluid and visually inspect coolant, brake fluid, power steering fluid, and transmission fluid during every oil change service. If any fluid appears critically low or contaminated, we'll let you know." },
+      { q: "What fluids do you check during an oil change?", a: "We check and top off washer fluid and visually inspect coolant, brake fluid, power steering fluid, and transmission fluid during every oil change service." },
     ],
   },
   {
@@ -312,11 +366,20 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     metaTitle: "Suspension & Steering Repair in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Expert suspension and steering repair in Fredericksburg, VA. My Ride Service Center replaces shocks, struts, control arms, tie rods & performs 4-wheel alignment. Call 540-418-6626.",
     description:
-      "A worn suspension system affects ride quality, tire wear, and vehicle safety. My Ride Service Center's technicians diagnose and repair everything from worn shocks and struts to damaged control arms and tie rods — restoring proper handling and stability.",
-    longDescription: [
-      "Your suspension system does far more than smooth out bumps — it keeps your tires in contact with the road and allows you to maintain control during emergency maneuvers. When suspension components wear out, the consequences range from uneven tire wear and a rough ride to serious loss of control in emergency situations. At My Ride Service Center in Fredericksburg, VA, we perform thorough suspension inspections and targeted repairs to restore your vehicle's handling to factory standards.",
-      "Common suspension complaints we address include clunking or knocking sounds over bumps (usually ball joints or sway bar links), excessive body roll in corners (worn shocks/struts), pulling to one side while driving (alignment or tie rod issues), and vibration at highway speeds (wheel bearing or alignment problems). Our technicians lift the vehicle, shake each wheel, and inspect every suspension component systematically before recommending any repairs.",
-      "After every suspension repair, we perform a 4-wheel computerized alignment to ensure your tires are pointed correctly. Misalignment after suspension work will cause rapid, uneven tire wear and pulling — an alignment is not optional after replacing control arms, tie rods, or struts. Proper alignment also improves fuel economy and extends tire life by thousands of miles.",
+      "My Ride Service Center in Fredericksburg, VA diagnoses and repairs all suspension and steering components — shocks, struts, ball joints, tie rods, control arms, wheel bearings, and more. Every qualifying suspension repair includes a 4-wheel computerized alignment to protect your tires and restore factory handling.",
+    sections: [
+      {
+        heading: "How Worn Suspension Affects Safety — Not Just Comfort",
+        body: "Your suspension system keeps your tires in contact with the road and allows you to maintain control during emergency maneuvers. When components wear out, the consequences range from uneven tire wear and a rough ride to serious loss of vehicle control. At My Ride Service Center, we perform thorough suspension inspections — lifting the vehicle, shaking each wheel, and testing every component before recommending any repair.",
+      },
+      {
+        heading: "Common Suspension Problems We Diagnose and Fix",
+        body: "Clunking or knocking sounds over bumps (typically ball joints or sway bar links), excessive body roll in corners (worn shocks or struts), pulling to one side while driving (alignment or tie rod issues), and vibration at highway speeds (wheel bearing or alignment problems) are the most common complaints we resolve. We identify the exact cause before touching a single part.",
+      },
+      {
+        heading: "4-Wheel Computerized Alignment After Every Suspension Repair",
+        body: "After every suspension repair, we perform a 4-wheel computerized alignment to ensure your tires are pointed correctly. Misalignment after suspension work causes rapid, uneven tire wear and handling issues — an alignment is not optional after replacing control arms, tie rods, or struts. Proper alignment also improves fuel economy and extends tire life by thousands of miles.",
+      },
     ],
     details: [
       "Shock and strut replacement",
@@ -330,10 +393,10 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     ],
     process: [
       { step: "Suspension Inspection", description: "We lift the vehicle and inspect all four corners — shaking wheels, checking for play in joints and bearings, and measuring shock/strut condition." },
-      { step: "Steering System Check", description: "We inspect tie rods, steering rack boots, power steering hoses, and rack-and-pinion or recirculating ball for wear and leaks." },
+      { step: "Steering System Check", description: "We inspect tie rods, steering rack boots, power steering hoses, and rack-and-pinion for wear and leaks." },
       { step: "Component Replacement", description: "We replace worn or damaged components using quality parts that meet or exceed OEM specifications and torque all hardware to specification." },
       { step: "4-Wheel Alignment", description: "We perform a computerized 4-wheel alignment after any suspension work to set camber, caster, toe, and thrust angle to factory specifications." },
-      { step: "Road Test", description: "We test drive the vehicle on varying road surfaces to confirm the ride, steering feel, and handling have been fully restored." },
+      { step: "Road Test", description: "We test drive the vehicle on varying road surfaces to confirm ride, steering feel, and handling have been fully restored." },
     ],
     whyUs: [
       "State-of-the-art 4-wheel computerized alignment equipment",
@@ -343,12 +406,12 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
       "Serving Fredericksburg, Spotsylvania, Stafford, and Culpeper counties",
     ],
     faq: [
-      { q: "How do I know if my shocks or struts are bad?", a: "Signs of worn shocks or struts include excessive bouncing after hitting a bump, nose-diving when braking, body roll in corners, uneven tire wear, and a generally loose or floaty feeling while driving." },
-      { q: "What is an alignment and why do I need it?", a: "Alignment is the adjustment of your wheel angles to the manufacturer's specifications. Proper alignment ensures even tire wear, straight-line tracking, and optimal handling. It's needed after suspension repairs, hitting a large pothole, or if your vehicle pulls to one side." },
-      { q: "How long do shocks and struts last?", a: "Most shocks and struts last 50,000–100,000 miles under normal driving conditions. Rough roads, heavy loads, and aggressive driving shorten their lifespan. We recommend inspection every 50,000 miles." },
-      { q: "What causes a clunking sound when going over bumps?", a: "Clunking over bumps is most commonly caused by worn sway bar end links, loose ball joints, or degraded strut mounts. These are typically inexpensive to repair when caught early but can become costly if ignored." },
-      { q: "Can I replace just one strut or do I need to do both?", a: "We strongly recommend replacing struts in pairs — front pair or rear pair. A new strut on one side and a worn strut on the other creates uneven handling and can affect braking balance in emergency situations." },
-      { q: "Will suspension repairs fix my uneven tire wear?", a: "Yes — if your uneven tire wear is caused by alignment issues or worn suspension components, correcting those problems along with a fresh alignment will allow your tires to wear evenly going forward. However, tires that are already unevenly worn may need replacement." },
+      { q: "How do I know if my shocks or struts are bad?", a: "Signs include excessive bouncing after hitting a bump, nose-diving when braking, body roll in corners, uneven tire wear, and a generally loose or floaty feeling while driving." },
+      { q: "What is an alignment and why do I need it?", a: "Alignment adjusts your wheel angles to manufacturer specifications, ensuring even tire wear, straight-line tracking, and optimal handling. It's needed after suspension repairs, hitting a large pothole, or if your vehicle pulls to one side." },
+      { q: "How long do shocks and struts last?", a: "Most shocks and struts last 50,000–100,000 miles under normal driving conditions. Rough roads, heavy loads, and aggressive driving shorten their lifespan." },
+      { q: "What causes a clunking sound when going over bumps?", a: "Clunking over bumps is most commonly caused by worn sway bar end links, loose ball joints, or degraded strut mounts. These are typically inexpensive repairs when caught early." },
+      { q: "Can I replace just one strut or do I need to do both?", a: "We strongly recommend replacing struts in pairs. A new strut on one side and a worn strut on the other creates uneven handling and can affect braking balance in emergency situations." },
+      { q: "Will suspension repairs fix my uneven tire wear?", a: "Yes — if uneven wear is caused by alignment issues or worn suspension components, correcting those problems along with a fresh alignment will allow your tires to wear evenly going forward." },
     ],
   },
   {
@@ -360,11 +423,20 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     metaTitle: "Transmission Repair & Service in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Expert transmission repair in Fredericksburg, VA. My Ride Service Center diagnoses and repairs automatic and manual transmissions on all makes and models. Call 540-418-6626 today.",
     description:
-      "Transmission repair is one of the most complex jobs in auto service. Whether you're experiencing slipping, hard shifts, or a complete failure, My Ride Service Center's specialists diagnose and repair both automatic and manual transmissions with precision.",
-    longDescription: [
-      "Your transmission is one of the most mechanically complex systems in your vehicle — and one of the most expensive to replace if ignored. Transmission problems rarely appear all at once; they typically develop gradually through slipping gears, rough shifts, delayed engagement, or fluid leaks. Catching these symptoms early can mean the difference between a $300 service and a $3,000 rebuild. At My Ride Service Center in Fredericksburg, VA, our transmission specialists identify problems early and give you honest options at every level of repair.",
-      "Automatic transmission failures are often caused by low or contaminated fluid, worn clutch packs, failing solenoids, or torque converter issues. Manual transmission problems typically involve worn synchronizers, failing bearings, or clutch hydraulic issues. Our technicians perform a thorough fluid inspection, electronic scan, and road test before recommending any transmission repair — we never guess at a transmission problem.",
-      "My Ride Service Center offers a complete range of transmission services: from a simple fluid service that can extend transmission life by tens of thousands of miles, to full transmission rebuilds for severely damaged units. We use quality remanufactured components and back every transmission repair with a warranty. Our goal is to get you back on the road with confidence, not just patch the problem temporarily.",
+      "My Ride Service Center in Fredericksburg, VA specializes in accurate transmission diagnosis and repair for both automatic and manual transmissions on all makes and models. From a simple fluid service to a full rebuild, we identify the true cause of transmission problems and fix them with precision — backed by a warranty.",
+    sections: [
+      {
+        heading: "Catch Transmission Problems Early and Save Thousands",
+        body: "Your transmission is one of the most mechanically complex systems in your vehicle — and one of the most expensive to replace if ignored. Transmission problems typically develop gradually through slipping gears, rough shifts, delayed engagement, or fluid leaks. Catching these symptoms early can mean the difference between a $300 service and a $3,000 rebuild. We identify problems early and give you honest options at every level of repair.",
+      },
+      {
+        heading: "Accurate Diagnosis Before Any Transmission Repair",
+        body: "Automatic transmission failures are often caused by low or contaminated fluid, worn clutch packs, failing solenoids, or torque converter issues. Manual transmission problems typically involve worn synchronizers, failing bearings, or clutch hydraulic issues. Our technicians perform a thorough fluid inspection, electronic scan, and road test before recommending any repair — we never guess at a transmission problem.",
+      },
+      {
+        heading: "Full-Range Transmission Services With Warranty",
+        body: "My Ride Service Center offers a complete range of transmission services: from a simple fluid service that can extend transmission life by tens of thousands of miles, to full transmission rebuilds for severely damaged units. We use quality remanufactured components and back every transmission repair with a warranty. Our goal is to get you back on the road with confidence — not just a temporary patch.",
+      },
     ],
     details: [
       "Automatic and manual transmission diagnosis",
@@ -381,7 +453,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
       { step: "Fluid Inspection", description: "We check transmission fluid color, smell, and level. Dark, burnt-smelling fluid indicates severe internal wear. Milky fluid indicates coolant contamination." },
       { step: "Electronic Diagnosis", description: "We connect professional diagnostic tools to read transmission fault codes and monitor shift timing, solenoid operation, and input/output speed sensors." },
       { step: "Road Test", description: "We road test the vehicle while monitoring live transmission data to confirm the fault condition and gather data for the repair plan." },
-      { step: "Targeted Repair or Rebuild", description: "We perform the minimum necessary repair — solenoid replacement, fluid service, or full rebuild — based on what our diagnosis actually reveals, not what's easiest to sell." },
+      { step: "Targeted Repair or Rebuild", description: "We perform the minimum necessary repair — solenoid replacement, fluid service, or full rebuild — based on what our diagnosis actually reveals." },
     ],
     whyUs: [
       "Transmission specialists — not generalists making their best guess",
@@ -391,11 +463,11 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
       "Fredericksburg's trusted name in complex drivetrain repairs",
     ],
     faq: [
-      { q: "What are the signs of a failing transmission?", a: "Common warning signs include slipping out of gear, rough or delayed shifting, grinding or shaking during gear changes, a burning smell, leaking red fluid under the vehicle, or a transmission warning light. Any of these symptoms warrant an immediate inspection." },
-      { q: "How often should transmission fluid be changed?", a: "Most manufacturers recommend a transmission fluid service every 30,000–60,000 miles for vehicles with conventional fluid, or up to 100,000 miles for modern sealed transmissions with synthetic fluid. Check your owner's manual or ask us for your vehicle's specific interval." },
-      { q: "How much does transmission repair cost?", a: "Transmission repair costs vary widely depending on the problem. A fluid service may cost $150–$250. Solenoid replacement runs $300–$600. A complete rebuild can range from $1,500–$3,500 depending on the vehicle. We provide a detailed estimate before any work begins." },
-      { q: "Is it better to repair or replace a transmission?", a: "In most cases, a professional rebuild or targeted repair is more cost-effective than a full replacement. However, for severely damaged or high-mileage transmissions on older vehicles, replacement may make more financial sense. We'll give you an honest recommendation based on your specific situation." },
-      { q: "Can low transmission fluid cause slipping?", a: "Yes — low fluid is one of the most common causes of transmission slipping. Fluid creates the hydraulic pressure needed to engage clutch packs and hold gears. Low or contaminated fluid leads to inadequate pressure and premature wear. Check fluid level at your first sign of slipping." },
+      { q: "What are the signs of a failing transmission?", a: "Common warning signs include slipping out of gear, rough or delayed shifting, grinding or shaking during gear changes, a burning smell, leaking red fluid under the vehicle, or a transmission warning light." },
+      { q: "How often should transmission fluid be changed?", a: "Most manufacturers recommend a transmission fluid service every 30,000–60,000 miles for conventional fluid, or up to 100,000 miles for modern sealed transmissions with synthetic fluid." },
+      { q: "How much does transmission repair cost?", a: "A fluid service may cost $150–$250. Solenoid replacement runs $300–$600. A complete rebuild can range from $1,500–$3,500. We provide a detailed estimate before any work begins." },
+      { q: "Is it better to repair or replace a transmission?", a: "In most cases, a professional rebuild or targeted repair is more cost-effective than a full replacement. However, for severely damaged or high-mileage transmissions on older vehicles, replacement may make more financial sense." },
+      { q: "Can low transmission fluid cause slipping?", a: "Yes — low fluid is one of the most common causes of transmission slipping. Fluid creates the hydraulic pressure needed to engage clutch packs and hold gears. Check fluid level at your first sign of slipping." },
       { q: "Do you service both automatic and manual transmissions?", a: "Yes. My Ride Service Center services both automatic transmissions (including CVTs and dual-clutch units) and manual transmissions with clutch replacement and synchronizer service." },
     ],
   },
@@ -411,11 +483,20 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     metaTitle: "Auto Painting in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Professional auto painting in Fredericksburg, VA. My Ride Service Center delivers factory-quality paint with computer color matching on all makes and models. Call 540-418-6626.",
     description:
-      "A flawless paint job requires proper surface preparation, precise color matching, and professional application. My Ride Service Center uses computer color matching to ensure your vehicle's new paint blends perfectly with existing panels — whether it's a full respray or a spot repair.",
-    longDescription: [
-      "Auto painting is both an art and a science — and cutting corners at any step produces results that are immediately obvious in natural light. At My Ride Service Center in Fredericksburg, VA, our painters follow a rigorous multi-stage process: thorough surface preparation, professional primer application, computer-matched base coat, and a durable clear coat finish that protects the paint from UV, moisture, and road debris for years to come.",
-      "Color matching is where many body shops fall short. Every vehicle's paint has a unique code — but paint fades over years of sun exposure, meaning an exact code match won't always produce a seamless blend. Our technicians use computerized spectrophotometer technology to analyze your existing paint and custom-tint the replacement color for a perfect match, even on faded or weathered vehicles.",
-      "Whether you need a single panel respray after a fender-bender, a spot repair for a door ding with chipped paint, or a complete vehicle color change, My Ride Service Center has the facility and expertise to deliver a result you'll be proud of. We work with all insurance companies and can assist you through the claims process from estimate to final inspection.",
+      "My Ride Service Center in Fredericksburg, VA delivers factory-quality auto painting using computer spectrophotometer color matching and a rigorous multi-stage process — surface prep, primer, base coat, and durable clear coat. Whether you need a single panel respray or a full vehicle color change, we work with all insurance companies and produce a finish you'll be proud of.",
+    sections: [
+      {
+        heading: "Why Proper Surface Preparation Defines a Great Paint Job",
+        body: "A flawless paint job requires thorough surface preparation — not just a spray-over. At My Ride Service Center, our painters follow a rigorous multi-stage process: complete surface preparation including sanding and body filler application, professional primer, computer-matched base coat, and a durable clear coat finish that protects your paint from UV, moisture, and road debris for years to come.",
+      },
+      {
+        heading: "Computer Color Matching — Because Fade Makes Exact Codes Insufficient",
+        body: "Color matching is where many body shops fall short. Every vehicle's paint has a unique code — but paint fades over years of sun exposure, meaning an exact code match won't always produce a seamless blend. Our technicians use computerized spectrophotometer technology to analyze your existing paint and custom-tint the replacement color for a perfect match, even on faded or weathered vehicles.",
+      },
+      {
+        heading: "Complete Auto Painting Services With Insurance Support",
+        body: "Whether you need a single panel respray after a fender-bender, a spot repair for a door ding with chipped paint, or a complete vehicle color change, My Ride Service Center has the facility and expertise to deliver results. We work with all insurance companies and can assist you through the claims process from estimate to final quality inspection.",
+      },
     ],
     details: [
       "Computer spectrophotometer color matching",
@@ -431,7 +512,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
       { step: "Damage Assessment", description: "We inspect the area to be painted, assess the underlying metal or plastic condition, and document everything needed for an accurate estimate." },
       { step: "Surface Preparation", description: "We sand, clean, and degrease the surface — and apply body filler where needed — to create a perfectly smooth substrate for paint." },
       { step: "Computer Color Matching", description: "We scan your existing paint with a spectrophotometer and blend a custom color formula to match your vehicle's current shade, accounting for fade." },
-      { step: "Paint Application", description: "We apply primer, color base coat, and clear coat in our professional spray environment — free from dust and contaminants that cause orange peel or fish-eye defects." },
+      { step: "Paint Application", description: "We apply primer, color base coat, and clear coat in our professional spray environment — free from dust and contaminants." },
       { step: "Polishing & Quality Check", description: "After the paint cures, we polish the surface and perform a quality inspection in natural and artificial light to ensure a perfect, seamless finish." },
     ],
     whyUs: [
@@ -442,12 +523,12 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
       "Serving Fredericksburg, Stafford, Spotsylvania, and surrounding areas",
     ],
     faq: [
-      { q: "How long does auto painting take?", a: "A single panel respray typically takes 1–3 days depending on the complexity of the damage and required prep work. Full vehicle resprays take 3–7 days. We'll give you a specific timeline during your estimate appointment." },
-      { q: "Will the new paint match my existing paint perfectly?", a: "We use computerized color matching technology to get as close as possible. For spot repairs, we blend the new paint into adjacent panels to create a seamless transition. On most vehicles, the result is indistinguishable from factory paint." },
-      { q: "How do I take care of new auto paint?", a: "Avoid washing the vehicle for the first 30 days. After that, hand wash with automotive soap — no drive-through car washes for 90 days, as the high-pressure brushes can damage fresh clear coat. Avoid waxing for 60–90 days." },
-      { q: "Can you paint over existing paint?", a: "In some cases, yes — but proper adhesion requires sanding the existing surface. For best results and longevity, we apply a primer coat before the new color. Painting directly over old paint without proper prep often leads to peeling." },
-      { q: "Do you work with insurance companies?", a: "Yes — My Ride Service Center works directly with all major insurance companies. We can prepare the estimate, document the damage, and coordinate the repair so you deal with as little stress as possible." },
-      { q: "Can you paint plastic bumpers?", a: "Absolutely. We use flexible primer and paint formulated for plastic to ensure the finish doesn't crack when the bumper flexes. Proper plastic prep is essential — we never skip this step." },
+      { q: "How long does auto painting take?", a: "A single panel respray typically takes 1–3 days. Full vehicle resprays take 3–7 days. We'll give you a specific timeline during your estimate appointment." },
+      { q: "Will the new paint match my existing paint perfectly?", a: "We use computerized color matching technology to get as close as possible. For spot repairs, we blend the new paint into adjacent panels. On most vehicles, the result is indistinguishable from factory paint." },
+      { q: "How do I take care of new auto paint?", a: "Avoid washing the vehicle for the first 30 days. Hand wash with automotive soap after that — no drive-through car washes for 90 days. Avoid waxing for 60–90 days." },
+      { q: "Can you paint over existing paint?", a: "In some cases, but proper adhesion requires sanding the existing surface first. For best results and longevity, we apply a primer coat before the new color." },
+      { q: "Do you work with insurance companies?", a: "Yes — My Ride Service Center works directly with all major insurance companies. We prepare the estimate, document the damage, and coordinate the repair." },
+      { q: "Can you paint plastic bumpers?", a: "Absolutely. We use flexible primer and paint formulated for plastic to ensure the finish doesn't crack when the bumper flexes." },
     ],
   },
   {
@@ -459,11 +540,20 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     metaTitle: "Bumper Repair in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Professional bumper repair and replacement in Fredericksburg, VA. My Ride Service Center fixes cracks, scuffs, and collision damage on all makes and models. Call 540-418-6626.",
     description:
-      "Bumper damage is one of the most common collision issues we see. My Ride Service Center repairs and restores bumpers using professional-grade materials and techniques — saving you the cost of a full replacement when repair is the right choice.",
-    longDescription: [
-      "Bumper damage happens more often than any other collision injury — a tap in a parking lot, a low-speed rear-end, or a close encounter with a concrete barrier. Modern plastic bumper covers are designed to absorb minor impacts, but they crack, scratch, and scuff easily. At My Ride Service Center in Fredericksburg, VA, we assess every bumper carefully to determine the most cost-effective path: repair or replacement — and we give you that honest recommendation before any work begins.",
-      "Not all bumper damage is the same. Surface scuffs and paint scratches can often be repaired with plastic welding, filler, and refinishing at a fraction of replacement cost. Deep cracks that compromise the structure, or bumpers with embedded sensors and cameras, may require a full cover replacement to restore both appearance and safety system function. Our technicians have the experience to make the right call for every situation.",
-      "Modern vehicles often have sensors, radar units, parking cameras, and active grille shutters integrated into the bumper assembly. Any bumper repair or replacement at My Ride Service Center includes proper reinstallation and calibration of all integrated safety systems — ensuring your park assist, blind spot monitoring, and collision warning systems work exactly as designed after the repair.",
+      "My Ride Service Center in Fredericksburg, VA repairs and restores bumpers from parking lot damage to collision impacts — using professional plastic welding, color-matched paint, and proper ADAS sensor reinstallation. We assess every bumper honestly and recommend repair or replacement based on what actually makes sense for your vehicle.",
+    sections: [
+      {
+        heading: "Repair or Replace? We Give You the Honest Answer",
+        body: "Not all bumper damage is the same. Surface scuffs and paint scratches can often be repaired with plastic welding, filler, and refinishing at a fraction of replacement cost. Deep cracks that compromise the structure, or bumpers with embedded sensors and cameras that can't be properly repositioned, may require a full cover replacement. Our technicians make the right call for your situation — not the one that's most profitable.",
+      },
+      {
+        heading: "Sensors, Cameras & ADAS Systems Properly Reinstalled",
+        body: "Modern vehicles often have sensors, radar units, parking cameras, and active grille shutters integrated into the bumper assembly. Any bumper repair or replacement at My Ride Service Center includes proper reinstallation and calibration of all integrated safety systems — ensuring your park assist, blind spot monitoring, and collision warning systems work exactly as designed after the repair.",
+      },
+      {
+        heading: "Seamless Color Matching on Every Bumper Repair",
+        body: "A bumper repair is only as good as the paint finish. We use computer spectrophotometer color matching to blend the repaired bumper with your existing paint — including weathered and faded vehicles where a simple color code match would produce a visible mismatch. The result is a repair that looks like it never happened.",
+      },
     ],
     details: [
       "Front and rear bumper cover repair",
@@ -476,11 +566,11 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
       "Insurance estimate and claim assistance",
     ],
     process: [
-      { step: "Damage Assessment", description: "We inspect the bumper for cracks, distortion, and damage to underlying structure, sensors, mounting brackets, and energy absorbers." },
-      { step: "Repair or Replace Decision", description: "We recommend repair when the bumper cover is repairable with plastic welding and refinishing. We recommend replacement when the structure is compromised or repair costs exceed replacement value." },
-      { step: "Plastic Welding & Body Work", description: "For repairs, we weld cracks from behind the cover, sand and apply flexible filler, and block-sand the surface flat before painting." },
-      { step: "Paint & Finish", description: "We apply primer, color-matched base coat, and clear coat — blending into adjacent panels where needed for a seamless, invisible repair." },
-      { step: "Sensor Reinstallation & Calibration", description: "We reinstall all sensors, cameras, and trim pieces and perform any required ADAS calibration to restore the function of driver assistance systems." },
+      { step: "Damage Assessment", description: "We inspect the bumper for cracks, distortion, sensor damage, mounting brackets, and energy absorbers." },
+      { step: "Repair or Replace Decision", description: "We recommend repair when the cover is repairable with plastic welding and refinishing. We recommend replacement when the structure is compromised." },
+      { step: "Plastic Welding & Body Work", description: "For repairs, we weld cracks from behind the cover, sand and apply flexible filler, and block-sand flat before painting." },
+      { step: "Paint & Finish", description: "We apply primer, color-matched base coat, and clear coat — blending into adjacent panels for a seamless, invisible repair." },
+      { step: "Sensor Reinstallation & Calibration", description: "We reinstall all sensors, cameras, and trim pieces and perform required ADAS calibration to restore driver assistance systems." },
     ],
     whyUs: [
       "Repair vs. replace honesty — we tell you which is the right call",
@@ -490,12 +580,12 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
       "Fast turnaround — many bumper repairs completed in 1–2 days",
     ],
     faq: [
-      { q: "Can a cracked bumper be repaired without replacement?", a: "In many cases, yes. Cracks that don't compromise the structural integrity of the bumper can be professionally repaired with plastic welding and refinishing for significantly less than the cost of a new bumper cover. We'll assess and tell you honestly." },
-      { q: "How much does bumper repair cost?", a: "Costs vary widely based on damage severity. Minor scuffs may cost $200–$400. Major cracks or replacements with painting can range from $600–$1,500+. We provide a free estimate so you know the exact cost before authorizing any work." },
-      { q: "Will my parking sensors work after bumper repair?", a: "Yes — we properly reinstall all parking sensors, cameras, and radar units during bumper repair or replacement. If your vehicle requires ADAS calibration after bumper work, we perform that too." },
-      { q: "Does bumper repair affect the resale value of my car?", a: "A professional bumper repair that's invisible to the eye has minimal impact on resale value. A visibly damaged or poorly repaired bumper, on the other hand, can significantly reduce what a buyer is willing to pay." },
-      { q: "How long does bumper repair take?", a: "Minor surface repairs take 1 day. Full bumper replacements with painting take 2–3 days to allow proper paint curing time. We'll give you an exact timeline during your estimate." },
-      { q: "Will my insurance cover bumper repair?", a: "If the damage was caused by a collision, your collision coverage will typically apply (subject to your deductible). Cosmetic wear is usually not covered. We work directly with your insurance company to process the claim." },
+      { q: "Can a cracked bumper be repaired without replacement?", a: "In many cases, yes. Cracks that don't compromise structural integrity can be professionally repaired with plastic welding and refinishing for significantly less than a new bumper cover." },
+      { q: "How much does bumper repair cost?", a: "Minor scuffs may cost $200–$400. Major cracks or replacements with painting can range from $600–$1,500+. We provide a free estimate before authorizing any work." },
+      { q: "Will my parking sensors work after bumper repair?", a: "Yes — we properly reinstall all parking sensors, cameras, and radar units during bumper repair or replacement, including ADAS calibration where required." },
+      { q: "Does bumper repair affect the resale value of my car?", a: "A professional bumper repair that's invisible to the eye has minimal impact on resale value. A visibly damaged bumper significantly reduces what a buyer will pay." },
+      { q: "How long does bumper repair take?", a: "Minor surface repairs take 1 day. Full bumper replacements with painting take 2–3 days to allow proper paint curing time." },
+      { q: "Will my insurance cover bumper repair?", a: "If the damage was caused by a collision, your collision coverage will typically apply. We work directly with your insurance company to process the claim." },
     ],
   },
   {
@@ -507,11 +597,20 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     metaTitle: "Dent Repair in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Professional dent repair in Fredericksburg, VA. My Ride Service Center removes dents from parking lot dings to collision damage using traditional and paintless techniques. Call 540-418-6626.",
     description:
-      "Dents from parking lots, hail, or minor collisions don't have to mean a costly body panel replacement. My Ride Service Center offers both traditional dent repair and paintless dent removal — choosing the best method based on the damage to preserve your original paint finish.",
-    longDescription: [
-      "Dents are one of the most common and frustrating forms of vehicle damage — and they come in many forms. A door ding from a careless neighbor, hail damage from a sudden storm, or a minor collision in a parking lot all leave marks that affect your vehicle's appearance and resale value. At My Ride Service Center in Fredericksburg, VA, we assess every dent individually and choose the repair method that delivers the best result at the lowest cost.",
-      "Paintless dent removal (PDR) is the first choice when the paint is undamaged and the metal has not been stretched or creased. Using specialized PDR tools, our technicians carefully massage the metal back to its original shape from behind the panel without disturbing the factory paint. PDR is faster, more affordable, and delivers results that are truly invisible — your car looks like it was never dented.",
-      "When paint is chipped, the metal is creased, or the dent is too large or complex for PDR, we use traditional dent repair techniques: panel straightening, professional-grade body filler where needed, and a precisely color-matched respray. In some cases, a combination of PDR and traditional repair delivers the best outcome. Our technicians select the right approach for each dent — not the one that's most profitable for us.",
+      "My Ride Service Center in Fredericksburg, VA assesses every dent individually and chooses the right repair method — paintless dent removal when the paint is undamaged, traditional repair when it isn't. The result is a cost-effective, invisible repair that restores your vehicle's appearance and protects its resale value.",
+    sections: [
+      {
+        heading: "Paintless Dent Removal — The First Choice for Undamaged Paint",
+        body: "Paintless dent removal (PDR) is the preferred method when the paint is undamaged and the metal has not been stretched or creased. Using specialized PDR tools, our technicians carefully massage the metal back to its original shape from behind the panel without disturbing the factory finish. PDR is faster, more affordable, and delivers results that are truly invisible — your car looks like it was never dented.",
+      },
+      {
+        heading: "Traditional Dent Repair When PDR Isn't Enough",
+        body: "When paint is chipped, the metal is creased, or the dent is too large or complex for PDR, we use traditional repair: panel straightening, professional-grade body filler where needed, and a precisely color-matched respray. In some cases, a combination of both methods delivers the best outcome. Our technicians select the right approach for each dent — not the one that's most profitable for us.",
+      },
+      {
+        heading: "Protecting Your Original Factory Paint Has Real Value",
+        body: "Factory paint is the best paint your car will ever have — applied under controlled conditions with quality materials and baked at high temperatures. Preserving that factory finish maintains your vehicle's resale value, avoids color-match complications, and keeps the vehicle looking newer longer. PDR is the only repair method that truly preserves the original paint, which is why it's our first choice for every eligible dent.",
+      },
     ],
     details: [
       "Paintless dent removal (PDR)",
@@ -525,7 +624,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     ],
     process: [
       { step: "Dent Assessment", description: "We examine the dent in controlled lighting to assess size, location, paint condition, and metal stretch — determining whether PDR or traditional repair is the right method." },
-      { step: "Method Selection", description: "For undamaged paint, we proceed with PDR. For paint damage or complex creases, we use traditional bodywork. Sometimes both methods are combined." },
+      { step: "Method Selection", description: "For undamaged paint, we proceed with PDR. For paint damage or complex creases, we use traditional bodywork." },
       { step: "PDR or Panel Work", description: "Using specialized rods and tabs (PDR) or professional body hammers and dollies, our technicians carefully restore the panel to its original profile." },
       { step: "Paint Repair if Needed", description: "If paint was damaged, we feather, prime, and apply a computer color-matched base coat and clear coat, blending into surrounding panels." },
       { step: "Final Polish & Inspection", description: "We polish the repaired area and inspect in natural light to confirm the dent is invisible and the finish is flawless." },
@@ -538,12 +637,12 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
       "Convenient Fredericksburg location — serving all of the Rappahannock region",
     ],
     faq: [
-      { q: "What is the difference between PDR and traditional dent repair?", a: "PDR (paintless dent removal) uses specialized tools to massage dents out from behind the panel without disturbing the paint — it's faster and more affordable. Traditional repair uses body filler and repainting for dents where the paint is damaged or the metal is too stretched for PDR." },
-      { q: "Can all dents be fixed with PDR?", a: "Not all. PDR works best on round, shallow dents where the paint is undamaged and the metal isn't severely stretched or creased. Dents near panel edges, sharp creases, and dents with paint damage require traditional repair." },
-      { q: "How long does dent repair take?", a: "Small PDR repairs can be completed in 1–2 hours. Larger dents or traditional repairs requiring paint may take 1–3 days. We'll give you a specific timeline during your estimate." },
-      { q: "Will my insurance cover dent repair?", a: "If the dent was caused by a covered incident (collision, hail), your insurance will likely cover it. Hail damage is typically covered under comprehensive coverage. We can help document the damage for your claim." },
-      { q: "Can I fix a dent myself?", a: "DIY dent repair kits are available, but they frequently cause paint damage, stretching, or a dimpled surface that costs more to fix professionally. We recommend having a professional assess any dent before attempting DIY repairs." },
-      { q: "How much does dent repair cost?", a: "PDR for a small door ding starts around $100–$200. Larger dents or traditional repairs with paint range from $300–$800+. Insurance often covers dent repair with minimal out-of-pocket cost after your deductible." },
+      { q: "What is the difference between PDR and traditional dent repair?", a: "PDR uses specialized tools to massage dents out from behind the panel without disturbing the paint. Traditional repair uses body filler and repainting for dents where the paint is damaged or the metal is too stretched for PDR." },
+      { q: "Can all dents be fixed with PDR?", a: "Not all. PDR works best on round, shallow dents where the paint is undamaged and the metal isn't severely stretched or creased. Sharp creases and dents with paint damage require traditional repair." },
+      { q: "How long does dent repair take?", a: "Small PDR repairs can be completed in 1–2 hours. Larger dents or traditional repairs requiring paint may take 1–3 days." },
+      { q: "Will my insurance cover dent repair?", a: "If the dent was caused by a covered incident (collision, hail), your insurance will likely cover it. We can help document the damage for your claim." },
+      { q: "Can I fix a dent myself?", a: "DIY dent repair kits frequently cause paint damage, stretching, or a dimpled surface that costs more to fix professionally. We recommend having a professional assess any dent before attempting DIY repairs." },
+      { q: "How much does dent repair cost?", a: "PDR for a small door ding starts around $100–$200. Larger dents or traditional repairs with paint range from $300–$800+." },
     ],
   },
   {
@@ -555,11 +654,20 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     metaTitle: "Frame Straightening in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Professional frame straightening in Fredericksburg, VA. My Ride Service Center restores vehicle structural integrity after collision using precision computerized frame equipment. Call 540-418-6626.",
     description:
-      "After a significant collision, frame damage can affect how your vehicle drives and how it protects you in a future accident. My Ride Service Center uses professional frame straightening equipment to restore your vehicle's structural integrity to factory specifications.",
-    longDescription: [
-      "Frame damage is one of the most serious consequences of a collision — and one of the most dangerous to leave unaddressed. A bent or distorted frame affects everything: your vehicle's handling, the way it absorbs energy in a future accident, and even the alignment of your doors, hood, and trunk. At My Ride Service Center in Fredericksburg, VA, we use a professional computerized frame straightening system to measure and restore your vehicle's structure to factory specifications.",
-      "Modern vehicles are built on unibody or full-frame platforms that are engineered with specific structural properties. When a collision bends these structures, the vehicle's crumple zones, safety cage, and crash energy management are compromised. Driving a vehicle with unrepaired frame damage is not just a handling issue — it's a life safety issue. Our frame straightening process restores those engineered properties so your vehicle protects you the way it was designed to.",
-      "Our frame straightening equipment uses laser measurement technology to compare your vehicle's actual dimensions to the factory specifications stored in our database. This allows us to pull and push the frame with precise control — measuring at dozens of points simultaneously — until every dimension matches the manufacturer's original design. We provide before-and-after measurement reports so you can see exactly what was corrected.",
+      "My Ride Service Center in Fredericksburg, VA uses a professional computerized laser frame straightening system to measure and restore your vehicle's structure to factory specifications after a collision. We provide before-and-after measurement reports and coordinate directly with insurance adjusters — and we don't release a vehicle until every dimension is within tolerance.",
+    sections: [
+      {
+        heading: "Frame Damage Is a Safety Issue, Not Just a Cosmetic One",
+        body: "A bent or distorted frame affects everything: your vehicle's handling, the way it absorbs energy in a future accident, and even the alignment of doors, hood, and trunk. Driving a vehicle with unrepaired frame damage is not just a handling inconvenience — it's a life safety issue. At My Ride Service Center, we restore the engineered structural properties that protect you in a collision.",
+      },
+      {
+        heading: "Computerized Laser Measurement — Factory Specs, Not Guesswork",
+        body: "Our frame straightening equipment uses laser measurement technology to compare your vehicle's actual dimensions to the factory specifications stored in our database. This allows us to pull and push the frame with precise control — measuring at dozens of points simultaneously — until every dimension matches the manufacturer's original design. We provide before-and-after measurement reports so you can see exactly what was corrected.",
+      },
+      {
+        heading: "Structural Repair Backed by Insurance Coordination",
+        body: "When sections are too severely damaged to straighten, we replace them with factory-replacement structural components welded to manufacturer specifications. After frame work, we perform a full 4-wheel alignment and road test. We work directly with all major insurance carriers and document all repairs thoroughly — so you have a complete record of every correction made to your vehicle.",
+      },
     ],
     details: [
       "Unibody and full-frame computerized straightening",
@@ -572,11 +680,11 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
       "Road test and structural verification",
     ],
     process: [
-      { step: "Damage Evaluation", description: "We perform a complete structural inspection — measuring frame dimensions, checking door gaps, inspecting the firewall, floor pans, rails, and roof line for signs of collision distortion." },
+      { step: "Damage Evaluation", description: "We perform a complete structural inspection — measuring frame dimensions, checking door gaps, and inspecting the firewall, floor pans, rails, and roof line for distortion." },
       { step: "Measurement Baseline", description: "We mount the vehicle on our frame rack and establish precise measurement points using our computerized laser system, comparing actual dimensions to factory specifications." },
       { step: "Controlled Straightening", description: "Using hydraulic pulling towers and chains, we apply precisely directed force to the damaged areas while monitoring measurements in real time until factory specs are restored." },
       { step: "Structural Replacement if Required", description: "When sections are too severely damaged to straighten, we replace them with factory-replacement structural components and weld to manufacturer specifications." },
-      { step: "Final Measurement & Alignment", description: "We produce a final measurement report confirming all dimensions are within tolerance, then perform a full 4-wheel alignment to complete the structural restoration." },
+      { step: "Final Measurement & Alignment", description: "We produce a final measurement report confirming all dimensions are within tolerance, then perform a full 4-wheel alignment to complete the restoration." },
     ],
     whyUs: [
       "Computerized laser frame measurement — not eye estimates",
@@ -586,12 +694,12 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
       "Fredericksburg's trusted collision repair specialists",
     ],
     faq: [
-      { q: "How do I know if my car's frame is bent?", a: "Signs of frame damage include doors or windows that don't close properly, uneven panel gaps, a vehicle that drives crooked even after alignment, visible creases or kinks in the floor or frame rails, or a collision impact severe enough to deploy airbags." },
-      { q: "Is it safe to drive a car with frame damage?", a: "No. Frame damage compromises the structural safety of the vehicle. In a future collision, a bent frame may not absorb energy correctly, increasing injury risk. Additionally, frame damage affects steering geometry and tire wear." },
-      { q: "Can frame damage be completely repaired?", a: "In most cases, yes — when repaired using professional computerized equipment and measured to factory specifications. Some severe damage may require partial frame section replacement, which is a standard collision repair technique." },
-      { q: "Will frame damage show on a Carfax report?", a: "A collision that results in an insurance claim will appear on a vehicle history report. However, the presence of professional frame repair documentation demonstrating the vehicle was restored to factory specifications can actually help reassure future buyers." },
-      { q: "How much does frame straightening cost?", a: "Costs depend on the severity and location of the damage. Minor unibody straightening may cost $500–$1,000. Severe structural damage can require $2,000–$5,000 or more in labor and materials. Most frame repairs are covered by collision insurance." },
-      { q: "Do you work with insurance companies on frame repairs?", a: "Yes — we work directly with all major insurance carriers and can coordinate the entire process from initial estimate to final inspection. We document all repairs thoroughly so you have a complete record of the work performed." },
+      { q: "How do I know if my car's frame is bent?", a: "Signs include doors or windows that don't close properly, uneven panel gaps, a vehicle that drives crooked even after alignment, visible creases in the floor or frame rails, or a collision impact severe enough to deploy airbags." },
+      { q: "Is it safe to drive a car with frame damage?", a: "No. Frame damage compromises the structural safety of the vehicle. In a future collision, a bent frame may not absorb energy correctly, significantly increasing injury risk." },
+      { q: "Can frame damage be completely repaired?", a: "In most cases, yes — when repaired using professional computerized equipment and measured to factory specifications. Some severe damage may require partial frame section replacement, which is standard collision repair practice." },
+      { q: "Will frame damage show on a Carfax report?", a: "A collision that results in an insurance claim will appear on a vehicle history report. However, professional frame repair documentation demonstrating the vehicle was restored to factory specifications can reassure future buyers." },
+      { q: "How much does frame straightening cost?", a: "Minor unibody straightening may cost $500–$1,000. Severe structural damage can require $2,000–$5,000 or more. Most frame repairs are covered by collision insurance." },
+      { q: "Do you work with insurance companies on frame repairs?", a: "Yes — we work directly with all major insurance carriers and coordinate the entire process from initial estimate to final inspection." },
     ],
   },
   {
@@ -603,11 +711,20 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     metaTitle: "Auto Glass Replacement in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Professional auto glass replacement in Fredericksburg, VA. My Ride Service Center installs windshields, side and rear windows with proper sealing and ADAS recalibration. Call 540-418-6626.",
     description:
-      "A cracked windshield or broken side window is both a safety hazard and a security risk. My Ride Service Center provides professional auto glass replacement using quality glass with proper sealing — so you can see clearly and your vehicle stays weatherproof.",
-    longDescription: [
-      "Auto glass is a critical structural and safety component — not just a window. Your windshield contributes to the rigidity of your vehicle's roof structure and serves as a backstop for passenger airbag deployment. A cracked or improperly installed windshield can fail in a rollover or frontal collision in ways that dramatically increase injury risk. At My Ride Service Center in Fredericksburg, VA, we treat every glass replacement as the safety-critical repair it is.",
-      "Many modern vehicles are equipped with Advanced Driver Assistance Systems (ADAS) that use cameras, sensors, and radar mounted to or through the windshield. Systems like lane departure warning, automatic emergency braking, adaptive cruise control, and rain-sensing wipers rely on the windshield being in precisely the correct position. After every windshield replacement, we perform the required ADAS camera recalibration to ensure these systems work correctly — this step is not optional and is frequently skipped by lower-cost shops.",
-      "Proper urethane sealing is equally critical. The adhesive that bonds your windshield to the frame must be allowed to fully cure before the vehicle is driven — typically 1 hour minimum but sometimes longer depending on temperature and humidity. Rushing this step risks the windshield coming loose in a collision. My Ride Service Center follows OEM cure time requirements on every installation, and we test the seal before returning your vehicle.",
+      "My Ride Service Center in Fredericksburg, VA installs windshields and all automotive glass using OEM or OEM-equivalent materials, proper urethane adhesive, and required ADAS camera recalibration — all in one visit. We follow manufacturer cure time requirements on every installation and handle insurance billing directly.",
+    sections: [
+      {
+        heading: "Your Windshield Is a Structural and Safety Component",
+        body: "Auto glass is far more than a window — your windshield contributes to the rigidity of your vehicle's roof structure and serves as a backstop for passenger airbag deployment. A cracked or improperly installed windshield can fail in a rollover or frontal collision in ways that dramatically increase injury risk. At My Ride Service Center, we treat every glass replacement as the safety-critical repair it is.",
+      },
+      {
+        heading: "ADAS Camera Recalibration — The Step Too Many Shops Skip",
+        body: "Many modern vehicles have cameras, sensors, and radar mounted to or through the windshield — systems like lane departure warning, automatic emergency braking, and adaptive cruise control. After windshield replacement, the camera position changes slightly, requiring recalibration. My Ride Service Center performs required ADAS recalibration in-house after every windshield replacement — so you don't have to make a second trip to the dealer.",
+      },
+      {
+        heading: "Proper Adhesive Cure Time Protects Your Safety",
+        body: "The urethane that bonds your windshield to the frame must fully cure before the vehicle is driven. Rushing this step risks the windshield coming loose in a collision. My Ride Service Center follows OEM cure time requirements on every installation — typically 1 hour minimum, longer in cold or humid conditions — and tests the seal before returning your vehicle.",
+      },
     ],
     details: [
       "Windshield replacement with OEM or OEM-equivalent glass",
@@ -620,8 +737,8 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
       "Insurance billing support",
     ],
     process: [
-      { step: "Glass Selection", description: "We source OEM or OEM-equivalent glass matching your vehicle's exact specifications — including acoustic lamination, solar coating, and antenna integration where applicable." },
-      { step: "Old Glass Removal", description: "We carefully cut the urethane seal and remove the damaged glass without damaging the trim, paint, or body around the opening." },
+      { step: "Glass Selection", description: "We source OEM or OEM-equivalent glass matching your vehicle's exact specifications — including acoustic lamination, solar coating, and antenna integration." },
+      { step: "Old Glass Removal", description: "We carefully cut the urethane seal and remove the damaged glass without damaging trim, paint, or the body around the opening." },
       { step: "Frame Preparation", description: "We clean and prepare the pinch weld, applying fresh primer and urethane adhesive in the correct bead pattern per OEM installation procedures." },
       { step: "Glass Installation & Cure", description: "We set the new glass and allow the urethane to cure for the manufacturer-specified time before the vehicle is moved or driven." },
       { step: "ADAS Calibration & Leak Test", description: "We recalibrate windshield-mounted cameras, verify seal integrity with a water test, and confirm all related systems are functioning correctly." },
@@ -634,12 +751,12 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
       "Insurance billing handled directly — minimal hassle for you",
     ],
     faq: [
-      { q: "Can a cracked windshield be repaired instead of replaced?", a: "Small chips smaller than a quarter and cracks shorter than 3 inches can often be repaired with resin injection if they're not in the driver's line of sight. Larger cracks, damage in the driver's view, and damage near the edge of the glass require full replacement." },
-      { q: "What is ADAS calibration and why is it required after windshield replacement?", a: "ADAS (Advanced Driver Assistance Systems) cameras mounted to the windshield must be precisely aimed to function correctly. When the windshield is replaced, the camera position changes slightly, requiring recalibration. Skipping this step can cause lane departure warnings, automatic braking, and adaptive cruise to malfunction." },
-      { q: "How long after windshield replacement can I drive my car?", a: "The typical safe drive-away time is 1 hour minimum, but we recommend waiting longer in cold or humid conditions. We follow the adhesive manufacturer's specifications and will give you a specific time when the job is complete." },
-      { q: "Does insurance cover windshield replacement?", a: "Most comprehensive auto insurance policies cover windshield replacement with no deductible in Virginia. We work directly with your insurance company and handle the claim process for you." },
-      { q: "Can you replace a side window that was broken in a break-in?", a: "Yes. We replace all automotive glass including door glass, quarter glass, and rear windows. We source the correct glass for your make, model, and year and install it with proper sealing." },
-      { q: "How long does windshield replacement take?", a: "The replacement process takes 1–2 hours. Add time for ADAS calibration (30–60 minutes) and cure time. Plan for a half-day visit, though we can often have you back on the road faster in good weather conditions." },
+      { q: "Can a cracked windshield be repaired instead of replaced?", a: "Small chips smaller than a quarter and cracks shorter than 3 inches can often be repaired with resin injection if not in the driver's line of sight. Larger cracks or damage near the edge require full replacement." },
+      { q: "What is ADAS calibration and why is it required?", a: "ADAS cameras must be precisely aimed to function correctly. When the windshield is replaced, the camera position changes slightly, requiring recalibration. Skipping this step can cause lane departure and automatic braking systems to malfunction." },
+      { q: "How long after windshield replacement can I drive?", a: "The typical safe drive-away time is 1 hour minimum, but longer in cold or humid conditions. We follow the adhesive manufacturer's specifications and give you a specific time when the job is complete." },
+      { q: "Does insurance cover windshield replacement?", a: "Most comprehensive auto insurance policies cover windshield replacement with no deductible in Virginia. We work directly with your insurance company and handle the claim." },
+      { q: "Can you replace a side window broken in a break-in?", a: "Yes. We replace all automotive glass including door glass, quarter glass, and rear windows with the correct glass for your make, model, and year." },
+      { q: "How long does windshield replacement take?", a: "The replacement process takes 1–2 hours, plus 30–60 minutes for ADAS calibration and cure time. Plan for a half-day visit." },
     ],
   },
   {
@@ -651,18 +768,27 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     metaTitle: "Paintless Dent Removal in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Expert paintless dent removal (PDR) in Fredericksburg, VA. My Ride Service Center removes door dings, hail damage & more without repainting. Preserves factory finish. Call 540-418-6626.",
     description:
-      "Paintless dent removal (PDR) is the most cost-effective way to fix dents on undamaged paint. My Ride Service Center's PDR technicians use specialized tools to massage dents out from behind the panel — no filler, no repainting, and a fraction of the cost of traditional bodywork.",
-    longDescription: [
-      "Paintless dent removal is one of the most impressive skills in the automotive repair world — and when performed correctly, the results are genuinely indistinguishable from factory condition. At My Ride Service Center in Fredericksburg, VA, our PDR technicians use a combination of specialized metal rods, tabs, and precision lighting to work dents out from behind the panel with no filler, no painting, and no damage to your factory finish.",
-      "Factory paint is the best paint your car will ever have — it was applied under controlled conditions with quality materials, baked at high temperatures, and precisely matched to your vehicle's color code. Preserving that factory finish has real value: it maintains your car's resale value, avoids color-match complications, and keeps the vehicle looking newer longer. PDR is the only repair method that truly preserves the original paint, which is why it's our first choice for any eligible dent.",
-      "PDR is ideal for round dents, door dings, hail damage, and minor panel damage where the paint is completely intact. The technique requires access behind the dent — either through an existing opening or by temporarily removing a panel — and specialized lighting to see the dent's surface reflections during repair. Our technicians work methodically from the outer edges toward the center, gradually massaging the metal back to its original contour without over-working any one area.",
+      "My Ride Service Center in Fredericksburg, VA provides expert paintless dent removal for door dings, hail damage, and minor panel dents where the paint is undamaged. Our PDR technicians use specialized metal rods and precision lighting to massage dents out from behind the panel — preserving your original factory finish completely.",
+    sections: [
+      {
+        heading: "Paintless Dent Removal — Invisible Results, Fraction of the Cost",
+        body: "Paintless dent removal is one of the most impressive skills in the automotive repair world — and when performed correctly, results are genuinely indistinguishable from factory condition. At My Ride Service Center, our PDR technicians use a combination of specialized metal rods, tabs, and precision lighting to work dents out from behind the panel with no filler, no painting, and no damage to your factory finish.",
+      },
+      {
+        heading: "The Only Repair That Truly Preserves Your Factory Paint",
+        body: "Factory paint is the best paint your car will ever have — applied under controlled conditions, baked at high temperatures, and precisely matched to your vehicle's color code. Preserving that factory finish has real value: it maintains resale value, avoids color-match complications, and keeps the vehicle looking newer longer. PDR is the only method that preserves the original paint 100%.",
+      },
+      {
+        heading: "Hail Damage Specialists Serving the Fredericksburg Area",
+        body: "PDR is ideal for round dents, door dings, hail damage, and minor panel impacts where the paint is completely intact. Our technicians are hail damage specialists — we work methodically from the outer edges toward the center of each dent, gradually massaging the metal back to its original contour. Multi-dent discounts are available for hail damage events, and we assist with insurance documentation.",
+      },
     ],
     details: [
       "Hail damage repair (multiple dent discounts available)",
       "Door ding and parking lot dent removal",
       "Crease and linear dent repair",
       "Panel access from behind — no drilling",
-      "Specialized lighting and reflection boards used for precision",
+      "Specialized lighting and reflection boards for precision",
       "Preserves original factory paint 100%",
       "Same-day service on qualifying damage",
       "Insurance claim documentation for hail damage",
@@ -672,22 +798,22 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
       { step: "Panel Access", description: "We access the back of the dent through existing openings where possible — door seams, plugs, or by temporarily removing tail lights or trim — without drilling holes." },
       { step: "Progressive Massage", description: "Working from the outer edge inward, we use precise rod pressure and tab pulls to gradually bring the metal back to its original contour in small incremental movements." },
       { step: "High-Spot Finishing", description: "Fine high spots that appear during PDR are carefully knocked down using a specialized knockdown tool — the final step before the surface is perfectly flat." },
-      { step: "Final Inspection", description: "We inspect the repaired area in multiple light angles to confirm the dent is completely gone and the paint surface is undamaged before returning your vehicle." },
+      { step: "Final Inspection", description: "We inspect the repaired area in multiple light angles to confirm the dent is completely gone and the paint surface is undamaged." },
     ],
     whyUs: [
       "Experienced PDR technicians — not trainees learning on your vehicle",
       "Preserves your original factory paint — the best finish your car will ever have",
       "Same-day service available on qualifying repairs",
       "More affordable than traditional repair with paint for eligible dents",
-      "Hail damage specialists — convenient for large hail events in the Fredericksburg area",
+      "Hail damage specialists with insurance assistance",
     ],
     faq: [
       { q: "Is paintless dent removal permanent?", a: "Yes. When PDR is performed correctly, the metal is restored to its original position and the repair is permanent. There is no filler to crack or paint to fade — the result lasts the life of the vehicle." },
-      { q: "What types of dents can be fixed with PDR?", a: "PDR works on round dents, oval dents, door dings, and hail damage where the paint is undamaged and the metal is not severely stretched or creased. Sharp creases, dents near panel edges, and dents with paint damage are better addressed with traditional repair." },
-      { q: "Will PDR damage my paint?", a: "When performed by a skilled technician, PDR does not damage paint. The tools used in PDR work from behind the panel and never contact the painted surface. However, poor technique by an inexperienced technician can cause paint to crack — which is why technician experience matters." },
-      { q: "How long does paintless dent removal take?", a: "A single small door ding can be repaired in 30–60 minutes. Hail damage with dozens of dents may take 1–3 days depending on the severity. We'll assess your vehicle and give you an accurate time estimate." },
-      { q: "Does PDR work on aluminum panels?", a: "Yes, but aluminum requires different technique and tools than steel. Aluminum work-hardens as it's manipulated, which limits how aggressively a dent can be worked. Our technicians are experienced with both steel and aluminum panel repair." },
-      { q: "Is hail damage covered by insurance?", a: "Yes — hail damage is typically covered under comprehensive auto insurance coverage. If you've recently experienced a hail event in the Fredericksburg area, contact us for a free damage assessment and we'll assist with the insurance documentation." },
+      { q: "What types of dents can be fixed with PDR?", a: "PDR works on round dents, oval dents, door dings, and hail damage where the paint is undamaged and the metal is not severely stretched or creased. Sharp creases and dents with paint damage require traditional repair." },
+      { q: "Will PDR damage my paint?", a: "When performed by a skilled technician, PDR does not damage paint. The tools work from behind the panel and never contact the painted surface. However, poor technique by an inexperienced technician can cause paint to crack." },
+      { q: "How long does paintless dent removal take?", a: "A single small door ding can be repaired in 30–60 minutes. Hail damage with dozens of dents may take 1–3 days depending on severity." },
+      { q: "Does PDR work on aluminum panels?", a: "Yes, but aluminum requires different technique and tools than steel. Aluminum work-hardens as it's manipulated, which limits how aggressively a dent can be worked. Our technicians are experienced with both steel and aluminum." },
+      { q: "Is hail damage covered by insurance?", a: "Yes — hail damage is typically covered under comprehensive auto insurance. If you've recently experienced a hail event in the Fredericksburg area, contact us for a free damage assessment and we'll assist with insurance documentation." },
     ],
   },
   {
@@ -699,11 +825,20 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     metaTitle: "Rust Repair in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Expert rust repair in Fredericksburg, VA. My Ride Service Center removes rust, repairs panels, and applies corrosion protection on all makes and models. Call 540-418-6626 today.",
     description:
-      "Rust is more than cosmetic — left untreated, it eats through metal and compromises your vehicle's structural integrity. My Ride Service Center removes rust, treats affected areas, and applies protective coatings so the damage doesn't come back.",
-    longDescription: [
-      "Rust is a chemical process that never stops on its own — it only accelerates. What starts as a small surface bubble under the paint eventually becomes a hole through the metal if ignored. Virginia's humid summers, road salt in winter, and the Fredericksburg area's proximity to tidal waterways all contribute to faster-than-average rust formation on vehicles. At My Ride Service Center, we stop rust in its tracks with proper removal, treatment, and protection.",
-      "Surface rust — orange staining on the paint surface — can be treated with light grinding, rust-neutralizing primer, and refinishing. Scale rust — where the metal begins to pit and flake — requires more aggressive preparation, including grinding to bare, sound metal before priming and painting. Penetrating rust — where the metal has rusted completely through — requires patch panel welding or full panel replacement, which our technicians are fully equipped to perform.",
-      "The rust repair process is only as good as the protection applied afterward. At My Ride Service Center, we apply epoxy primer directly to bare metal, followed by a seam sealer on all joints, and a topcoat that matches your vehicle's color. On structural and undercarriage components, we apply rubberized undercoating to prevent moisture intrusion. Proper rust repair with quality protective coatings can extend the life of your vehicle by years.",
+      "My Ride Service Center in Fredericksburg, VA stops rust with proper removal down to clean, sound metal — no painting over the problem. We treat all levels of rust from surface oxidation to penetrating rust requiring patch panel welding, and apply long-term epoxy primer and protective coatings to keep it from coming back.",
+    sections: [
+      {
+        heading: "Rust Never Stops on Its Own — And Virginia Accelerates It",
+        body: "Rust is a chemical process that only accelerates over time. What starts as a small surface bubble eventually becomes a hole through the metal if ignored. Virginia's humid summers, road salt in winter, and the Fredericksburg area's proximity to tidal waterways all contribute to faster-than-average rust formation. At My Ride Service Center, we stop rust in its tracks with proper removal, treatment, and long-term protection.",
+      },
+      {
+        heading: "The Right Treatment for Every Level of Rust",
+        body: "Surface rust can be treated with light grinding, rust-neutralizing primer, and refinishing. Scale rust — where metal begins to pit and flake — requires aggressive preparation, including grinding to bare, sound metal before priming and painting. Penetrating rust — where the metal has rusted completely through — requires patch panel welding or full panel replacement, which our technicians are fully equipped to perform.",
+      },
+      {
+        heading: "Long-Term Corrosion Protection Built Into Every Repair",
+        body: "The rust repair process is only as good as the protection applied afterward. At My Ride Service Center, we apply epoxy primer directly to bare metal, followed by a seam sealer on all joints, and a topcoat that matches your vehicle's color. On structural and undercarriage components, we apply rubberized undercoating to prevent moisture intrusion. Proper rust repair with quality protective coatings can extend the life of your vehicle by years.",
+      },
     ],
     details: [
       "Surface rust removal and chemical treatment",
@@ -717,7 +852,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     ],
     process: [
       { step: "Rust Severity Assessment", description: "We probe, tap, and inspect all affected areas to categorize the rust as surface, scale, or penetrating — and identify any structural components affected." },
-      { step: "Rust Removal", description: "We grind, sand, or media blast the rust back to clean, sound metal. We use rust converter on areas with minor remaining traces to neutralize the oxidation chemically." },
+      { step: "Rust Removal", description: "We grind, sand, or media blast the rust back to clean, sound metal. We use rust converter on areas with minor remaining traces to neutralize oxidation chemically." },
       { step: "Metal Repair", description: "For penetrating rust, we cut out the rusted section and weld in a fabricated or stamped patch panel, grinding welds smooth for a seamless finish." },
       { step: "Primer & Corrosion Protection", description: "We apply epoxy primer to all bare metal immediately after preparation, followed by seam sealer on all joints and edges to block moisture entry." },
       { step: "Paint & Protective Topcoat", description: "We apply color-matched paint to repaired panels and rubberized undercoating to all undercarriage areas to create a long-lasting protective barrier." },
@@ -730,11 +865,11 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
       "Serving Fredericksburg and surrounding areas in the Rappahannock region",
     ],
     faq: [
-      { q: "Can rust repair be done on an old vehicle?", a: "Yes — rust repair is worth doing on any vehicle you plan to keep driving. We'll assess the extent of the rust, provide a written estimate, and give you an honest recommendation on whether the repair makes financial sense for your vehicle's value." },
+      { q: "Can rust repair be done on an old vehicle?", a: "Yes — rust repair is worth doing on any vehicle you plan to keep driving. We'll assess the extent of the rust, provide a written estimate, and give you an honest recommendation on whether the repair makes financial sense." },
       { q: "How do I know if my car has rust I can't see?", a: "Common hidden rust locations include wheel arches, the bottom of door skins, frame rails, floor pans, and the area around fuel lines. We can perform an undercarriage inspection to identify rust before it becomes visible or structural." },
-      { q: "Does rust repair last?", a: "Rust repair with proper bare-metal preparation, epoxy primer, and protective topcoating lasts many years. Painting over rust without proper preparation may look good initially but will fail within months as the rust continues to spread beneath the paint." },
-      { q: "How much does rust repair cost?", a: "Surface rust treatment starts around $200–$400 per panel. Patch panel welding for penetrating rust ranges from $500–$1,500+ depending on the location and size of the affected area. Full structural panel replacement is priced on a case-by-case basis after inspection." },
-      { q: "Can you prevent rust from coming back?", a: "Yes — proper epoxy primer, seam sealing, and rubberized undercoating significantly reduce the chances of rust returning in the repaired area. Annual undercarriage inspections and prompt attention to paint chips help prevent new rust from starting." },
+      { q: "Does rust repair last?", a: "Rust repair with proper bare-metal preparation, epoxy primer, and protective topcoating lasts many years. Painting over rust without proper preparation may look good initially but will fail within months." },
+      { q: "How much does rust repair cost?", a: "Surface rust treatment starts around $200–$400 per panel. Patch panel welding for penetrating rust ranges from $500–$1,500+ depending on location and size. Full structural panel replacement is priced after inspection." },
+      { q: "Can you prevent rust from coming back?", a: "Yes — proper epoxy primer, seam sealing, and rubberized undercoating significantly reduce the chances of rust returning in the repaired area. Annual undercarriage inspections help prevent new rust from starting." },
       { q: "Will rust repair affect my vehicle inspection?", a: "In Virginia, severely rusted structural components — frame rails, control arms, and brake lines — can cause a vehicle to fail the annual safety inspection. Proper rust repair restores these components to an inspectable condition." },
     ],
   },
@@ -747,11 +882,20 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     metaTitle: "Scratch Repair in Fredericksburg, VA | My Ride Service Center",
     metaDescription: "Professional scratch repair in Fredericksburg, VA. My Ride Service Center fixes surface scuffs, keying damage, and deep scratches with perfect color matching. Call 540-418-6626.",
     description:
-      "Scratches range from minor clear coat scuffs to deep gouges that expose bare metal. My Ride Service Center evaluates every scratch and applies the right solution — paint correction for light damage or professional respray for deeper cuts — to restore your finish.",
-    longDescription: [
-      "Not all scratches are created equal — and the right repair depends entirely on how deep the damage goes. A surface scuff that only affects the clear coat can often be polished out without any repainting. A scratch through the base coat requires professional repainting and blending. A deep gouge that reaches bare metal creates a rust risk in addition to the cosmetic damage and must be repaired promptly. At My Ride Service Center in Fredericksburg, VA, we evaluate every scratch accurately and recommend the right repair — nothing more, nothing less.",
-      "Key scratches, shopping cart contact, and road debris impacts are among the most common causes of paint damage we see. Keying damage — where a sharp object has been deliberately dragged across a panel — often reaches the primer or bare metal layer and requires professional repainting. Our technicians handle all levels of scratch severity with the same attention to detail: proper surface preparation, precise color matching, and a flawless final finish.",
-      "For minor scratches confined to the clear coat, paint correction using professional-grade compounds and polishes can restore the surface to a mirror finish without any painting. This is faster, more affordable, and preserves more of the original factory paint thickness than repainting. We always start with the least invasive effective repair — and only recommend a full repaint when the depth of the damage requires it.",
+      "My Ride Service Center in Fredericksburg, VA accurately diagnoses how deep a scratch goes and applies the right solution — paint correction polishing for surface scuffs, or professional repainting with computer color matching for deeper damage. We never recommend more repair than the damage actually requires.",
+    sections: [
+      {
+        heading: "Not All Scratches Need Repainting — We Diagnose the Depth First",
+        body: "A surface scuff that only affects the clear coat can often be polished out without any repainting. A scratch through the base coat requires professional repainting and blending. A deep gouge that reaches bare metal creates a rust risk and must be repaired promptly. At My Ride Service Center, we evaluate every scratch accurately and recommend the right repair — nothing more, nothing less.",
+      },
+      {
+        heading: "Paint Correction for Surface Scratches — Faster and More Affordable",
+        body: "For scratches confined to the clear coat, paint correction using professional-grade compounds and polishes can restore the surface to a mirror finish without any painting. This is faster, more affordable, and preserves more of the original factory paint thickness than repainting. We always start with the least invasive effective repair — and only recommend a full repaint when the damage depth truly requires it.",
+      },
+      {
+        heading: "Seamless Color Matching When Repainting Is Necessary",
+        body: "Key scratches, shopping cart damage, and road debris impacts that reach the base coat or bare metal require professional repainting. Our technicians use computer spectrophotometer color matching and blend the repaired panel into adjacent sections to create a repair that is invisible in normal viewing conditions. We handle all levels of scratch severity — from parking lot scuffs to deliberate keying damage — with the same precision.",
+      },
     ],
     details: [
       "Clear coat scratch polishing and paint correction",
@@ -767,8 +911,8 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
       { step: "Scratch Depth Assessment", description: "We evaluate the scratch under proper lighting to determine whether it's in the clear coat, base coat, primer, or bare metal — the depth determines the repair method." },
       { step: "Polish or Prep", description: "Clear coat scratches go straight to paint correction polishing. Deeper scratches require sanding to feather the edges and prepare the surface for primer and paint." },
       { step: "Rust Prevention", description: "Any scratch reaching bare metal gets an immediate application of etch primer to prevent rust from starting during the repair process." },
-      { step: "Color Match & Paint", description: "We scan your existing paint for a custom color match and apply base coat to the repaired area, blending into adjacent panels where needed for a seamless result." },
-      { step: "Clear Coat & Polish", description: "We apply clear coat, allow it to cure, and polish the repaired area to match the gloss level of the surrounding paint — leaving no visible line between old and new." },
+      { step: "Color Match & Paint", description: "We scan your existing paint for a custom color match and apply base coat to the repaired area, blending into adjacent panels where needed." },
+      { step: "Clear Coat & Polish", description: "We apply clear coat, allow it to cure, and polish the repaired area to match the gloss level of the surrounding paint — leaving no visible line." },
     ],
     whyUs: [
       "Accurate scratch depth diagnosis — no unnecessary repainting",
@@ -779,9 +923,9 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     ],
     faq: [
       { q: "Can a scratch be buffed out?", a: "Scratches confined to the clear coat layer can often be polished out without repainting. If you can't feel the scratch with your fingernail, it's likely a clear coat scratch. If your nail catches in the groove, the base coat is likely affected and professional repainting is required." },
-      { q: "How much does scratch repair cost?", a: "Clear coat polishing for minor scratches starts around $100–$200. Base coat scratches requiring paint range from $300–$700 per panel depending on size and location. Key damage or multi-panel repairs are priced after inspection." },
+      { q: "How much does scratch repair cost?", a: "Clear coat polishing for minor scratches starts around $100–$200. Base coat scratches requiring paint range from $300–$700 per panel depending on size and location." },
       { q: "Will scratch repair be noticeable?", a: "A professional scratch repair with proper color matching and blending is not detectable in normal viewing conditions. We blend new paint into adjacent panels and polish to match the surrounding gloss level." },
-      { q: "How quickly should I repair a deep scratch?", a: "As soon as possible. A scratch that reaches bare metal exposes the steel to air and moisture, beginning the rust process within days. Even a thin coat of automotive touch-up paint applied immediately provides some protection until a professional repair can be completed." },
+      { q: "How quickly should I repair a deep scratch?", a: "As soon as possible. A scratch that reaches bare metal exposes the steel to air and moisture, beginning the rust process within days. Even touch-up paint applied immediately provides some protection until a professional repair can be completed." },
       { q: "Can you fix scratches on plastic bumpers and trim?", a: "Yes — we repair scratches on plastic bumper covers and trim pieces using flexible primer and paint formulated for plastic. The result is a seamless repair that won't crack when the plastic flexes." },
       { q: "Do you offer mobile scratch repair?", a: "Our professional scratch repairs are performed in our Fredericksburg shop where we have proper lighting, temperature control, and dust-free painting conditions. Mobile repairs cannot produce the same quality result as our shop environment." },
     ],

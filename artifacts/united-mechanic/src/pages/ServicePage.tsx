@@ -108,21 +108,31 @@ export default function ServicePage({ service }: Props) {
             {/* ── Main Content ── */}
             <div className="lg:col-span-2 space-y-14">
 
-              {/* About Section */}
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
+              {/* SEO Lede */}
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                aria-labelledby="about-heading"
+                transition={{ duration: 0.45 }}
+                className="text-base md:text-lg text-muted-foreground leading-relaxed border-l-4 border-primary pl-5 py-1"
               >
-                <h2 id="about-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-5">
-                  {service.title} in {locationKeyword}
-                </h2>
-                <p className="text-muted-foreground text-base leading-relaxed mb-4">{service.description}</p>
-                {service.longDescription.map((para, i) => (
-                  <p key={i} className="text-muted-foreground text-base leading-relaxed mb-4">{para}</p>
-                ))}
-              </motion.section>
+                {service.description}
+              </motion.p>
+
+              {/* Sectioned Long-Form Content */}
+              {service.sections.map((section, i) => (
+                <motion.section
+                  key={section.heading}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  aria-labelledby={`section-heading-${i}`}
+                >
+                  <h2 id={`section-heading-${i}`} className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                    {section.heading}
+                  </h2>
+                  <p className="text-muted-foreground text-base leading-relaxed">{section.body}</p>
+                </motion.section>
+              ))}
 
               {/* What's Included */}
               <motion.section
