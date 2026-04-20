@@ -71,7 +71,7 @@ export default function Navbar() {
           : "bg-white border-b border-border shadow-sm"
       )}
     >
-      <div className="container mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
 
           <Link href="/" className="flex items-center shrink-0">
@@ -169,7 +169,7 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className={cn("lg:hidden border-t", scrolled ? "border-zinc-800 bg-zinc-900" : "border-border bg-white")}>
-          <div className="container mx-auto px-4 py-4 space-y-1">
+          <div className="max-w-6xl mx-auto px-4 py-4 space-y-1">
             <Link href="/" className={cn("block px-3 py-2 text-sm font-medium rounded-lg transition-colors", scrolled ? "text-zinc-300 hover:bg-zinc-800 hover:text-white" : "hover:bg-secondary")}>
               Home
             </Link>
