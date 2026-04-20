@@ -85,8 +85,8 @@ export default function HomeContent() {
             <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground rounded-full px-4 py-1.5 text-sm font-medium mb-4">
               <Wrench className="h-4 w-4" /> Auto Repair
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">Complete Auto Repair Services</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">From routine maintenance to complex mechanical repairs — we handle it all with certified expertise.</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">Auto Repair Services in Fredericksburg, VA</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">From routine oil changes and brake service to engine diagnostics and transmission repair — My Ride Service Center handles it all.</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
             {AUTO_REPAIR_SERVICES.map((service, i) => (
@@ -123,8 +123,8 @@ export default function HomeContent() {
             <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground rounded-full px-4 py-1.5 text-sm font-medium mb-4">
               <PaintBucket className="h-4 w-4" /> Body Shop
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">Collision &amp; Body Shop Services</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">Professional collision repair, paint, and restoration — backed by insurance support and precision craftsmanship.</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">Collision Repair &amp; Body Shop Services in Fredericksburg, VA</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">Professional collision repair, dent removal, auto painting, and frame straightening — backed by direct insurance billing at My Ride Service Center.</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
             {BODY_SHOP_SERVICES.map((service, i) => (
@@ -167,10 +167,10 @@ export default function HomeContent() {
                 <Building2 className="h-4 w-4" /> Dealership Service Program
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-                A Trusted Repair Partner for Automotive Dealers
+                My Ride Dealership Service Program — Fredericksburg, VA
               </h2>
               <p className="text-zinc-400 text-lg leading-relaxed mb-8">
-                My Ride Service Center partners with dealerships across Fredericksburg, VA for trade-in reconditioning, overflow repairs, collision claims, and customer referrals — handled with fast turnaround and transparent pricing.
+                My Ride Service Center partners with automotive dealerships across Fredericksburg, Stafford, and Spotsylvania, VA for trade-in reconditioning, overflow mechanical repairs, collision claims, and customer vehicle service — fast turnaround, transparent pricing, one trusted local partner.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/dealership-service-program">
@@ -211,18 +211,18 @@ export default function HomeContent() {
               <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground rounded-full px-4 py-1.5 text-sm font-medium mb-6">
                 <Star className="h-4 w-4" /> Why My Ride
               </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-6">Fredericksburg's Repair Shop You Can Trust</h2>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-6">Why Choose My Ride Service Center in Fredericksburg, VA?</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Experienced Technicians", desc: "Our team is trained for both mechanical and body shop repairs across all makes and models." },
-                  { title: "Insurance Support", desc: "We work directly with your insurance company to make claims stress-free." },
-                  { title: "Fast Turnaround", desc: "We respect your time — same-day service available on qualifying repairs." },
-                  { title: "All Makes & Models", desc: "Domestic and foreign vehicles, from sedans to trucks and SUVs." },
+                  { title: "Experienced Auto & Body Shop Technicians", desc: "Our team is trained for both mechanical and collision repairs across all makes and models." },
+                  { title: "Direct Insurance Billing", desc: "We work directly with your insurance company to make collision claims stress-free." },
+                  { title: "Fast Turnaround Times", desc: "We respect your time — same-day service available on qualifying repairs in Fredericksburg." },
+                  { title: "All Makes & Models Accepted", desc: "Domestic and foreign vehicles, from sedans to trucks and SUVs — we service them all." },
                 ].map(({ title, desc }) => (
                   <div key={title} className="flex gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-semibold text-foreground">{title}</p>
+                      <h3 className="font-semibold text-foreground">{title}</h3>
                       <p className="text-sm text-muted-foreground">{desc}</p>
                     </div>
                   </div>
@@ -243,8 +243,8 @@ export default function HomeContent() {
             <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground rounded-full px-4 py-1.5 text-sm font-medium mb-4">
               <Star className="h-4 w-4 fill-primary text-primary" /> Customer Testimonials
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">What Our Customers Say</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">Real reviews from real drivers in Fredericksburg, VA.</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">5-Star Reviews — My Ride Service Center, Fredericksburg VA</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">Real Google reviews from drivers across Fredericksburg, Stafford, and Spotsylvania, VA.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
@@ -278,7 +278,7 @@ export default function HomeContent() {
                   ))}
                 </div>
                 <div>
-                  <p className="font-bold text-foreground text-base mb-2">{title}</p>
+                  <h3 className="font-bold text-foreground text-base mb-2">{title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed line-clamp-6">{body}</p>
                 </div>
                 <div className="mt-auto pt-3 border-t border-border flex items-center gap-2.5">
@@ -315,8 +315,8 @@ export default function HomeContent() {
       <section className="py-20 bg-zinc-950">
         <div className="container mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Ready to Book Your Repair?</h2>
-            <p className="text-zinc-400 max-w-xl mx-auto mb-10 text-lg">Call us or schedule online — same-day appointments often available.</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Schedule Auto Repair or Collision Service in Fredericksburg, VA</h2>
+            <p className="text-zinc-400 max-w-xl mx-auto mb-10 text-lg">Call My Ride Service Center or book online — same-day appointments often available at 540-418-6626.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/appointment">
                 <Button size="lg" className="font-semibold w-full sm:w-auto">Book Appointment</Button>
