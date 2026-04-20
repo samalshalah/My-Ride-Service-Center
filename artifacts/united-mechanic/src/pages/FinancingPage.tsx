@@ -214,12 +214,17 @@ export default function FinancingPage() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-3xl overflow-hidden shadow-lg border border-border"
+              className="flex items-center justify-center gap-6 py-8 px-4"
             >
               <img
-                src="/technet-warranty.png"
-                alt="TechNet Nationwide Warranty and Roadside Assistance"
-                className="w-full h-auto object-contain bg-zinc-50 p-4"
+                src="/technet-shield-warranty.png"
+                alt="TechNet 24-Month / 24,000-Mile Nationwide Warranty"
+                className="w-44 md:w-56 drop-shadow-xl"
+              />
+              <img
+                src="/technet-shield-roadside.png"
+                alt="TechNet Roadside Assistance"
+                className="w-44 md:w-56 drop-shadow-xl"
               />
             </motion.div>
 
