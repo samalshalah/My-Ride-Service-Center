@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Calendar, Phone, MapPin, CheckCircle2, Car, Clock } from "lucide-react";
@@ -24,7 +24,16 @@ const ALL_SERVICE_OPTIONS = [
 
 export default function AppointmentContent() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", year: "", make: "", model: "", service: "", date: "", time: "", notes: "" });
+  const [minDate, setMinDate] = useState("");
   const set = (k: string, v: string) => setForm((p) => ({ ...p, [k]: v }));
+
+  useEffect(() => {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+    setMinDate(`${yyyy}-${mm}-${dd}`);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -103,7 +112,7 @@ export default function AppointmentContent() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
                         <Label htmlFor="date">Preferred Date *</Label>
-                        <Input id="date" type="date" min={new Date().toISOString().split("T")[0]} value={form.date} onChange={(e) => set("date", e.target.value)} required />
+                        <Input id="date" type="date" min={minDate} value={form.date} onChange={(e) => set("date", e.target.value)} required />
                       </div>
                       <div className="space-y-1.5">
                         <Label>Preferred Time *</Label>

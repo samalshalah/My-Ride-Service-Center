@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p>© {new Date().getFullYear()} My Ride Service Center. All rights reserved.</p>
+          <p suppressHydrationWarning>© {new Date().getFullYear()} My Ride Service Center. All rights reserved.</p>
           <div className="flex gap-5">
             <Link href="/about" className="text-zinc-400 hover:text-white transition-colors">About</Link>
             <Link href="/contact" className="text-zinc-400 hover:text-white transition-colors">Contact</Link>
