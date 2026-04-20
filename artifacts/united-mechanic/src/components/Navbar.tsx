@@ -87,7 +87,11 @@ export default function Navbar() {
               Home
             </Link>
 
-            <div className="relative">
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("auto-repair")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
               <button
                 className={cn("flex items-center gap-1 text-sm font-medium transition-colors", linkColor("/auto-repair"))}
                 onClick={() => setActiveDropdown(activeDropdown === "auto-repair" ? null : "auto-repair")}
@@ -96,7 +100,7 @@ export default function Navbar() {
                 <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", activeDropdown === "auto-repair" && "rotate-180")} />
               </button>
               {activeDropdown === "auto-repair" && (
-                <div className={cn("absolute left-0 top-full mt-2 w-64 rounded-xl shadow-xl py-1 z-50", dropdownPanel)}>
+                <div className={cn("absolute left-0 top-full mt-0 w-64 rounded-xl shadow-xl py-1 z-50", dropdownPanel)}>
                   <Link href="/auto-repair" className={cn("block px-4 py-2 text-sm font-semibold transition-colors", dropdownHeading)} onClick={() => setActiveDropdown(null)}>
                     All Auto Repair Services
                   </Link>
@@ -110,7 +114,11 @@ export default function Navbar() {
               )}
             </div>
 
-            <div className="relative">
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("body-shop")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
               <button
                 className={cn("flex items-center gap-1 text-sm font-medium transition-colors", linkColor("/body-shop"))}
                 onClick={() => setActiveDropdown(activeDropdown === "body-shop" ? null : "body-shop")}
@@ -119,7 +127,7 @@ export default function Navbar() {
                 <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", activeDropdown === "body-shop" && "rotate-180")} />
               </button>
               {activeDropdown === "body-shop" && (
-                <div className={cn("absolute left-0 top-full mt-2 w-64 rounded-xl shadow-xl py-1 z-50", dropdownPanel)}>
+                <div className={cn("absolute left-0 top-full mt-0 w-64 rounded-xl shadow-xl py-1 z-50", dropdownPanel)}>
                   <Link href="/body-shop" className={cn("block px-4 py-2 text-sm font-semibold transition-colors", dropdownHeading)} onClick={() => setActiveDropdown(null)}>
                     All Body Shop Services
                   </Link>
