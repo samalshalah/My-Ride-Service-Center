@@ -213,7 +213,7 @@ export default function AutoRepairListPage() {
 
       {/* FAQ */}
       <section className="py-16 bg-white" aria-labelledby="faq-repair-heading">
-        <div className="container mx-auto px-4 max-w-3xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">
             <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2">Common Questions</p>
             <h2 id="faq-repair-heading" className="text-2xl md:text-3xl font-extrabold text-foreground">

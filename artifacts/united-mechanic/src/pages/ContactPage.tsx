@@ -22,7 +22,7 @@ export default function ContactPage() {
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
             {/* Location Info */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -158,7 +158,7 @@ export default function ContactPage() {
 
       {/* Map Embed */}
       <section className="pb-16 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="rounded-3xl overflow-hidden h-80 border border-border shadow-sm">
             <iframe
               title="My Ride Service Center Map"

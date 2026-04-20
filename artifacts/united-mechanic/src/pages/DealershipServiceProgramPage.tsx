@@ -30,7 +30,7 @@ export default function DealershipServiceProgramPage() {
 
       {/* Program Overview */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -64,7 +64,7 @@ export default function DealershipServiceProgramPage() {
 
       {/* Program Benefits */}
       <section className="py-20 bg-zinc-50">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ export default function DealershipServiceProgramPage() {
 
       {/* Services Covered */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
