@@ -4,7 +4,6 @@ import { Phone, CheckCircle2, ExternalLink, ShieldCheck, Star } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
 
 const FINANCE_PARTNERS = [
@@ -89,16 +88,18 @@ export default function FinancingPage() {
         badge={<><ShieldCheck className="h-4 w-4" /><span>Financing Available</span></>}
         title={<>Don't let the cost wait.<br />Fix it today.</>}
         subtitle="We partner with three flexible financing companies so you can get your vehicle repaired now and pay over time — with options for all credit types."
+        image="/oil-change.png"
+        imageAlt="Vehicle service"
         actions={
           <>
             <a href="tel:5046581818">
               <Button size="lg" className="font-semibold w-full sm:w-auto">
-                <Phone className="mr-2 h-4 w-4" /> Fredericksburg: 504-658-1818
+                <Phone className="mr-2 h-4 w-4" /> Fredericksburg
               </Button>
             </a>
             <a href="tel:5714587251">
               <Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
-                <Phone className="mr-2 h-4 w-4" /> Woodbridge: 571-458-7251
+                <Phone className="mr-2 h-4 w-4" /> Woodbridge
               </Button>
             </a>
           </>
@@ -278,7 +279,6 @@ export default function FinancingPage() {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

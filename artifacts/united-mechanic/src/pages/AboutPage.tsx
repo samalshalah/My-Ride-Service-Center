@@ -5,7 +5,6 @@ import { Phone, Star, ShieldCheck, Wrench, Users, ArrowRight } from "lucide-reac
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
 
 export default function AboutPage() {
@@ -17,8 +16,8 @@ export default function AboutPage() {
         badge={<><span>Our Story</span></>}
         title="About United Mechanic"
         subtitle="A community fixture in Northern Virginia for over two decades."
-        image="/hero.png"
-        imageAlt="United Mechanic shop"
+        image="/engine.png"
+        imageAlt="United Mechanic engine work"
       />
 
       {/* Story */}
@@ -138,7 +137,6 @@ export default function AboutPage() {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

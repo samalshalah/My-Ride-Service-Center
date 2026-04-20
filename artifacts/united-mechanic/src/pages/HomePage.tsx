@@ -5,7 +5,6 @@ import { Phone, ShieldCheck, Star, Car, CheckCircle2, ArrowRight, MapPin } from 
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import { SERVICES } from "@/data/services";
 
 export default function HomePage() {
@@ -36,12 +35,12 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="tel:5046581818">
                   <Button size="lg" className="w-full sm:w-auto text-lg h-14 px-8 font-semibold">
-                    <Phone className="mr-2 h-5 w-5" /> Fredericksburg: 504-658-1818
+                    <Phone className="mr-2 h-5 w-5" /> Fredericksburg
                   </Button>
                 </a>
                 <a href="tel:5714587251">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-8 font-semibold bg-white/10 hover:bg-white/20 text-white border-white/20">
-                    <Phone className="mr-2 h-5 w-5" /> Woodbridge: 571-458-7251
+                    <Phone className="mr-2 h-5 w-5" /> Woodbridge
                   </Button>
                 </a>
               </div>
@@ -226,7 +225,6 @@ export default function HomePage() {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

@@ -80,14 +80,10 @@ export default function Footer() {
 
         <div className="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <p>© {new Date().getFullYear()} United Mechanic Auto Service LLC. All rights reserved.</p>
-          <a
-            href="https://wa.me/15046581818"
-            target="_blank"
-            rel="noreferrer"
-            className="text-[#25D366] hover:underline"
-          >
-            Chat on WhatsApp
-          </a>
+          <div className="flex gap-5">
+            <a href="tel:5046581818" className="text-zinc-400 hover:text-white transition-colors text-sm">Fredericksburg</a>
+            <a href="tel:5714587251" className="text-zinc-400 hover:text-white transition-colors text-sm">Woodbridge</a>
+          </div>
         </div>
       </div>
     </footer>

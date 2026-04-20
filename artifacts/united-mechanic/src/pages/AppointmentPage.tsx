@@ -15,7 +15,6 @@ import {
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
 import { SERVICES } from "@/data/services";
 
@@ -100,12 +99,13 @@ export default function AppointmentPage() {
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
-      <WhatsAppButton />
 
       <PageHero
         badge={<><Calendar className="h-4 w-4" /><span>Schedule a Visit</span></>}
         title="Book a Repair Appointment"
         subtitle="Tell us about your vehicle and we'll get you in as soon as possible — same-day appointments often available."
+        image="/brakes.png"
+        imageAlt="Brake service"
       />
 
       <section className="py-16 bg-zinc-50">

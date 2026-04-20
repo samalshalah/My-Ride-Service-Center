@@ -14,7 +14,6 @@ import {
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
 
 const coverageItems = [
@@ -49,22 +48,23 @@ export default function WarrantyPage() {
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
-      <WhatsAppButton />
 
       <PageHero
         badge={<><Shield className="h-4 w-4" /><span>TechNet Professional</span></>}
         title="Warranty Protection You Can Count On"
         subtitle="Every repair we perform is backed by a nationwide TechNet warranty — 24 months or 24,000 miles, honored at over 15,000 locations across North America."
+        image="/diagnostics.png"
+        imageAlt="Vehicle diagnostics"
         actions={
           <>
             <a href="tel:5046581818">
               <Button size="lg" className="font-semibold w-full sm:w-auto">
-                <Phone className="mr-2 h-4 w-4" /> Fredericksburg: 504-658-1818
+                <Phone className="mr-2 h-4 w-4" /> Fredericksburg
               </Button>
             </a>
             <a href="tel:5714587251">
               <Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
-                <Phone className="mr-2 h-4 w-4" /> Woodbridge: 571-458-7251
+                <Phone className="mr-2 h-4 w-4" /> Woodbridge
               </Button>
             </a>
           </>

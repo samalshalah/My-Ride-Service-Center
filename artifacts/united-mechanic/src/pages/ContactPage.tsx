@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
 
 export default function ContactPage() {
@@ -41,7 +40,9 @@ export default function ContactPage() {
       <PageHero
         badge={<><span>Get in Touch</span></>}
         title="Contact Us"
-        subtitle="Call, get directions, or chat on WhatsApp — we're ready to help with your vehicle."
+        subtitle="Call or stop by — we're ready to help with your vehicle."
+        image="/shop-exterior.jpg"
+        imageAlt="United Mechanic shop exterior"
       />
 
       <section className="py-16 bg-white">
@@ -131,7 +132,6 @@ export default function ContactPage() {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

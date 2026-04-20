@@ -5,7 +5,6 @@ import { Phone, MapPin, CheckCircle2, Clock, ArrowRight, ShieldCheck } from "luc
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
 import { SERVICES } from "@/data/services";
 
@@ -79,7 +78,7 @@ export const LOCATIONS: Record<string, LocationData> = {
       "Electrical Repair",
       "All Makes & Models",
     ],
-    heroImage: "/transmission.png",
+    heroImage: "/alignment.png",
     description:
       "United Mechanic's Woodbridge location brings the same trusted expertise and quality workmanship to Prince William County. Whether you need a transmission rebuild, brake service, or general auto repair, our skilled technicians deliver honest, reliable work — just like we have for two decades.",
     highlights: [
@@ -269,7 +268,6 @@ export default function LocationPage({ slug }: { slug: string }) {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

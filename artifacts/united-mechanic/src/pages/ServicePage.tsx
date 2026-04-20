@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
 
 export type { ServiceData } from "@/data/services";
@@ -129,7 +128,6 @@ function ServicePageLayout({ service }: { service: ServiceData }) {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

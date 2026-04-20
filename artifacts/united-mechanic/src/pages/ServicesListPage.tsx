@@ -5,7 +5,6 @@ import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
 import { SERVICES } from "@/data/services";
 
@@ -79,7 +78,6 @@ export default function ServicesListPage() {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }
