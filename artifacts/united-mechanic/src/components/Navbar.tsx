@@ -57,9 +57,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center shrink-0">
             <img
-              src="/myride-logo.png"
+              src="/myride-logo-horiz.jpg"
               alt="My Ride Service Center"
-              className="h-10 w-auto"
+              className="h-10 w-auto object-contain"
             />
           </Link>
 
