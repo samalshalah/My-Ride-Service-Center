@@ -1,6 +1,6 @@
 kind = "web"
 previewPath = "/"
-title = "United Mechanic"
+title = "My Ride Service Center"
 version = "1.0.0"
 id = "artifacts/united-mechanic"
 router = "path"
