@@ -1,7 +1,7 @@
 {
   "version": 4,
   "routes": {
-    "/body-shop/auto-painting": {
+    "/appointment": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -14,8 +14,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/body-shop/[slug]",
-      "dataRoute": "/body-shop/auto-painting.rsc",
+      "srcRoute": "/appointment",
+      "dataRoute": "/appointment.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -25,7 +25,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/body-shop/bumper-repair": {
+    "/dealership-service-program": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -38,8 +38,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/body-shop/[slug]",
-      "dataRoute": "/body-shop/bumper-repair.rsc",
+      "srcRoute": "/dealership-service-program",
+      "dataRoute": "/dealership-service-program.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -49,7 +49,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/body-shop/dent-repair": {
+    "/": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -62,8 +62,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/body-shop/[slug]",
-      "dataRoute": "/body-shop/dent-repair.rsc",
+      "srcRoute": "/",
+      "dataRoute": "/index.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -73,7 +73,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/body-shop/frame-straightening": {
+    "/auto-repair": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -86,8 +86,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/body-shop/[slug]",
-      "dataRoute": "/body-shop/frame-straightening.rsc",
+      "srcRoute": "/auto-repair",
+      "dataRoute": "/auto-repair.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -97,7 +97,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/body-shop/glass-replacement": {
+    "/about": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -110,8 +110,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/body-shop/[slug]",
-      "dataRoute": "/body-shop/glass-replacement.rsc",
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -121,7 +121,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/body-shop/paintless-dent-removal": {
+    "/body-shop": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -134,56 +134,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/body-shop/[slug]",
-      "dataRoute": "/body-shop/paintless-dent-removal.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/body-shop/rust-repair": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/body-shop/[slug]",
-      "dataRoute": "/body-shop/rust-repair.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/body-shop/scratch-repair": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/body-shop/[slug]",
-      "dataRoute": "/body-shop/scratch-repair.rsc",
+      "srcRoute": "/body-shop",
+      "dataRoute": "/body-shop.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -385,7 +337,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/appointment": {
+    "/body-shop/auto-painting": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -398,8 +350,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/appointment",
-      "dataRoute": "/appointment.rsc",
+      "srcRoute": "/body-shop/[slug]",
+      "dataRoute": "/body-shop/auto-painting.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -409,7 +361,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/body-shop": {
+    "/body-shop/bumper-repair": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -422,8 +374,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/body-shop",
-      "dataRoute": "/body-shop.rsc",
+      "srcRoute": "/body-shop/[slug]",
+      "dataRoute": "/body-shop/bumper-repair.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -433,7 +385,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/": {
+    "/body-shop/dent-repair": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -446,8 +398,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/",
-      "dataRoute": "/index.rsc",
+      "srcRoute": "/body-shop/[slug]",
+      "dataRoute": "/body-shop/dent-repair.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -457,7 +409,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/auto-repair": {
+    "/body-shop/frame-straightening": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -470,8 +422,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/auto-repair",
-      "dataRoute": "/auto-repair.rsc",
+      "srcRoute": "/body-shop/[slug]",
+      "dataRoute": "/body-shop/frame-straightening.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -481,7 +433,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/dealership-service-program": {
+    "/body-shop/glass-replacement": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -494,8 +446,80 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/dealership-service-program",
-      "dataRoute": "/dealership-service-program.rsc",
+      "srcRoute": "/body-shop/[slug]",
+      "dataRoute": "/body-shop/glass-replacement.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/body-shop/paintless-dent-removal": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/body-shop/[slug]",
+      "dataRoute": "/body-shop/paintless-dent-removal.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/body-shop/rust-repair": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/body-shop/[slug]",
+      "dataRoute": "/body-shop/rust-repair.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/body-shop/scratch-repair": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/body-shop/[slug]",
+      "dataRoute": "/body-shop/scratch-repair.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -520,30 +544,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/contact",
       "dataRoute": "/contact.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/about": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/about",
-      "dataRoute": "/about.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -638,31 +638,6 @@
     }
   },
   "dynamicRoutes": {
-    "/body-shop/[slug]": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "routeRegex": "^/body\\-shop/([^/]+?)(?:/)?$",
-      "dataRoute": "/body-shop/[slug].rsc",
-      "fallback": null,
-      "dataRouteRegex": "^/body\\-shop/([^/]+?)\\.rsc$",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/auto-repair/[slug]": {
       "experimentalBypassFor": [
         {
@@ -687,12 +662,37 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
+    },
+    "/body-shop/[slug]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/body\\-shop/([^/]+?)(?:/)?$",
+      "dataRoute": "/body-shop/[slug].rsc",
+      "fallback": null,
+      "dataRouteRegex": "^/body\\-shop/([^/]+?)\\.rsc$",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
     }
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "c90c54cffb65f8ae86e6a5202115df90",
-    "previewModeSigningKey": "0bb3a90f1b214a06ca333f5c47ad798b320d444898dd4d2c870b4778e33f3f17",
-    "previewModeEncryptionKey": "9b646034dbf2c9e593e654b1ce4427e3ad3c0c78b229ddba3f4cdade1ed6cff4"
+    "previewModeId": "b25ef73e5da5dc6ce39beece24820acf",
+    "previewModeSigningKey": "5c3311d6401fd29b13b398275c9f061fe8eb7182e5a0a39e234b2e86ebe4f070",
+    "previewModeEncryptionKey": "aad177ce563634fa4b7e45c3d1b87e951a70775fb7e967d1b072e40cb5ac8fa8"
   }
 }
