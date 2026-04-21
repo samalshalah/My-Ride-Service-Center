@@ -225,8 +225,8 @@ export default function HomeContent() {
 
       {/* Why Choose Us */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground rounded-full px-4 py-1.5 text-sm font-medium mb-6">
                 <Star className="h-4 w-4" /> Why My Ride
@@ -261,7 +261,7 @@ export default function HomeContent() {
                 </a>
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-3xl overflow-hidden h-80">
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-3xl overflow-hidden h-[480px]">
               <img src="/myride-auto-repair.jpg" alt="Our shop" className="w-full h-full object-cover" />
             </motion.div>
           </div>

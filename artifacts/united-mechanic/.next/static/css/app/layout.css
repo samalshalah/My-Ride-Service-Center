@@ -1127,6 +1127,9 @@
   .h-\[82vh\] {
     height: 82vh;
   }
+  .h-\[480px\] {
+    height: 480px;
+  }
   .h-\[var\(--radix-navigation-menu-viewport-height\)\] {
     height: var(--radix-navigation-menu-viewport-height);
   }
@@ -1560,6 +1563,9 @@
   }
   .gap-12 {
     gap: calc(var(--spacing) * 12);
+  }
+  .gap-16 {
+    gap: calc(var(--spacing) * 16);
   }
   .space-y-0\.5 {
     :where(& > :not(:last-child)) {
