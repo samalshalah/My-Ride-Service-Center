@@ -64,18 +64,23 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Contact</h3>
             <div className="space-y-3 text-sm">
-              <div className="flex items-start gap-2">
+              <a
+                href="https://www.google.com/maps/place/My+Ride+Service+Center/@38.2662,-77.5183,15z"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-start gap-2 hover:text-white transition-colors group"
+              >
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
                 <div>
-                  <p className="text-white font-medium">Fredericksburg, VA</p>
+                  <p className="text-white font-medium group-hover:text-primary transition-colors">Fredericksburg, VA</p>
                   <p>2715 Lafayette Blvd</p>
                   <p>Fredericksburg, VA 22408</p>
                 </div>
-              </div>
-              <div className="flex items-center gap-2">
+              </a>
+              <a href="tel:5404186626" className="flex items-center gap-2 hover:text-white transition-colors">
                 <Phone className="h-4 w-4 shrink-0 text-primary" />
-                <a href="tel:5404186626" className="hover:text-white transition-colors">540-418-6626</a>
-              </div>
+                <span>540-418-6626</span>
+              </a>
               <div className="text-sm">
                 <p className="text-white font-medium mb-1">Hours</p>
                 <p>Mon – Fri: 8:00 AM – 6:00 PM</p>
@@ -87,7 +92,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p suppressHydrationWarning>© {new Date().getFullYear()} My Ride Service Center. All rights reserved.</p>
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <p suppressHydrationWarning>© {new Date().getFullYear()} My Ride Service Center. All rights reserved.</p>
+            <p className="text-zinc-600 text-xs">Powered by Horizon Light Inc</p>
+          </div>
           <div className="flex gap-5">
             <Link href="/about" className="text-zinc-400 hover:text-white transition-colors">About</Link>
             <Link href="/contact" className="text-zinc-400 hover:text-white transition-colors">Contact</Link>
