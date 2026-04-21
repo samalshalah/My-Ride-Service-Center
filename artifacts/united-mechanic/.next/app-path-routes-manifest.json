@@ -1,0 +1,14 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/about/page": "/about",
+  "/appointment/page": "/appointment",
+  "/auto-repair/page": "/auto-repair",
+  "/auto-repair/[slug]/page": "/auto-repair/[slug]",
+  "/body-shop/page": "/body-shop",
+  "/body-shop/[slug]/page": "/body-shop/[slug]",
+  "/dealership-service-program/page": "/dealership-service-program",
+  "/contact/page": "/contact",
+  "/page": "/"
+}
