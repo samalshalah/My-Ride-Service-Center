@@ -63,14 +63,14 @@ export default function HomeContent() {
           <div className="max-w-6xl mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:divide-x divide-white/20">
               {[
-                { icon: <ShieldCheck className="w-5 h-5 text-primary" />, text: "Experienced Technicians" },
-                { icon: <Star className="w-5 h-5 text-primary" />, text: "5-Star Rated" },
-                { icon: <Wrench className="w-5 h-5 text-primary" />, text: "All Makes & Models" },
-                { icon: <Shield className="w-5 h-5 text-primary" />, text: "Insurance Accepted" },
-              ].map(({ icon, text }) => (
+                { icon: <ShieldCheck className="w-5 h-5 text-primary" />, text: "Experienced Technicians", offset: "translate-y-px" },
+                { icon: <Star className="w-5 h-5 text-primary" />, text: "5-Star Rated", offset: "translate-y-[3px]" },
+                { icon: <Wrench className="w-5 h-5 text-primary" />, text: "All Makes & Models", offset: "translate-y-px" },
+                { icon: <Shield className="w-5 h-5 text-primary" />, text: "Insurance Accepted", offset: "translate-y-px" },
+              ].map(({ icon, text, offset }) => (
                 <div key={text} className="flex items-center justify-center gap-2 px-4">
                   <span className="shrink-0 flex items-center">{icon}</span>
-                  <span className="text-white font-semibold tracking-wide text-sm leading-none translate-y-px">{text}</span>
+                  <span className={`text-white font-semibold tracking-wide text-sm leading-none ${offset}`}>{text}</span>
                 </div>
               ))}
             </div>
