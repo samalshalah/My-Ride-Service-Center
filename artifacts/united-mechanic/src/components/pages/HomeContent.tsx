@@ -106,12 +106,22 @@ export default function HomeContent() {
               </motion.div>
             ))}
           </div>
-          <div className="text-center mt-10">
-            <Link href="/auto-repair">
-              <Button size="lg" variant="outline" className="font-semibold border-primary text-primary hover:bg-primary hover:text-white">
-                View All Auto Repair Services <ArrowRight className="ml-2 h-4 w-4" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+            <Link href="/appointment">
+              <Button size="lg" className="font-semibold w-full sm:w-auto">
+                Book a Repair Appointment <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
+            <Link href="/auto-repair">
+              <Button size="lg" variant="outline" className="font-semibold border-primary text-primary hover:bg-primary hover:text-white w-full sm:w-auto">
+                View All Auto Repair Services
+              </Button>
+            </Link>
+            <a href="tel:5404186626">
+              <Button size="lg" variant="ghost" className="font-semibold text-muted-foreground hover:text-foreground w-full sm:w-auto">
+                <Phone className="mr-2 h-4 w-4" /> Call 540-418-6626
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -144,12 +154,22 @@ export default function HomeContent() {
               </motion.div>
             ))}
           </div>
-          <div className="text-center mt-10">
-            <Link href="/body-shop">
-              <Button size="lg" variant="outline" className="font-semibold border-primary text-primary hover:bg-primary hover:text-white">
-                View All Body Shop Services <ArrowRight className="ml-2 h-4 w-4" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+            <Link href="/appointment">
+              <Button size="lg" className="font-semibold w-full sm:w-auto">
+                Get a Free Estimate <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
+            <Link href="/body-shop">
+              <Button size="lg" variant="outline" className="font-semibold border-primary text-primary hover:bg-primary hover:text-white w-full sm:w-auto">
+                View All Body Shop Services
+              </Button>
+            </Link>
+            <a href="tel:5404186626">
+              <Button size="lg" variant="ghost" className="font-semibold text-muted-foreground hover:text-foreground w-full sm:w-auto">
+                <Phone className="mr-2 h-4 w-4" /> Call 540-418-6626
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -228,6 +248,18 @@ export default function HomeContent() {
                   </div>
                 ))}
               </div>
+              <div className="flex flex-col sm:flex-row gap-3 mt-8">
+                <Link href="/appointment">
+                  <Button size="lg" className="font-semibold w-full sm:w-auto">
+                    Book Appointment <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <a href="tel:5404186626">
+                  <Button size="lg" variant="outline" className="font-semibold border-primary text-primary hover:bg-primary hover:text-white w-full sm:w-auto">
+                    <Phone className="mr-2 h-4 w-4" /> Call 540-418-6626
+                  </Button>
+                </a>
+              </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-3xl overflow-hidden h-80">
               <img src="/myride-auto-repair.jpg" alt="Our shop" className="w-full h-full object-cover" />
@@ -296,7 +328,12 @@ export default function HomeContent() {
               </motion.div>
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+            <Link href="/appointment">
+              <Button size="lg" className="font-semibold w-full sm:w-auto">
+                Experience the Difference — Book Now <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
             <a
               href="https://www.google.com/maps/place/My+Ride+Service+Center/@38.2662,-77.5183,15z/data=!4m8!3m7!1s0x0:0x0!8m2!3d38.2662!4d-77.5183!9m1!1b1"
               target="_blank"
@@ -305,7 +342,6 @@ export default function HomeContent() {
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
               See All Reviews on Google
-              <ArrowRight className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>
