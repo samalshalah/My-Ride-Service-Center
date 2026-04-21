@@ -248,17 +248,12 @@ export default function HomeContent() {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 mt-8">
-                <Link href="/appointment">
-                  <Button size="lg" className="font-semibold w-full sm:w-auto">
-                    Book Appointment <ArrowRight className="ml-2 h-4 w-4" />
+              <div className="mt-8">
+                <Link href="/about">
+                  <Button size="lg" className="font-semibold">
+                    About Us <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <a href="tel:5404186626">
-                  <Button size="lg" variant="outline" className="font-semibold border-primary text-primary hover:bg-primary hover:text-white w-full sm:w-auto">
-                    <Phone className="mr-2 h-4 w-4" /> Call 540-418-6626
-                  </Button>
-                </a>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-3xl overflow-hidden h-[480px]">
