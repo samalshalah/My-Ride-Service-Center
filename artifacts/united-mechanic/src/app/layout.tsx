@@ -109,7 +109,7 @@ const LOCAL_BUSINESS_SCHEMA = {
   currenciesAccepted: "USD",
   priceRange: "$$",
   image: `${SITE_URL}/myride-hero.jpg`,
-  logo: `${SITE_URL}/myride-logo.png`,
+  logo: `${SITE_URL}/myride-logo-horiz-new.png`,
   sameAs: ["https://www.facebook.com/profile.php?id=61583662515240"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",

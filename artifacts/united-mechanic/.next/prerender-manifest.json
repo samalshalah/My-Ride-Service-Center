@@ -1,7 +1,7 @@
 {
   "version": 4,
   "routes": {
-    "/auto-repair": {
+    "/appointment": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -14,8 +14,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/auto-repair",
-      "dataRoute": "/auto-repair.rsc",
+      "srcRoute": "/appointment",
+      "dataRoute": "/appointment.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -217,7 +217,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/dealership-service-program": {
+    "/auto-repair": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -230,32 +230,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/dealership-service-program",
-      "dataRoute": "/dealership-service-program.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/about": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/about",
-      "dataRoute": "/about.rsc",
+      "srcRoute": "/auto-repair",
+      "dataRoute": "/auto-repair.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -457,7 +433,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/appointment": {
+    "/body-shop": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -470,8 +446,56 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/appointment",
-      "dataRoute": "/appointment.rsc",
+      "srcRoute": "/body-shop",
+      "dataRoute": "/body-shop.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/about": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/dealership-service-program": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/dealership-service-program",
+      "dataRoute": "/dealership-service-program.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -496,30 +520,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/",
       "dataRoute": "/index.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/body-shop": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/body-shop",
-      "dataRoute": "/body-shop.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -691,8 +691,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "590d14bbf351e955fc89accc8cbc3cd3",
-    "previewModeSigningKey": "163eb4609bd382109e7fe9cd9fa6f288e153144efc02b2914ae44a8a2201f5b9",
-    "previewModeEncryptionKey": "0cc703723365a1faf088a4ed1db6aecdb608e4edb10cdcc21a76f09fdacbe00d"
+    "previewModeId": "e2c211c7564d525f4a4236c8cbca9cff",
+    "previewModeSigningKey": "8ad9d80688309a506025a7cfc12f96e38f6eb182b881e22f326f44afa0afc78b",
+    "previewModeEncryptionKey": "12c39995412c6649fe3cb4bf9b22fd6b9b502cf4846bf713a57e8b0ab17c2690"
   }
 }
