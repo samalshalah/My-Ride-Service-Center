@@ -70,7 +70,7 @@ export default function HomeContent() {
               ].map(({ icon, text }) => (
                 <div key={text} className="flex items-center justify-center gap-2 px-4">
                   <span className="shrink-0 flex items-center">{icon}</span>
-                  <span className="text-white font-semibold tracking-wide text-sm leading-none">{text}</span>
+                  <span className="text-white font-semibold tracking-wide text-sm leading-none translate-y-px">{text}</span>
                 </div>
               ))}
             </div>
