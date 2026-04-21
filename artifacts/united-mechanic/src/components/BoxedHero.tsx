@@ -106,7 +106,7 @@ export default function BoxedHero({
               </a>
               <Link href={appointmentHref} className="flex-1">
                 <Button variant="outline" className="w-full font-semibold border-zinc-600 text-zinc-300 hover:bg-zinc-800">
-                  Book Appointment
+                  Appointment
                 </Button>
               </Link>
             </div>

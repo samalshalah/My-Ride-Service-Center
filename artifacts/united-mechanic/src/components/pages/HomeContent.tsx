@@ -46,7 +46,7 @@ export default function HomeContent() {
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               <Link href="/appointment">
                 <Button size="lg" className="w-full sm:w-auto font-bold text-base px-9">
-                  Book Appointment
+                  Appointment
                 </Button>
               </Link>
               <a href="tel:5404186626">
@@ -109,7 +109,7 @@ export default function HomeContent() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <Link href="/appointment">
               <Button size="lg" className="font-semibold w-full sm:w-auto">
-                Book a Repair Appointment <ArrowRight className="ml-2 h-4 w-4" />
+                Appointment <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
             <Link href="/auto-repair">
@@ -326,7 +326,7 @@ export default function HomeContent() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <Link href="/appointment">
               <Button size="lg" className="font-semibold w-full sm:w-auto">
-                Experience the Difference — Book Now <ArrowRight className="ml-2 h-4 w-4" />
+                Appointment <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
             <a
@@ -350,7 +350,7 @@ export default function HomeContent() {
             <p className="text-zinc-400 max-w-xl mx-auto mb-10 text-lg">Call My Ride Service Center or book online — same-day appointments often available at 540-418-6626.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/appointment">
-                <Button size="lg" className="font-semibold w-full sm:w-auto">Book Appointment</Button>
+                <Button size="lg" className="font-semibold w-full sm:w-auto">Appointment</Button>
               </Link>
               <a href="tel:5404186626">
                 <Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">

@@ -83,7 +83,7 @@ export default function ContactContent() {
                   </Button>
                 </a>
                 <Link href="/appointment">
-                  <Button size="lg" className="w-full font-semibold bg-white text-primary hover:bg-white/90">Book Appointment</Button>
+                  <Button size="lg" className="w-full font-semibold bg-white text-primary hover:bg-white/90">Appointment</Button>
                 </Link>
               </div>
               <div className="bg-zinc-50 rounded-3xl border border-border p-8">

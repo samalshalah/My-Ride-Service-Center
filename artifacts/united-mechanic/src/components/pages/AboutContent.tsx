@@ -138,7 +138,7 @@ export default function AboutContent() {
                 <Button size="lg" className="font-semibold w-full sm:w-auto"><Phone className="mr-2 h-4 w-4" /> Call 540-418-6626</Button>
               </a>
               <Link href="/appointment">
-                <Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">Book Appointment</Button>
+                <Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">Appointment</Button>
               </Link>
             </div>
           </motion.div>

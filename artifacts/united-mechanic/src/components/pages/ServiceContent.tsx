@@ -112,7 +112,7 @@ export default function ServiceContent({ service }: { service: ServiceData }) {
                 <p className="text-zinc-400 text-sm mb-6">Call us or book online — serving {locationKeyword} and surrounding areas Mon–Sat.</p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <a href="tel:5404186626"><Button size="lg" className="font-semibold w-full sm:w-auto"><Phone className="mr-2 h-4 w-4" /> 540-418-6626</Button></a>
-                  <Link href="/appointment"><Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">Book Appointment</Button></Link>
+                  <Link href="/appointment"><Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">Appointment</Button></Link>
                 </div>
               </motion.section>
             </div>
@@ -129,7 +129,7 @@ export default function ServiceContent({ service }: { service: ServiceData }) {
                 </div>
                 <div className="p-6 space-y-2">
                   <a href="tel:5404186626" className="block"><Button className="w-full font-semibold"><Phone className="mr-2 h-4 w-4" /> Call Now</Button></a>
-                  <Link href="/appointment"><Button variant="outline" className="w-full font-semibold border-zinc-600 text-zinc-300 hover:bg-zinc-800">Book Appointment</Button></Link>
+                  <Link href="/appointment"><Button variant="outline" className="w-full font-semibold border-zinc-600 text-zinc-300 hover:bg-zinc-800">Appointment</Button></Link>
                 </div>
                 <div className="px-6 pb-6 border-t border-zinc-800 pt-5">
                   <h3 className="font-bold text-zinc-300 mb-3 text-sm">Hours of Operation</h3>

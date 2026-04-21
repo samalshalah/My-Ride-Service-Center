@@ -143,7 +143,7 @@ export default function AutoRepairContent() {
           <p className="text-zinc-400 max-w-xl mx-auto mb-10 text-lg">Call us or book online — same-day appointments often available. Serving Fredericksburg, Spotsylvania, Stafford, and surrounding areas.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:5404186626"><Button size="lg" className="font-semibold w-full sm:w-auto"><Phone className="mr-2 h-4 w-4" /> 540-418-6626</Button></a>
-            <Link href="/appointment"><Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">Book Appointment</Button></Link>
+            <Link href="/appointment"><Button size="lg" variant="outline" className="font-semibold border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">Appointment</Button></Link>
           </div>
         </div>
       </section>

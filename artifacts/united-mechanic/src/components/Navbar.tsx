@@ -242,7 +242,7 @@ export default function Navbar() {
             <div className={cn("pt-3 border-t flex flex-col gap-2", scrolled ? "border-zinc-800" : "border-border")}>
               <Link href="/appointment">
                 <Button variant="outline" className={cn("w-full font-semibold gap-2", scrolled ? "border-zinc-600 text-zinc-200 bg-transparent hover:bg-zinc-800" : "border-primary text-primary hover:bg-primary hover:text-white")}>
-                  <Calendar className="h-4 w-4" /> Book Appointment
+                  <Calendar className="h-4 w-4" /> Appointment
                 </Button>
               </Link>
               <a href="tel:5404186626" className="block">
@@ -275,7 +275,7 @@ export default function Navbar() {
           className="flex-1 flex items-center justify-center gap-2 py-4 text-sm font-bold text-primary border-l border-border hover:bg-zinc-50 transition-colors"
         >
           <Calendar className="h-4 w-4" />
-          Book Appointment
+          Appointment
         </Link>
       </div>
     </>
