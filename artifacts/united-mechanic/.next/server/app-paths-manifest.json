@@ -1,14 +1,3 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/robots.txt/route": "app/robots.txt/route.js",
-  "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/appointment/page": "app/appointment/page.js",
-  "/about/page": "app/about/page.js",
-  "/auto-repair/page": "app/auto-repair/page.js",
-  "/auto-repair/[slug]/page": "app/auto-repair/[slug]/page.js",
-  "/body-shop/[slug]/page": "app/body-shop/[slug]/page.js",
-  "/body-shop/page": "app/body-shop/page.js",
-  "/dealership-service-program/page": "app/dealership-service-program/page.js",
-  "/contact/page": "app/contact/page.js",
   "/page": "app/page.js"
 }
