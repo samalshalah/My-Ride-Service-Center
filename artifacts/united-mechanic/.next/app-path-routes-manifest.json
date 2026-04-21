@@ -1,14 +1,14 @@
 {
   "/_not-found/page": "/_not-found",
-  "/robots.txt/route": "/robots.txt",
   "/sitemap.xml/route": "/sitemap.xml",
-  "/appointment/page": "/appointment",
+  "/robots.txt/route": "/robots.txt",
   "/about/page": "/about",
-  "/auto-repair/[slug]/page": "/auto-repair/[slug]",
+  "/appointment/page": "/appointment",
   "/auto-repair/page": "/auto-repair",
   "/body-shop/[slug]/page": "/body-shop/[slug]",
-  "/body-shop/page": "/body-shop",
-  "/contact/page": "/contact",
+  "/auto-repair/[slug]/page": "/auto-repair/[slug]",
   "/dealership-service-program/page": "/dealership-service-program",
-  "/page": "/"
+  "/contact/page": "/contact",
+  "/page": "/",
+  "/body-shop/page": "/body-shop"
 }
