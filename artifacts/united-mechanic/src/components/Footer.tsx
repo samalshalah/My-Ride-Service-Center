@@ -100,6 +100,7 @@ export default function Footer() {
             <Link href="/about" className="text-zinc-400 hover:text-white transition-colors">About</Link>
             <Link href="/contact" className="text-zinc-400 hover:text-white transition-colors">Contact</Link>
             <Link href="/appointment" className="text-zinc-400 hover:text-white transition-colors">Appointment</Link>
+            <Link href="/privacy-policy" className="text-zinc-400 hover:text-white transition-colors">Privacy Policy</Link>
           </div>
         </div>
       </div>
