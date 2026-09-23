@@ -3,12 +3,13 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const SITE_URL = "https://www.myrideserivcecenter.com";
+const SITE_URL = "https://myrideservicecenter.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: "My Ride Service Center",
   title: {
-    template: "%s | My Ride Service Center",
+    template: "%s",
     default: "My Ride Service Center | Body Shop & Auto Repair in Fredericksburg, VA",
   },
   description:
@@ -30,6 +31,10 @@ export const metadata: Metadata = {
     "auto repair Spotsylvania VA",
     "dealership service Fredericksburg",
   ],
+  authors: [{ name: "My Ride Service Center", url: SITE_URL }],
+  creator: "My Ride Service Center",
+  publisher: "My Ride Service Center",
+  category: "Auto Repair",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -61,9 +66,22 @@ export const metadata: Metadata = {
   },
 };
 
+const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: "My Ride Service Center",
+  url: SITE_URL,
+  publisher: {
+    "@id": `${SITE_URL}/#localbusiness`,
+  },
+  inLanguage: "en-US",
+};
+
 const LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "AutoRepair", "AutoBodyShop"],
+  "@id": `${SITE_URL}/#localbusiness`,
   name: "My Ride Service Center",
   description:
     "Fredericksburg, VA's trusted auto repair and collision body shop with 25+ years of experience. Serving Stafford, Spotsylvania & surrounding areas. All makes and models.",
@@ -111,6 +129,16 @@ const LOCAL_BUSINESS_SCHEMA = {
   image: `${SITE_URL}/myride-hero.jpg`,
   logo: `${SITE_URL}/myride-logo-horiz-new.png`,
   sameAs: ["https://www.facebook.com/profile.php?id=61583662515240"],
+  knowsAbout: [
+    "Auto repair",
+    "Collision repair",
+    "Brake repair",
+    "Oil changes",
+    "Engine diagnostics",
+    "Transmission repair",
+    "Dent repair",
+    "Auto painting",
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Auto Repair & Body Shop Services",
@@ -125,11 +153,15 @@ const LOCAL_BUSINESS_SCHEMA = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-background font-sans antialiased" suppressHydrationWarning>
+    <html lang="en" className="overflow-x-hidden">
+      <body className="min-h-screen overflow-x-hidden bg-background font-sans antialiased" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_SCHEMA) }}
         />
         <Navbar />
         <main>{children}</main>

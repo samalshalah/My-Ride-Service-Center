@@ -4,9 +4,9 @@ import ContactContent from "@/components/pages/ContactContent";
 export const metadata: Metadata = {
   title: "Contact My Ride Service Center | Auto Repair Shop in Fredericksburg, VA",
   description:
-    "Contact My Ride Service Center — auto repair & collision body shop in Fredericksburg, VA. Call 540-418-6626, get directions to 2715 Lafayette Blvd, or book a service appointment online.",
+    "Contact My Ride Service Center in Fredericksburg, VA. Call 540-418-6626, get directions to 2715 Lafayette Blvd, or book service online.",
   alternates: {
-    canonical: "https://www.myrideserivcecenter.com/contact",
+    canonical: "https://myrideservicecenter.com/contact/",
   },
   openGraph: {
     title: "Contact My Ride Service Center | Auto Repair in Fredericksburg, VA",

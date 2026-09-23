@@ -97,13 +97,18 @@ export default function Navbar() {
               onMouseEnter={() => setActiveDropdown("auto-repair")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
+              <div className={cn("flex items-center gap-1 text-base font-bold transition-colors", linkColor("/auto-repair"))}>
+                <Link href="/auto-repair/">Auto Repair</Link>
               <button
-                className={cn("flex items-center gap-1 text-base font-bold transition-colors", linkColor("/auto-repair"))}
+                type="button"
+                className="p-1"
+                aria-label="Toggle auto repair services"
+                aria-expanded={activeDropdown === "auto-repair"}
                 onClick={() => setActiveDropdown(activeDropdown === "auto-repair" ? null : "auto-repair")}
               >
-                Auto Repair
                 <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", activeDropdown === "auto-repair" && "rotate-180")} />
               </button>
+              </div>
               {activeDropdown === "auto-repair" && (
                 <div className={cn("absolute left-0 top-full mt-0 w-64 rounded-xl shadow-xl py-1 z-50", dropdownPanel)}>
                   <Link href="/auto-repair" className={cn("block px-4 py-2.5 text-sm font-bold transition-colors", dropdownHeading)} onClick={() => setActiveDropdown(null)}>
@@ -124,13 +129,18 @@ export default function Navbar() {
               onMouseEnter={() => setActiveDropdown("body-shop")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
+              <div className={cn("flex items-center gap-1 text-base font-bold transition-colors", linkColor("/body-shop"))}>
+                <Link href="/body-shop/">Body Shop</Link>
               <button
-                className={cn("flex items-center gap-1 text-base font-bold transition-colors", linkColor("/body-shop"))}
+                type="button"
+                className="p-1"
+                aria-label="Toggle body shop services"
+                aria-expanded={activeDropdown === "body-shop"}
                 onClick={() => setActiveDropdown(activeDropdown === "body-shop" ? null : "body-shop")}
               >
-                Body Shop
                 <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", activeDropdown === "body-shop" && "rotate-180")} />
               </button>
+              </div>
               {activeDropdown === "body-shop" && (
                 <div className={cn("absolute left-0 top-full mt-0 w-64 rounded-xl shadow-xl py-1 z-50", dropdownPanel)}>
                   <Link href="/body-shop" className={cn("block px-4 py-2.5 text-sm font-bold transition-colors", dropdownHeading)} onClick={() => setActiveDropdown(null)}>

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | My Ride Service Center",
   description: "Privacy policy for My Ride Service Center in Fredericksburg, VA. We do not sell or share your personal information or mobile phone numbers with third parties.",
-  alternates: { canonical: "https://www.myrideserivcecenter.com/privacy-policy" },
+  alternates: { canonical: "https://myrideservicecenter.com/privacy-policy/" },
 };
 
 export default function PrivacyPolicyPage() {

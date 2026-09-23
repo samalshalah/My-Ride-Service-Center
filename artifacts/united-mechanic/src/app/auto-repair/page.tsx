@@ -17,9 +17,9 @@ const FAQ_SCHEMA = {
 export const metadata: Metadata = {
   title: "Auto Repair in Fredericksburg, VA | My Ride Service Center",
   description:
-    "Expert auto repair in Fredericksburg, VA. My Ride Service Center offers brake service, oil changes, engine diagnostics, transmission repair, and more — all makes and models. Call 540-418-6626.",
+    "Auto repair in Fredericksburg, VA for brakes, oil changes, diagnostics, suspension, electrical, and transmission service. Call My Ride at 540-418-6626.",
   alternates: {
-    canonical: "https://www.myrideserivcecenter.com/auto-repair",
+    canonical: "https://myrideservicecenter.com/auto-repair/",
   },
   openGraph: {
     title: "Auto Repair in Fredericksburg, VA | My Ride Service Center",
@@ -32,8 +32,8 @@ const BREADCRUMB_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.myrideserivcecenter.com" },
-    { "@type": "ListItem", position: 2, name: "Auto Repair", item: "https://www.myrideserivcecenter.com/auto-repair" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://myrideservicecenter.com/" },
+    { "@type": "ListItem", position: 2, name: "Auto Repair", item: "https://myrideservicecenter.com/auto-repair/" },
   ],
 };
 

@@ -15,9 +15,9 @@ const DEALERSHIP_FAQ_SCHEMA = {
 export const metadata: Metadata = {
   title: "Dealership Service Program in Fredericksburg, VA | My Ride Service Center",
   description:
-    "My Ride Dealership Service Program — priority scheduling, transparent pricing, and quality repairs for automotive dealers in Fredericksburg, VA. Reconditioning, overflow work, collision claims. Call 540-418-6626.",
+    "Dealership service program in Fredericksburg, VA for reconditioning, overflow repairs, collision claims, priority scheduling, and transparent pricing.",
   alternates: {
-    canonical: "https://www.myrideserivcecenter.com/dealership-service-program",
+    canonical: "https://myrideservicecenter.com/dealership-service-program/",
   },
   openGraph: {
     title: "Dealership Service Program in Fredericksburg, VA | My Ride Service Center",
