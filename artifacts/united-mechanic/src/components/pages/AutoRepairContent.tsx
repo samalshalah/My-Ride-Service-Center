@@ -57,6 +57,14 @@ export default function AutoRepairContent() {
         breadcrumb={[{ href: "/auto-repair", label: "Auto Repair" }]}
       />
 
+      <section className="py-12 bg-white" aria-labelledby="visit-planning-heading">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 id="visit-planning-heading" className="text-2xl font-extrabold text-foreground mb-4">Plan your visit to our Fredericksburg mechanic shop</h2>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl">For an appointment, have your vehicle year, make, model, mileage, and recent service history ready. Describe the concern in your own words, including when it happens and any dashboard messages. You do not need to choose a replacement part before an inspection. Ask about diagnostic charges, the estimate approval process, parts availability, and drop-off or collection arrangements when you call.</p>
+          <Link href="/contact/" className="inline-block mt-4 text-primary font-semibold hover:underline">Location, hours, and contact details</Link>
+        </div>
+      </section>
+
       <section className="py-16 bg-zinc-50" aria-labelledby="services-heading">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">

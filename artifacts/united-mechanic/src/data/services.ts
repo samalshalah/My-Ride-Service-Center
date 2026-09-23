@@ -140,6 +140,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     description:
       "My Ride Service Center in Fredericksburg, VA delivers reliable brake repair and replacement on all makes and models — from brake pad and rotor service to full ABS system diagnostics. We use quality parts, back every repair with a warranty, and offer same-day service so you're never waiting to be safe on the road.",
     sections: [
+      {"heading":"Preparing for a brake inspection and estimate","body":"When you call, have the vehicle year, make, model, and approximate mileage ready. Describe when the noise or vibration occurs and mention any warning lights or recent brake work. Ask whether the estimate covers the front axle, rear axle, or both, and which pads, rotors, hardware, or fluid services it includes. Confirm parts availability and the expected collection time with the shop before planning a same-day visit."},
       {
         heading: "Why Brake Maintenance Is Your #1 Safety Priority",
         body: "Your brakes are the single most important safety system on your vehicle, and brake wear is inevitable — every stop gradually reduces pad thickness and rotor surface. The key is catching wear before it becomes dangerous. At My Ride Service Center, we measure pad thickness, rotor depth, and caliper operation at every visit to give you an honest assessment of your brake system's health — never an upsell, always an accurate picture.",
@@ -311,6 +312,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     description:
       "My Ride Service Center in Fredericksburg, VA makes oil changes fast, affordable, and thorough — with the correct oil specification for your engine, a complimentary multi-point inspection at every visit, and no unnecessary upsells. It's the simplest way to protect your engine for the long haul.",
     sections: [
+      {"heading":"Bring your maintenance history to your oil service","body":"Bring the mileage and date of your last oil change, any service receipts, and the oil specification listed in your owner’s manual if available. Mention oil added between visits or a leak you have noticed. Ask the shop to confirm the oil specification, quantity, filter, and any additional work in the estimate. Use your vehicle’s maintenance schedule and oil-life guidance to plan the next visit rather than relying on one mileage interval for every car."},
       {
         heading: "Why Regular Oil Changes Are Your Engine's Best Defense",
         body: "Engine oil lubricates, cools, and cleans your engine — but over time it degrades, accumulates contaminants, and loses its protective properties. Staying current on oil changes is the number one way to maximize the lifespan of your engine. Skipping changes allows sludge to build up in oil passages, leading to accelerated wear and eventually expensive repairs like camshaft or bearing damage.",
@@ -368,6 +370,7 @@ export const AUTO_REPAIR_SERVICES: ServiceData[] = [
     description:
       "My Ride Service Center in Fredericksburg, VA diagnoses and repairs all suspension and steering components — shocks, struts, ball joints, tie rods, control arms, wheel bearings, and more. Every qualifying suspension repair includes a 4-wheel computerized alignment to protect your tires and restore factory handling.",
     sections: [
+      {"heading":"Describe the handling concern before your appointment","body":"Tell the shop whether the concern occurs over bumps, while turning, during braking, or at a particular speed. Mention recent tire changes, alignment work, or an impact, and bring any previous alignment report. Ask which components need repair and whether alignment is included in the estimate. This helps distinguish the work being proposed from a separate tire or alignment service."},
       {
         heading: "How Worn Suspension Affects Safety — Not Just Comfort",
         body: "Your suspension system keeps your tires in contact with the road and allows you to maintain control during emergency maneuvers. When components wear out, the consequences range from uneven tire wear and a rough ride to serious loss of vehicle control. At My Ride Service Center, we perform thorough suspension inspections — lifting the vehicle, shaking each wheel, and testing every component before recommending any repair.",
@@ -599,6 +602,7 @@ export const BODY_SHOP_SERVICES: ServiceData[] = [
     description:
       "My Ride Service Center in Fredericksburg, VA assesses every dent individually and chooses the right repair method — paintless dent removal when the paint is undamaged, traditional repair when it isn't. The result is a cost-effective, invisible repair that restores your vehicle's appearance and protects its resale value.",
     sections: [
+      {"heading":"What to bring for a dent repair estimate","body":"Note which panels are affected and whether the paint is scratched or cracked. Photos showing both the whole panel and a close view can help you explain the damage when contacting the shop, but an in-person assessment may still be needed. Ask whether the proposal is for paintless dent removal or conventional repair with refinishing, which panels will be included, and whether trim removal or paint blending is part of the estimate."},
       {
         heading: "Paintless Dent Removal — The First Choice for Undamaged Paint",
         body: "Paintless dent removal (PDR) is the preferred method when the paint is undamaged and the metal has not been stretched or creased. Using specialized PDR tools, our technicians carefully massage the metal back to its original shape from behind the panel without disturbing the factory finish. PDR is faster, more affordable, and delivers results that are truly invisible — your car looks like it was never dented.",

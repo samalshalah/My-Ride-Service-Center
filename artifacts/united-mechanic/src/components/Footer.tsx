@@ -93,10 +93,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-zinc-800 pt-8 mb-8">
-          <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Popular Fredericksburg Services</h3>
+          <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Collision Repair in Fredericksburg</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
             {SEO_LANDING_PAGES.map((page) => (
-              <Link key={page.slug} href={`/${page.slug}`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+              <Link key={page.slug} href={`/${page.slug}/`} className="text-sm text-zinc-400 hover:text-white transition-colors">
                 {page.title}
               </Link>
             ))}

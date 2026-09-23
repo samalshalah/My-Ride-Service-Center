@@ -7,11 +7,14 @@ export const dynamic = "force-static";
 const BASE = "https://myrideservicecenter.com";
 const LAST_MODIFIED = new Date("2026-07-07T00:00:00.000Z");
 
+const CONTENT_UPDATED = new Date("2026-09-23T00:00:00.000Z");
+const UPDATED_SERVICES = new Set(["brakes", "oil-change", "suspension-steering", "dent-repair"]);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${BASE}/`, lastModified: LAST_MODIFIED, changeFrequency: "weekly", priority: 1.0 },
-    { url: `${BASE}/auto-repair/`, lastModified: LAST_MODIFIED, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE}/body-shop/`, lastModified: LAST_MODIFIED, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/auto-repair/`, lastModified: CONTENT_UPDATED, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/body-shop/`, lastModified: CONTENT_UPDATED, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/dealership-service-program/`, lastModified: LAST_MODIFIED, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/about/`, lastModified: LAST_MODIFIED, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/contact/`, lastModified: LAST_MODIFIED, changeFrequency: "monthly", priority: 0.7 },
@@ -21,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const serviceRoutes: MetadataRoute.Sitemap = ALL_SERVICES.map((service) => ({
     url: `${BASE}/${service.category}/${service.slug}/`,
-    lastModified: LAST_MODIFIED,
+    lastModified: UPDATED_SERVICES.has(service.slug) ? CONTENT_UPDATED : LAST_MODIFIED,
     changeFrequency: "monthly",
     priority: 0.8,
   }));
