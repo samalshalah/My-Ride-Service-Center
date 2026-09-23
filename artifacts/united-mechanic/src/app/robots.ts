@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: [],
     },
-    sitemap: "https://www.myrideserivcecenter.com/sitemap.xml",
+    sitemap: "https://myrideservicecenter.com/sitemap.xml",
   };
 }

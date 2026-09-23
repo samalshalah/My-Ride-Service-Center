@@ -1,0 +1,13 @@
+# Consolidate overlapping local landing pages into detailed service pages.
+/auto-body-shop-fredericksburg-va /body-shop/ 301
+/auto-body-shop-fredericksburg-va/ /body-shop/ 301
+/brake-repair-fredericksburg-va /auto-repair/brakes/ 301
+/brake-repair-fredericksburg-va/ /auto-repair/brakes/ 301
+/oil-change-fredericksburg-va /auto-repair/oil-change/ 301
+/oil-change-fredericksburg-va/ /auto-repair/oil-change/ 301
+/suspension-repair-fredericksburg-va /auto-repair/suspension-steering/ 301
+/suspension-repair-fredericksburg-va/ /auto-repair/suspension-steering/ 301
+/dent-repair-fredericksburg-va /body-shop/dent-repair/ 301
+/dent-repair-fredericksburg-va/ /body-shop/dent-repair/ 301
+/mechanic-fredericksburg-va /auto-repair/ 301
+/mechanic-fredericksburg-va/ /auto-repair/ 301

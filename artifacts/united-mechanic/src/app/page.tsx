@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "My Ride Service Center is Fredericksburg, VA's trusted body shop and auto repair center — 25+ years experience, all makes and models, insurance accepted. Call 540-418-6626.",
   alternates: {
-    canonical: "https://www.myrideserivcecenter.com",
+    canonical: "https://myrideservicecenter.com/",
   },
   openGraph: {
     title: "My Ride Service Center | Body Shop & Auto Repair in Fredericksburg, VA",

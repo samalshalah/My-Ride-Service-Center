@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ALL_SERVICES, BODY_SHOP_SERVICES } from "@/data/services";
 import ServiceContent from "@/components/pages/ServiceContent";
 
-const SITE_URL = "https://www.myrideserivcecenter.com";
+const SITE_URL = "https://myrideservicecenter.com";
 
 export function generateStaticParams() {
   return BODY_SHOP_SERVICES.map((s) => ({ slug: s.slug }));
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: service.metaTitle,
     description: service.metaDescription,
     alternates: {
-      canonical: `${SITE_URL}/body-shop/${slug}`,
+      canonical: `${SITE_URL}/body-shop/${slug}/`,
     },
     openGraph: {
       title: service.metaTitle,
@@ -64,16 +64,16 @@ export default async function BodyShopServicePage({ params }: { params: Promise<
       { "@type": "City", name: "Stafford" },
       { "@type": "City", name: "Spotsylvania" },
     ],
-    url: `${SITE_URL}/body-shop/${slug}`,
+    url: `${SITE_URL}/body-shop/${slug}/`,
   };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-      { "@type": "ListItem", position: 2, name: "Body Shop", item: `${SITE_URL}/body-shop` },
-      { "@type": "ListItem", position: 3, name: service.title, item: `${SITE_URL}/body-shop/${slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Body Shop", item: `${SITE_URL}/body-shop/` },
+      { "@type": "ListItem", position: 3, name: service.title, item: `${SITE_URL}/body-shop/${slug}/` },
     ],
   };
 

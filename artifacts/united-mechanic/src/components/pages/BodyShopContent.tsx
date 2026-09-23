@@ -57,6 +57,14 @@ export default function BodyShopContent() {
         breadcrumb={[{ href: "/body-shop", label: "Body Shop" }]}
       />
 
+      <section className="py-12 bg-white" aria-labelledby="visit-planning-heading">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 id="visit-planning-heading" className="text-2xl font-extrabold text-foreground mb-4">Prepare for a body repair estimate</h2>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl">Tell the shop which panels are damaged, whether the paint is affected, and whether you need help with a dent, scratch, bumper, or several damaged areas. Bring any existing estimate and, if you have opened an insurance claim, the claim reference and contact information. Ask which panels and refinishing work are included and how additional damage found during repair will be handled. Confirm availability before bringing the vehicle in.</p>
+          <Link href="/collision-repair-fredericksburg-va/" className="inline-block mt-4 text-primary font-semibold hover:underline">Collision repair and estimate guidance</Link>
+        </div>
+      </section>
+
       <section className="py-16 bg-zinc-50" aria-labelledby="bodyshop-services-heading">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">

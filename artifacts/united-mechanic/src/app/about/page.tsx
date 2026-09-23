@@ -4,9 +4,9 @@ import AboutContent from "@/components/pages/AboutContent";
 export const metadata: Metadata = {
   title: "About My Ride Service Center | 25+ Years Auto Repair in Fredericksburg, VA",
   description:
-    "For over 25 years, My Ride Service Center has served Fredericksburg, Stafford & Spotsylvania VA with expert auto repair, body shop services, and a dedicated Dealership Service Program. Honest service, all makes and models.",
+    "Learn about My Ride Service Center, Fredericksburg's trusted auto repair and body shop for mechanical repairs, collision work, and dealership service support.",
   alternates: {
-    canonical: "https://www.myrideserivcecenter.com/about",
+    canonical: "https://myrideservicecenter.com/about/",
   },
   openGraph: {
     title: "About My Ride Service Center | 25+ Years in Fredericksburg, VA",

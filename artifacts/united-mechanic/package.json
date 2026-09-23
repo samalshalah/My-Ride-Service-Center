@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "rm -rf .next && next dev -H 0.0.0.0",
-    "build": "next build",
+    "dev": "node scripts/clean-next.mjs .next && next dev -H 0.0.0.0",
+    "build": "node scripts/clean-next.mjs .next out && next build",
     "start": "npx serve@latest out --listen tcp://0.0.0.0:${PORT:-3000} -s",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "next typegen && tsc -p tsconfig.json --noEmit",
+    "seo:audit": "node scripts/seo-audit.mjs"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

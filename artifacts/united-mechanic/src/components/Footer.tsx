@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Phone, MapPin, Facebook } from "lucide-react";
 import { AUTO_REPAIR_SERVICES, BODY_SHOP_SERVICES } from "@/data/services";
+import { SEO_LANDING_PAGES } from "@/data/seoLandingPages";
 
 export default function Footer() {
   return (
@@ -28,9 +29,9 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Auto Repair</h3>
             <ul className="space-y-2">
-              {AUTO_REPAIR_SERVICES.slice(0, 5).map((s) => (
+              {AUTO_REPAIR_SERVICES.map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/auto-repair/${s.slug}`} className="text-sm hover:text-white transition-colors">
+                  <Link href={`/auto-repair/${s.slug}/`} className="text-sm hover:text-white transition-colors">
                     {s.title}
                   </Link>
                 </li>
@@ -46,9 +47,9 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Body Shop</h3>
             <ul className="space-y-2">
-              {BODY_SHOP_SERVICES.slice(0, 5).map((s) => (
+              {BODY_SHOP_SERVICES.map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/body-shop/${s.slug}`} className="text-sm hover:text-white transition-colors">
+                  <Link href={`/body-shop/${s.slug}/`} className="text-sm hover:text-white transition-colors">
                     {s.title}
                   </Link>
                 </li>
@@ -88,6 +89,17 @@ export default function Footer() {
                 <p>Sun: Closed</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="border-t border-zinc-800 pt-8 mb-8">
+          <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Collision Repair in Fredericksburg</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+            {SEO_LANDING_PAGES.map((page) => (
+              <Link key={page.slug} href={`/${page.slug}/`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                {page.title}
+              </Link>
+            ))}
           </div>
         </div>
 

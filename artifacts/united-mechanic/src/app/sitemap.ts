@@ -1,28 +1,40 @@
 import type { MetadataRoute } from "next";
 import { ALL_SERVICES } from "@/data/services";
+import { SEO_LANDING_PAGES } from "@/data/seoLandingPages";
 
 export const dynamic = "force-static";
 
-const BASE = "https://www.myrideserivcecenter.com";
+const BASE = "https://myrideservicecenter.com";
+const LAST_MODIFIED = new Date("2026-07-07T00:00:00.000Z");
+
+const CONTENT_UPDATED = new Date("2026-09-23T00:00:00.000Z");
+const UPDATED_SERVICES = new Set(["brakes", "oil-change", "suspension-steering", "dent-repair"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: BASE, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
-    { url: `${BASE}/auto-repair`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE}/body-shop`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE}/dealership-service-program`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/appointment`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/privacy-policy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/`, lastModified: LAST_MODIFIED, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${BASE}/auto-repair/`, lastModified: CONTENT_UPDATED, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/body-shop/`, lastModified: CONTENT_UPDATED, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/dealership-service-program/`, lastModified: LAST_MODIFIED, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/about/`, lastModified: LAST_MODIFIED, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/contact/`, lastModified: LAST_MODIFIED, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/appointment/`, lastModified: LAST_MODIFIED, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/privacy-policy/`, lastModified: LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const serviceRoutes: MetadataRoute.Sitemap = ALL_SERVICES.map((service) => ({
-    url: `${BASE}/${service.category}/${service.slug}`,
-    lastModified: new Date(),
+    url: `${BASE}/${service.category}/${service.slug}/`,
+    lastModified: UPDATED_SERVICES.has(service.slug) ? CONTENT_UPDATED : LAST_MODIFIED,
     changeFrequency: "monthly",
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...serviceRoutes];
+  const seoLandingRoutes: MetadataRoute.Sitemap = SEO_LANDING_PAGES.map((page) => ({
+    url: `${BASE}/${page.slug}/`,
+    lastModified: LAST_MODIFIED,
+    changeFrequency: "monthly",
+    priority: 0.85,
+  }));
+
+  return [...staticRoutes, ...seoLandingRoutes, ...serviceRoutes];
 }
